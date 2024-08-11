@@ -155,7 +155,6 @@ input::placeholder {
   }
 
   &-head {
-    cursor: pointer;
     padding: 15px 10px;
     align-items: center;
   }
@@ -227,3 +226,5 @@ input::placeholder {
 }
 
 @import "./blocks/burger";
+@import "./blocks/swiper";
+

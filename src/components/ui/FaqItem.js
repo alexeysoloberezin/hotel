@@ -13,8 +13,8 @@ function FaqItem({ title, text, aos, delay, icon, children }) {
   }, [text, children, isOpen]);
 
   return (
-    <div className="faqItem" >
-      <div className="faqItem-head flex gap-[70px] sm:items-center justify-between" onClick={() => setIsOpen(!isOpen)}>
+    <div className="faqItem " >
+      <div className="faqItem-head link flex gap-[70px] sm:items-center justify-between" onClick={() => setIsOpen(!isOpen)}>
         <div className={"flex items-center gap-3"}>
           <img src={icon} alt="" />
           {title}

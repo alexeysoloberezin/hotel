@@ -8,7 +8,7 @@ function MainBlock(props) {
 
       <div>
         <video src="/videoplayback.mp4" autoPlay loop muted
-               className={"absolute top-0 left-0 w-full h-full object-cover"}
+               className={"absolute top-0 left-0 w-full h-full object-none"}
         ></video>
         <div className={"overlay-after"}></div>
       </div>

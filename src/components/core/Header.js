@@ -50,7 +50,7 @@ const Header = ({transparent}) => {
 
   return (
     <header
-      className={clsx("rounded-base transition-colors py-[20px] absolute top-0 left-0 z-50 w-full", {'text-black': isActiveBurger})}
+      className={clsx("rounded-base custom transition-colors py-[20px] absolute top-0 left-0 z-50 w-full", {'text-black': isActiveBurger})}
     >
 
       <div className={'container flex items-center justify-between w-full relative z-50'}>
@@ -58,11 +58,11 @@ const Header = ({transparent}) => {
           +1 857 576-6900
         </a>
         <Link to={'/'}>
-          <img src="/logo.png" alt=""/>
+          <img className={"max-w-[132px]"} src="/logo.png" alt=""/>
         </Link>
 
         <div className={"min-w-[142px]"}>
-          <div className={clsx("cursor-pointer menu-burger", {
+          <div className={clsx("menu-burger link", {
             'active': isActiveBurger
           })} onClick={(e) => setIsActiveBurger(!isActiveBurger)}>
             <span>MENU</span>

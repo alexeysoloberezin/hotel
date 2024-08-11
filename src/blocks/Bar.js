@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionHeader from "../components/ui/SectionHeader";
+import PerfectGrid from "../components/core/PerfectGrid";
 
 function Bar(props) {
   return (
@@ -11,13 +12,9 @@ function Bar(props) {
           color={'white'}
           title={'Nectar Bar'}
         />
-        <div className={"grid grid-cols-3 gap-[22px]"}>
-            <img className={"w-full h-full object-cover"} src={"/bar1.jpg"} alt="bar-img"/>
-            <img className={"row-span-2 w-full h-full object-cover"} src={"/bar2.jpg"} alt="bar-img"/>
-            <img className={"w-full h-full object-cover"} src={"/bar3.jpg"} alt="bar-img"/>
-            <img className={"w-full h-full object-cover"} src={"/bar4.jpg"} alt="bar-img"/>
-            <img className={"w-full h-full object-cover"} src={"/bar5.jpg"} alt="bar-img"/>
-        </div>
+        <PerfectGrid
+          imgTemplate={'/bar{**}.jpg'}
+        />
       </div>
     </div>
   );

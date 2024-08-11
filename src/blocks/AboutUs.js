@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionHeader from "../components/ui/SectionHeader";
+import GridBlock from "../components/core/GridBlock";
 
 function AboutUs(props) {
   return (
@@ -11,34 +12,16 @@ function AboutUs(props) {
           color={'black'}
           title={'About Us'}
         />
-        <div className={'text-black grid grid-cols-3 gap-[20px]'}>
-          <div className={"flex flex-col gap-[20px]"}>
-            <div>
-              <img className={"h-[309px] w-full object-cover"} src="/about1.jpg" alt=""/>
-              <h4 className={"mt-[10px]"}>GYM</h4>
-            </div>
-            <div>
-              <img className={"h-[220px] w-full object-cover"} src="/about2.jpg" alt=""/>
-              <h4 className={"mt-[10px]"}>Spa room</h4>
-            </div>
-          </div>
-          <div className={"flex flex-col gap-[20px]"}>
-            <div>
-              <img className={"h-[590px] w-full object-cover"} src="/about3.jpg" alt=""/>
-              <h4 className={"mt-[10px]"}>Cozy lobby and polite staff</h4>
-            </div>
-          </div>
-          <div className={"flex flex-col gap-[20px]"}>
-            <div>
-              <img className={"h-[220px] w-full object-cover"} src="/about4.jpg" alt=""/>
-              <h4 className={"mt-[10px]"}>Restaurant</h4>
-            </div>
-            <div>
-              <img className={"h-[309px] w-full object-cover"} src="/about5.jpg" alt=""/>
-              <h4 className={"mt-[10px]"}>Bar</h4>
-            </div>
-          </div>
-        </div>
+        <GridBlock
+          imgTemplate={'/about{**}.jpg'}
+          data={[
+           "GYM",
+            "Spa room",
+            "Cozy lobby and polite staff",
+            "Restaurant",
+            "Bar"
+          ]}
+        />
       </div>
     </div>
   );
