@@ -28,7 +28,7 @@ function Accommodation(props) {
   ];
 
   return (
-    <div className={"bg-gold py-[216px]"}>
+    <div className={"bg-gold lg:py-[216px] py-[100px]"}>
       <div className={"container"}>
         <SectionHeader
           text={'Whatever room you select, you\'ll discover a cozy haven with ample space to unwind and recharge. From luxurious bathrobes and a wide array of amenities, including exclusive Ferragamo products, to convenient kitchenettes.'}

@@ -42,7 +42,7 @@ function FaqItem({ title, text, aos, delay, icon, children }) {
         "max-h-[0]": !isOpen,
         "max-h-[0] sm:max-h-[0]": !isOpen, // Adjust the max-height for closed state
       })} style={{maxHeight: isOpen ? contentHeight : 0}}>
-        <div ref={contentRef} className="px-[20px] md:pt-[20px] pb-[40px]">
+        <div ref={contentRef} className="md:px-[20px] px-[10px] pt-[20px] md:pb-[40px] pb-[20px]">
           {children}
         </div>
       </div>

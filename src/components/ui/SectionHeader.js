@@ -4,7 +4,7 @@ import Button from "./Button";
 import clsx from "clsx";
 import Arrow from "../icon/Arrow";
 
-function SectionHeader({title, text, btnHref, color = 'black'}) {
+function SectionHeader({title, text, btnHref,bigMob, color = 'black'}) {
   const colors = {
     'black': {
       'text': 'text-black',
@@ -17,10 +17,10 @@ function SectionHeader({title, text, btnHref, color = 'black'}) {
     }
   }
   return (
-    <div className={clsx('flex items-center gap-[20px] mb-[50px]', colors[color].text)}>
-      <h2 className={"text-nowrap min-w-[34%]"}>{title}</h2>
+    <div className={clsx('flex lg:items-center lg:flex-row flex-col gap-[20px] mb-[50px]', colors[color].text)}>
+      <h2 className={clsx("text-nowrap lg:min-w-[34%]", {'bigMob': bigMob})}>{title}</h2>
       <p>{text}</p>
-      <Link to={btnHref}>
+      <Link to={btnHref} className={"lg:mx-0 lg:mt-0 mt-[30px] mx-auto"}>
         <Button
           label={'see more'}
           className={"group"}

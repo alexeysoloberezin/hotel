@@ -17,7 +17,7 @@ function Button({children, type, disabled, label, onClick, className,hoverColor,
   return (
     <button disabled={disabled} onClick={onClick} type={type} className={
       clsx(
-        " px-[20px] py-[10px] uppercase border-1 border border-transparent flex items-center gap-[10px]  transition-all text-nowrap",
+        " px-[20px] py-[10px] flex-nowrap uppercase border-1 border border-transparent flex items-center gap-[10px]  transition-all text-nowrap",
         colors[color],
         hoverColors[hoverColor || color],
         className,

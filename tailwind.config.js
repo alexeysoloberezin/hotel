@@ -20,6 +20,7 @@ module.exports = {
       'md': '800px',
       'lg': '1024px',
       'xl': '1340px',
+      '2xl': '1640px',
     },
     borderRadius: {
       'base': '20px',

@@ -4,37 +4,40 @@ import clsx from "clsx";
 function GridBlock({data, imgTemplate, type = 'type1'}) {
   const classes = {
     'type1': {
-      '1': 'h-[309px]',
-      '2': 'h-[220px]',
-      '3': 'h-[590px]',
+      '1': 'md:h-[314px]',
+      '2': 'md:h-[220px]',
+      '3': 'md:h-[590px]',
     },
   }
+
+  const textClass = "mt-[5px] font2 md:text-left md:mx-0 mx-auto max-w-[230px] md:max-w-fit text-center md:text-base text-[24px] uppercase md:normal-case"
+
   return (
-    <div className={'text-black grid grid-cols-3 gap-[20px]'}>
+    <div className={'text-black grid md:grid-cols-3 gap-[20px]'}>
       <div className={"flex flex-col gap-[20px]"}>
         <div>
           <img className={clsx(classes[type]['1'], "w-full object-cover")} src={imgTemplate.replace('{**}', 1)} alt=""/>
-          {data[0] && <h4 className={"mt-[10px]"}>{data[0]}</h4>}
+          {data[0] && <h4 className={clsx(textClass)}>{data[0]}</h4>}
         </div>
         <div>
           <img className={clsx(classes[type]['2'], "w-full object-cover")} src={imgTemplate.replace('{**}', 2)} alt=""/>
-          {data[1] && <h4 className={"mt-[10px]"}>{data[1]}</h4>}
+          {data[1] && <h4 className={clsx(textClass)}>{data[1]}</h4>}
         </div>
       </div>
       <div className={"flex flex-col gap-[20px]"}>
         <div>
           <img className={clsx(classes[type]['3'], "w-full object-cover")} src={imgTemplate.replace('{**}', 3)} alt=""/>
-          {data[2] && <h4 className={"mt-[10px]"}>{data[2]}</h4>}
+          {data[2] && <h4 className={clsx(textClass)}>{data[2]}</h4>}
         </div>
       </div>
       <div className={"flex flex-col gap-[20px]"}>
         <div>
           <img className={clsx(classes[type]['2'], "w-full object-cover")} src={imgTemplate.replace('{**}', 4)} alt=""/>
-          {data[3] && <h4 className={"mt-[10px]"}>{data[3]}</h4>}
+          {data[3] && <h4 className={clsx(textClass)}>{data[3]}</h4>}
         </div>
         <div>
           <img className={clsx(classes[type]['1'], "w-full object-cover")} src={imgTemplate.replace('{**}', 5)} alt=""/>
-          {data[4] && <h4 className={"mt-[10px]"}>{data[4]}</h4>}
+          {data[4] && <h4 className={clsx(textClass)}>{data[4]}</h4>}
         </div>
       </div>
     </div>

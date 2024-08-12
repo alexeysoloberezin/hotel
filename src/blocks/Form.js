@@ -116,11 +116,11 @@ const Form = (props) => {
   };
 
   return (
-    <div id={'form'} className={"container"}>
-      <div className={'container '}>
-        <div className={"uppercase mb-[30px]"}>Rrite your question <br/>and we will contact you!</div>
+    <div id={'form'} className={""}>
+      <div className={' '}>
+        <div className={"uppercase lg:mb-[30px] mb-[20px]"}>Rrite your question <br/>and we will contact you!</div>
 
-        <form className={"mt-[30px] max-w-[780px] mx-auto"} onSubmit={handleSubmit}>
+        <form className={"max-w-[780px]"} onSubmit={handleSubmit}>
           <div className={"grid gap-[15px] mb-[10px]"}>
             <Input
               placeholder={'Your name'}
@@ -146,7 +146,7 @@ const Form = (props) => {
             />
           </div>
 
-          <Button label={loading ? 'Loading...' : 'Send'} color={"black"} className={"mt-[40px]"} disabled={loading}/>
+          <Button label={loading ? 'Loading...' : 'Send'} color={"black"} className={"lg:mt-[40px] mt-[30px]"} disabled={loading}/>
         </form>
       </div>
 

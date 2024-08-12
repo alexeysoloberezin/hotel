@@ -5,7 +5,6 @@ import Button from "../components/ui/Button";
 function MainBlock(props) {
   return (
     <div className={"h-screen relative flex flex-col justify-center items-center pt-[80px]"}>
-
       <div>
         <video src="/videoplayback.mp4" autoPlay loop muted
                className={"absolute top-0 left-0 w-full h-full object-none"}
@@ -16,7 +15,7 @@ function MainBlock(props) {
 
       <div className={"relative z-10 text-center flex flex-col items-center"}>
         <h1>Iris Hotel Boston</h1>
-        <h3 className={"mt-2 mb-[30px]"}>
+        <h3 className={"mt-2 lg:mb-[30px] mb-[25px]"}>
           where design meets comfort
         </h3>
         <Button label={'Book Now'} />

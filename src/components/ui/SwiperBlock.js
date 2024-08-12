@@ -8,7 +8,7 @@ function AccommodationItem({title, subtitle, price, img}){
   return (
     <div className={"text-black"}>
       <img src={img} alt="AccommodationImage" className={"w-full aspect-square object-cover"}/>
-      <h4 className={"mt-[10px] mb-[5px]"}>{title}</h4>
+      <h4 className={"mt-[10px] mb-[5px] font2"}>{title}</h4>
       <p className={"mb-[20px]"}>{subtitle}</p>
       <p>from <b>{price}</b> / night</p>
     </div>

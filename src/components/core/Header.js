@@ -78,7 +78,7 @@ const Header = ({transparent}) => {
         <div className={"container h-full flex flex-col relative"}>
           <ul className={"flex flex-col gap-[20px] grow mb-auto w-fit"}>
             {navItems.map((item, index) => (
-              <li key={index} className={"text-[50px] group hover:text-[100px] w-fit text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
+              <li key={index} className={"2xl:text-[50px] text-[40px] group 2xl:hover:text-[100px] hover:text-[65px] w-fit text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
                 <Link className={"flex items-center"} to={item.to}>
                   {item.name}
                   <Arrow classes={"fill-black group-hover:scale-100 group-hover:delay-[400ms] scale-0 transition-all duration-500  origin-left translate-y-[9px] ml-[40px]"} width={'75'} height={'13'}/>
