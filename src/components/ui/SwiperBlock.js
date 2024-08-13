@@ -7,10 +7,10 @@ import 'swiper/css/pagination';
 function AccommodationItem({title, subtitle, price, img}){
   return (
     <div className={"text-black"}>
-      <img src={img} alt="AccommodationImage" className={"w-full aspect-square object-cover"}/>
-      <h4 className={"mt-[10px] mb-[5px] font2"}>{title}</h4>
-      <p className={"mb-[20px]"}>{subtitle}</p>
-      <p>from <b>{price}</b> / night</p>
+      <img src={img} alt="AccommodationImage" className={"w-full aspect-square object-cover"} data-aos="fade-up" data-aos-delay="0"/>
+      <h4 className={"mt-[10px] mb-[5px] font2"} data-aos="fade-up" data-aos-delay="150">{title}</h4>
+      <p className={"mb-[20px]"} data-aos="fade-up" data-aos-delay="300">{subtitle}</p>
+      <p data-aos="fade-up" data-aos-delay="450">from <b>{price}</b> / night</p>
     </div>
   )
 }
@@ -24,7 +24,6 @@ function Slider({ slidesData }) {
         spaceBetween={10}
         pagination={{
           clickable: true,
-          dynamicBullets: true,
         }}
         breakpoints={{
           700: {

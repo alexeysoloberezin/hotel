@@ -17,11 +17,12 @@ function Contacts(props) {
     <div className={"bg-dark lg:py-[200px] py-[100px]"}>
       <div className="container flex lg:flex-row flex-col-reverse lg:gap-[90px] gap-[20px]">
         <div className={"lg:w-[35%] shrink-0"}>
-          <div className={"lg:block hidden"}>
+          <div data-aos="fade-up" className={"lg:block hidden"}>
             <ContactsBlock/>
           </div>
 
           <FaqItem
+            delay={'150'}
             title={'Parking'}
             icon={'/icon_faq1.png'}
           >
@@ -35,6 +36,7 @@ function Contacts(props) {
             </div>
           </FaqItem>
           <FaqItem
+            delay={'300'}
             title={'Boston Logan International Airport'}
             icon={'/icon_faq2.png'}
           >
@@ -48,6 +50,7 @@ function Contacts(props) {
             </div>
           </FaqItem>
           <FaqItem
+            delay={"450"}
             title={'T F Green Airport'}
             icon={'/icon_faq2.png'}
           >
@@ -61,6 +64,7 @@ function Contacts(props) {
             </div>
           </FaqItem>
           <FaqItem
+            delay={"600"}
             title={'Manchester-Boston Regional Airport'}
             icon={'/icon_faq2.png'}
           >
@@ -74,6 +78,7 @@ function Contacts(props) {
             </div>
           </FaqItem>
           <FaqItem
+            delay={"750"}
             title={'Other Transportation'}
             icon={'/icon_faq3.png'}
           >
@@ -87,7 +92,7 @@ function Contacts(props) {
             </div>
           </FaqItem>
         </div>
-        <div className={"w-full"}>
+        <div className={"w-full"} data-aos="fade-up" data-aos-delay="800">
           <div className={"lg:hidden"}>
             <ContactsBlock/>
           </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from "clsx";
 
-function Button({children, type, disabled, label, onClick, className,hoverColor, color = 'purple', full, size = 'def'}) {
+function Button({children, type, disabled,noAnimate, label, onClick, className,delay = '0',hoverColor, color = 'purple', full, size = 'def'}) {
   const colors = {
     'purple': 'bg-purple text-black ',
     'white': 'bg-white text-black ',
@@ -15,7 +15,7 @@ function Button({children, type, disabled, label, onClick, className,hoverColor,
   }
 
   return (
-    <button disabled={disabled} onClick={onClick} type={type} className={
+    <button data-aos={noAnimate ? '' : "fade-up"}  data-aos-delay={delay}  disabled={disabled} onClick={onClick} type={type} className={
       clsx(
         " px-[20px] py-[10px] flex-nowrap uppercase border-1 border border-transparent flex items-center gap-[10px]  transition-all text-nowrap",
         colors[color],

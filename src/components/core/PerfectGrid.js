@@ -14,7 +14,9 @@ function PerfectGrid({imgTemplate}) {
   return (
     <div className={"grid lg:grid-cols-3 grid-cols-2 md:gap-[22px] gap-[15px]"}>
       {grid.map((el, index) => (
-        <img className={clsx("w-full h-full object-cover",
+        <img
+          data-aos="fade-up" data-aos-delay={index * 250 + ''}
+          className={clsx("w-full h-full object-cover",
           indexClasses[index]
         )} src={imgTemplate.replace('{**}', index + 1)} alt="bar-img"/>
       ))}

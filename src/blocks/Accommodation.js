@@ -25,6 +25,18 @@ function Accommodation(props) {
       img: '/accommodation3.jpg',
       subtitle: 'Sleeps up to 2',
     },
+    {
+      price: '$486.00',
+      title: 'KING DELUXE',
+      img: '/accommodation3.jpg',
+      subtitle: 'Sleeps up to 2',
+    },
+    {
+      price: '$486.00',
+      title: 'KING DELUXE',
+      img: '/accommodation3.jpg',
+      subtitle: 'Sleeps up to 2',
+    },
   ];
 
   return (
@@ -39,7 +51,8 @@ function Accommodation(props) {
 
         <Slider slidesData={accommodationData} />
 
-        <Button label={'Book Now'} className={"mt-[80px] mx-auto"} color={"white"}/>
+        <Button label={'Book Now'} className={"mt-[80px] mx-auto"}
+                color={"white"}/>
       </div>
     </div>
   );

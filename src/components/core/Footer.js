@@ -30,8 +30,8 @@ const Footer = () => {
   return (
     <footer className="bg-purple text-black pt-[90px] pb-[30px]">
       <div className="container">
-        <div className={"mb-[40px]"}><img src="/logoBlack.png" alt=""/></div>
-        <div className={"grid lg:grid-cols-3 lg:gap-[15px] gap-[50px] lg:min-h-[400px]"}>
+        <div className={"mb-[40px] "}><img className={"w-[108px]"} src="/logoBlack.png" alt=""/></div>
+        <div  className={"grid lg:grid-cols-3 lg:gap-[15px] gap-[50px] lg:min-h-[400px]"}>
           <div className={"flex flex-col gap-[20px]"}>
             <p>Iris Hotel Boston</p>
             <a href="mailto:info@irishotelboston.com">info@irishotelboston.com</a>

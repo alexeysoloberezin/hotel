@@ -66,11 +66,17 @@ html {
   }
 }
 
-body, html {
+body, html, #root {
   max-width: 100vw;
   width: 100%;
   overflow-x: hidden;
   transition: background-color .3s;
+}
+html{
+  max-height: 100vh;
+}
+#root{
+  //max-height: 100vh;
 }
 
 input::placeholder {

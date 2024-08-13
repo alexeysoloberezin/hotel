@@ -18,10 +18,11 @@ function SectionHeader({title, text, btnHref,bigMob, color = 'black'}) {
   }
   return (
     <div className={clsx('flex lg:items-center lg:flex-row flex-col gap-[20px] mb-[50px]', colors[color].text)}>
-      <h2 className={clsx("text-nowrap lg:min-w-[34%]", {'bigMob': bigMob})}>{title}</h2>
-      <p>{text}</p>
+      <h2 data-aos="fade-up" data-aos-delay="0" className={clsx("text-nowrap lg:min-w-[34%]", {'bigMob': bigMob})}>{title}</h2>
+      <p data-aos="fade-up" data-aos-delay="200">{text}</p>
       <Link to={btnHref} className={"lg:mx-0 lg:mt-0 mt-[30px] mx-auto"}>
         <Button
+          delay={'400'}
           label={'see more'}
           className={"group"}
           color={colors[color].btn}

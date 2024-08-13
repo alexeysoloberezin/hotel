@@ -54,11 +54,14 @@ const Header = ({transparent}) => {
     >
 
       <div className={'container flex items-center justify-between w-full relative z-50'}>
-        <a href={"tel:+18575766900"} className={"transition-colors"}>
+        <a href={"tel:+18575766900"} className={"transition-colors md:block hidden"}>
           +1 857 576-6900
         </a>
-        <Link to={'/'}>
-          <img className={"max-w-[132px]"} src="/logo.png" alt=""/>
+        <Link to={'/'} className={"relative w-[125px] h-[60px]"}>
+          <img className={clsx({
+            'md:w-[124px] md:h-[62px]': isActiveBurger,
+            'md:w-[125px] md:h-[51px]': !isActiveBurger
+          }, "w-[90px] object-contain absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]")} src={!isActiveBurger ? '/logo.png' : '/logoBlack.png'} alt=""/>
         </Link>
 
         <div className={"min-w-[142px]"}>
@@ -71,32 +74,40 @@ const Header = ({transparent}) => {
       </div>
 
       <div
-        className={clsx("fixed top-0 pt-[150px] pb-[50px] h-screen w-screen left-0 bg-gold transition-all duration-500", {
+        className={clsx("fixed top-0 md:pt-[150px] pt-[120px] pb-[50px] h-screen w-screen left-0 bg-gold transition-all duration-500", {
           'opacity-100': isActiveBurger,
           'opacity-0 translate-y-[-110vh]': !isActiveBurger,
         })}>
-        <div className={"container h-full flex flex-col relative"}>
-          <ul className={"flex flex-col gap-[20px] grow mb-auto w-fit"}>
+        <div className={"container h-full flex flex-col xl:items-start items-center relative"}>
+          <a href={"tel:+18575766900"} className={"transition-colors md:hidden mb-[50px] underline"}>
+            +1 857 576-6900
+          </a>
+          <ul className={"flex flex-col xl:items-start items-center gap-[20px] grow mb-auto w-fit"}>
             {navItems.map((item, index) => (
-              <li key={index} className={"2xl:text-[50px] text-[40px] group 2xl:hover:text-[100px] hover:text-[65px] w-fit text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
-                <Link className={"flex items-center"} to={item.to}>
+              <li key={index}
+                  className={"2xl:text-[50px] md:text-[40px] text-[32px] group 2xl:hover:text-[100px] xl:hover:text-[65px] w-fit text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
+                <Link className={"flex items-center"} to={item.to} onClick={() => setIsActiveBurger(false)}>
                   {item.name}
-                  <Arrow classes={"fill-black group-hover:scale-100 group-hover:delay-[400ms] scale-0 transition-all duration-500  origin-left translate-y-[9px] ml-[40px]"} width={'75'} height={'13'}/>
+                  <Arrow
+                    classes={"fill-black xl:block hidden group-hover:scale-100 group-hover:delay-[400ms] scale-0 transition-all duration-500  origin-left translate-y-[9px] ml-[40px]"}
+                    width={'75'} height={'13'}/>
                 </Link>
 
-                <img src={item.img} className={"fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 opacity-0 group-hover:opacity-100 group-hover:delay-0 delay-200 transition-all duration-500"} alt=""/>
+                <img src={item.img}
+                     className={"fixed w-[520px] xl:block hidden pointer-events-none object-cover h-full top-0 right-0 z-10 opacity-0 group-hover:opacity-100 group-hover:delay-0 delay-300 transition-all duration-700"}
+                     alt=""/>
               </li>
             ))}
           </ul>
 
-          <div className={"flex justify-between items-end relative z-[20]"}>
-            <div>
+          <div className={"flex md:w-full pt-[15px] justify-between md:flex-row flex-col-reverse  xl:text-left text-center md:items-end items-center  relative z-[20]"}>
+            <div className={""}>
               30 Webster St <br/>
               Brookline, MA 02446<br/>
               United States of America
             </div>
-            <div>
-              <Button label={'Book Now'} color={"purple"}/>
+            <div className={"md:mb-0 mb-[30px]"}>
+              <Button label={'Book Now'} color={"white"} noAnimate={true}/>
             </div>
           </div>
 
