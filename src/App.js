@@ -20,10 +20,12 @@ function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
-    AOS.init({
-      duration: 1350, // Длительность анимации в миллисекундах
-      disable: window.innerWidth < 1024
-    });
+    setTimeout(() => {
+      AOS.init({
+        duration: 1350, // Длительность анимации в миллисекундах
+        disable: window.innerWidth < 1024
+      });
+    }, 2000)
 
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);

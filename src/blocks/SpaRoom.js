@@ -2,9 +2,11 @@ import React from 'react';
 import SectionHeader from "../components/ui/SectionHeader";
 import PerfectGrid from "../components/core/PerfectGrid";
 
-function SpaRoomEl({number, children}) {
+function SpaRoomEl({number, children, delay}) {
   return (
-    <div className={"flex flex-col items-center text-center"}>
+    <div
+      data-aos="fade-up" data-aos-delay={delay}
+      className={"flex flex-col items-center text-center"}>
       <div className={"text-[50px] font2 py-[10px]"} style={{lineHeight: 1.2}}>{number}</div>
       <h4>{children}</h4>
     </div>
@@ -14,11 +16,11 @@ function SpaRoomEl({number, children}) {
 function SpaRoom(props) {
   return (
     <div className={"bg-dark lg:py-[200px] py-[100px]"}>
-      <div className={"flex justify-between gap-[20px] container pb-[150px]"}>
-        <SpaRoomEl number={'4'} >Years <br/>of Experience </SpaRoomEl>
-        <SpaRoomEl number={'20'} >Team <br/>Members</SpaRoomEl>
-        <SpaRoomEl number={'80'} >Our <br/>Products</SpaRoomEl>
-        <SpaRoomEl number={'2'} >Numbers <br/>of Salons</SpaRoomEl>
+      <div className={"grid lg:grid-cols-4 md:grid-cols-2 md:gap-[20px] gap-[50px] container pb-[150px]"}>
+        <SpaRoomEl delay={'150'} number={'4'} >Years <br/>of Experience </SpaRoomEl>
+        <SpaRoomEl delay={'350'} number={'20'} >Team <br/>Members</SpaRoomEl>
+        <SpaRoomEl delay={'500'} number={'80'} >Our <br/>Products</SpaRoomEl>
+        <SpaRoomEl delay={'650'} number={'2'} >Numbers <br/>of Salons</SpaRoomEl>
       </div>
       <div className={"container"}>
         <SectionHeader

@@ -1,23 +1,52 @@
 import React from 'react';
 import SectionHeader from "../components/ui/SectionHeader";
 import clsx from "clsx";
+import Contacts from "./Contacts";
 
 function FacialItem({imgTemplate, title, price, time, text, index}){
   return (
-    <div className={"min-h-[420px] pt-[90px] flex flex-col items-center"} style={{background: `url(${imgTemplate.replace('{**}', index )}) center/cover no-repeat`}}>
-      <div className={"flex items-end mb-[5px]"}>
-        <span className={"text-[50px]"}>{price}</span>
-        <h4>{time}</h4>
+    <div
+      data-aos="fade-up" data-aos-delay={index * 150}
+      className={"min-h-[420px] p-[20px] pt-[90px] flex flex-col items-center"} style={{background: `url(${imgTemplate.replace('{**}', index )}) center/cover no-repeat`}}>
+      <div className={"flex items-end mb-[5px] font2"}>
+        <span className={"text-[50px]"} style={{lineHeight: 1}}>{price} /</span>
+        <h4 className={"ml-[15px]"}>{time}</h4>
       </div>
-      <div>
+      <h4 className={"my-[10px] uppercase"}>
         {title}
-      </div>
-      <div>{text}</div>
+      </h4>
+      <div className={"mt-[5px] text-center"}>{text}</div>
     </div>
   )
 }
 
 function Facials(props) {
+  const arr2 = [
+    {
+      text: `Deep tissue massage uses firm pressure
+and slow strokes to relieve chronic tension,
+stiffness, and pain, break up scar tissue,
+and improve circulation and range of
+motion. It’s ideal for addressing chronic
+pain, muscle injuries, and postural issues`,
+      title: "Deep Tissue",
+      price: "$170",
+      time: "50min"
+    },
+    {
+      text: `Therapeutic massage is a versatile
+approach to healing and relaxation, tailored
+to address specific health concerns and
+promote overall well-being. Therapeutic
+massage not only offers physical benefits
+like improved circulation and flexibility but
+also fosters mental relaxation and
+emotional balance`,
+      title: "Therapeutic Massage",
+      price: "$160",
+      time: "50min"
+    }
+  ]
   const arr = [
     {
       text: `Experience the transformative power of our
@@ -81,18 +110,19 @@ confidence and vitality`,
     }
   ]
 
-  const grid = 'grid grid-cols-3 gap-[20px]'
+  const grid = 'grid lg:grid-cols-3 md:grid-cols-2 gap-[20px]'
   return (
     <div className={"py-[165px] bg-[#710000]"} >
       <div className="container">
         <SectionHeader
           text={'We offer a variety of facial services to suit your individual skin care needs. Our estheticians use only the finest Bioelements products based on trace minerals, essential oils, and plant extracts'}
           color={'white'}
+          bigMob={true}
           classText={"max-w-[640px]"}
           title={'Facials'}
         />
 
-        <div className={clsx(grid)}>
+        <div className={clsx(grid, 'md:mb-[165px] mb-[60px]')}>
           {arr.map((el, index) => (
             <FacialItem
               text={el.text}
@@ -100,6 +130,35 @@ confidence and vitality`,
               time={el.time}
               price={el.price}
               imgTemplate={"/facials_{**}.png"}
+              index={index + 1}
+            />
+          ))}
+          <div
+            data-aos="fade-up" data-aos-delay="1000"
+            className={"bg-dark flex flex-col text-center justify-center gap-[10px] min-h-[390px]"}>
+            <div className={"text-[50px] font2"} style={{lineHeight: 1}}>$30</div>
+            <h4 className={"uppercase"}>Add-on mask</h4>
+            <div className={"text-[50px] font2 mt-[15px]"} style={{lineHeight: 1}}>$60</div>
+            <h4 className={"uppercase"}>Dermaplaning</h4>
+          </div>
+        </div>
+
+        <SectionHeader
+          text={'Procedure that combines classic massage techniques with spa therapy elements, aimed at deep relaxation and rejuvenation of both body and mind'}
+          color={'white'}
+          bigMob={true}
+          classText={"max-w-[640px]"}
+          title={'Massages'}
+        />
+
+        <div className={clsx(grid)}>
+          {arr2.map((el, index) => (
+            <FacialItem
+              text={el.text}
+              title={el.title}
+              time={el.time}
+              price={el.price}
+              imgTemplate={"/massage_{**}.png"}
               index={index + 1}
             />
           ))}

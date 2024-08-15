@@ -32,25 +32,28 @@ function ContactsSubtitle({img, title, imgClass, text}){
   )
 }
 
-function Contacts(props) {
+function Contacts({showHotelInfo}) {
 
   return (
     <div className={"bg-dark lg:py-[200px] py-[100px]"}>
-      <div className="container md:pb-[170px] pb-[100px]">
-        <h2 className={"md:mb-[50px] mb-[20px]"}>Hotel Information</h2>
-        <div className={"flex md:flex-row flex-col justify-between md:gap-[30px] gap-[20px]"}>
-          <div className={"flex flex-col md:gap-[15px] gap-[20px]"}>
-            <ContactsSubtitle img={'/timer.png'} title={'Check in is 4 pm'}/>
-            <ContactsSubtitle img={'/timer.png'} title={'Check out is 11 am'}/>
-          </div>
-          <div>
-            <ContactsSubtitle img={'/pet.png'} title={'Pets Policy'} text={'Only official guide dogs are allowed'}/>
-          </div>
-          <div>
-            <ContactsSubtitle img={'/icon_faq1.png'} title={'Parking'} text={'Daily: $60'}/>
+      {showHotelInfo
+        && <div className="container md:pb-[170px] pb-[100px]">
+          <h2 className={"md:mb-[50px] mb-[20px]"}>Hotel Information</h2>
+          <div className={"flex md:flex-row flex-col justify-between md:gap-[30px] gap-[20px]"}>
+            <div className={"flex flex-col md:gap-[15px] gap-[20px]"}>
+              <ContactsSubtitle img={'/timer.png'} title={'Check in is 4 pm'}/>
+              <ContactsSubtitle img={'/timer.png'} title={'Check out is 11 am'}/>
+            </div>
+            <div>
+              <ContactsSubtitle img={'/pet.png'} title={'Pets Policy'} text={'Only official guide dogs are allowed'}/>
+            </div>
+            <div>
+              <ContactsSubtitle img={'/icon_faq1.png'} title={'Parking'} text={'Daily: $60'}/>
+            </div>
           </div>
         </div>
-      </div>
+      }
+
       <div className="container flex lg:flex-row flex-col-reverse lg:gap-[90px] gap-[20px]">
         <div className={"lg:w-[35%] shrink-0"}>
           <div data-aos="fade-up" className={"lg:block hidden"}>

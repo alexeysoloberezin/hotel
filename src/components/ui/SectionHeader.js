@@ -17,7 +17,7 @@ function SectionHeader({title, text, btnHref,bigMob, color = 'black', mobImage, 
     }
   }
   return (
-    <div className={clsx('flex lg:items-center lg:flex-row flex-col gap-[20px] mb-[50px]', colors[color].text)}>
+    <div className={clsx('flex lg:items-center lg:flex-row flex-col gap-[20px] md:mb-[50px] mb-[30px]', colors[color].text)}>
       <h2 data-aos="fade-up" data-aos-delay="0" className={clsx("text-nowrap lg:min-w-[34%]", {'bigMob': bigMob})}>{title}</h2>
       <p data-aos="fade-up" data-aos-delay="200" className={clsx(classText)}>{text}</p>
       {mobImage && <img src={mobImage} alt="" className={"mt-[40px] max-h-[600px] object-cover lg:hidden"}/>}
