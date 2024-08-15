@@ -34,7 +34,7 @@ function Home(props) {
       <Accommodation/>
       <AboutUs/>
 
-      <BgImageBlock bg={'/bg1.jpg'} topImg={'/petalLogo.png'}>
+      <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
         <h1  data-aos="fade-up" data-aos-delay="0">Petal Restaurant</h1>
         <p  data-aos="fade-up" data-aos-delay="200" className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
           all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>

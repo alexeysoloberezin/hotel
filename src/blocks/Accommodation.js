@@ -3,6 +3,7 @@ import SectionHeader from "../components/ui/SectionHeader";
 import Button from "../components/ui/Button";
 import Slider from "../components/ui/SwiperBlock";
 import {SwiperSlide} from "swiper/react";
+import {Link} from "react-router-dom";
 
 
 function Accommodation(props) {
@@ -51,8 +52,10 @@ function Accommodation(props) {
 
         <Slider slidesData={accommodationData} />
 
-        <Button label={'Book Now'} className={"mt-[80px] mx-auto"}
-                color={"white"}/>
+        <Link to={'/accommodation'}>
+          <Button label={'Book Now'} className={"mt-[80px] mx-auto"}
+                  color={"white"}/>
+        </Link>
       </div>
     </div>
   );

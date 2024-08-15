@@ -8,7 +8,7 @@ function Spa(props) {
       <div className={"container"}>
         <SectionHeader
           text={'Welcome to the Iris Spa, an intimate haven dedicated exclusively to the art of massage and facial treatments. Nestled within our hotel, Iris Spa offers a serene escape from the hustle and bustle of everyday life.'}
-          btnHref={'/bar'}
+          btnHref={'/spa'}
           color={'black'}
           mobImage={'/spa3.png'}
           title={'Spa Room'}
