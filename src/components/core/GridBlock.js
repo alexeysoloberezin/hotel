@@ -1,19 +1,22 @@
 import React from 'react';
 import clsx from "clsx";
 
-function GridBlock({data, imgTemplate, type = 'type1'}) {
+function GridBlock({data, imgTemplate, type = 'type1', hideMob}) {
   const classes = {
     'type1': {
-      '1': 'md:h-[314px]',
-      '2': 'md:h-[220px]',
-      '3': 'md:h-[590px]',
+      '1': 'md:h-[314px] ',
+      '2': 'md:h-[220px] ',
+      '3': 'md:h-[590px] ',
     },
   }
 
   const textClass = "mt-[5px] font2 md:text-left md:mx-0 mx-auto max-w-[230px] md:max-w-fit text-center text-[24px] uppercase md:normal-case"
 
   return (
-    <div className={'text-black grid md:grid-cols-3 gap-[20px]'}>
+    <div className={clsx('text-black md:grid-cols-3 gap-[20px]', {
+      'lg:grid hidden' :hideMob,
+      'grid': !hideMob
+    })}>
       <div className={"flex flex-col gap-[20px]"}>
         <div  data-aos="fade-up" data-aos-delay="0">
           <img className={clsx(classes[type]['1'], "w-full object-cover")} src={imgTemplate.replace('{**}', 1)} alt=""/>

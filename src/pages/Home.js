@@ -44,8 +44,6 @@ function Home(props) {
 
       <Spa />
       <Contacts />
-
-      <Footer />
     </div>
   );
 }

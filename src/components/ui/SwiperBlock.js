@@ -9,8 +9,8 @@ function AccommodationItem({title, subtitle, price, img}){
     <div className={"text-black"}>
       <img src={img} alt="AccommodationImage" className={"w-full aspect-square object-cover"} data-aos="fade-up" data-aos-delay="0"/>
       <h4 className={"mt-[10px] mb-[5px] font2"} data-aos="fade-up" data-aos-delay="150">{title}</h4>
-      <p className={"mb-[20px]"} data-aos="fade-up" data-aos-delay="300">{subtitle}</p>
-      <p data-aos="fade-up" data-aos-delay="450">from <b>{price}</b> / night</p>
+      <p className={"mb-[20px] lg:block hidden"} data-aos="fade-up" data-aos-delay="300">{subtitle}</p>
+      <p data-aos="fade-up" data-aos-delay="450" className={'lg:block hidden'}>from <b>{price}</b> / night</p>
     </div>
   )
 }
@@ -20,7 +20,7 @@ function Slider({ slidesData }) {
     <div className={"relative"}>
       <Swiper
         modules={[Pagination, Autoplay]}
-        slidesPerView={1.1}
+        slidesPerView={1}
         spaceBetween={10}
         pagination={{
           clickable: true,
@@ -28,11 +28,11 @@ function Slider({ slidesData }) {
         breakpoints={{
           700: {
             slidesPerView: 2,
-            spaceBetween: 30
+            spaceBetween: 20
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 30
+            spaceBetween: 20
           },
         }}
         onSlideChange={() => console.log('slide change')}

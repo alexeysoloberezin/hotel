@@ -1,8 +1,13 @@
 .swiper{
   margin-bottom: -80px;
+  overflow: visible !important;
   .swiper-wrapper{
     padding-top: 0px;
+    overflow: visible !important;
     padding-bottom: 80px;
+    @media (max-width: 1024px) {
+      padding-bottom: 20px  ;
+    }
   }
   .swiper-pagination-bullet{
     width: 18px;
@@ -13,6 +18,9 @@
   }
   .swiper-pagination{
     bottom: 20px !important;
+    @media (max-width: 1024px) {
+      display: none !important;
+    }
   }
   .swiper-button-prev{
     left: initial;
@@ -22,16 +30,16 @@
     }
   }
   .swiper-slide .slide-content>div{
-    opacity: 0.5;
-    transform: scale(.55);
-    transform-origin: bottom;
-    transition: .6s ease-in-out;
+    //opacity: 0.5;
+    //transform: scale(.55);
+    //transform-origin: bottom;
+    //transition: .6s ease-in-out;
   }
   .swiper-slide{
     &.swiper-slide-active, &.swiper-slide-next, &.swiper-slide-next+div {
       .slide-content>div{
-        transform: scale(1);
-        opacity: 1;
+        //transform: scale(1);
+        //opacity: 1;
       }
     }
   }
@@ -58,4 +66,23 @@
 
 .sliderTitle{
   max-width: calc(100% - 570px - 185px);
+}
+
+.loader-bar{
+  width: 0;
+}
+.loader-bar-wrp{
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 50px;
+}
+.loader-bar-animate {
+  background: #000;
+  border-radius: 50px;
+  animation: fillBar 2s forwards linear;
+}
+
+@keyframes fillBar {
+  100% {
+    width: 100%;
+  }
 }

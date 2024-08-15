@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from "clsx";
 
-function PerfectGrid({imgTemplate}) {
+function PerfectGrid({imgTemplate, hideMob}) {
   const grid = [1, 1, 1, 1, 1]
 
   const indexClasses = [
@@ -12,7 +12,12 @@ function PerfectGrid({imgTemplate}) {
     'order-5 md:order-5',
   ]
   return (
-    <div className={"grid lg:grid-cols-3 grid-cols-2 md:gap-[22px] gap-[15px]"}>
+    <div className={
+      clsx("lg:grid-cols-3 grid-cols-2 md:gap-[22px] gap-[15px]", {
+        'lg:grid hidden' :hideMob,
+        'grid': !hideMob
+      })
+    }>
       {grid.map((el, index) => (
         <img
           data-aos="fade-up" data-aos-delay={index * 250 + ''}

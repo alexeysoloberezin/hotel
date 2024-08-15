@@ -7,12 +7,14 @@ function Spa(props) {
     <div className={'bg-gold lg:py-[200px] py-[100px] text-black'}>
       <div className={"container"}>
         <SectionHeader
-          text={'Welcome to the Iris Spa, an intimate haven dedicated exclusively to the art of massage and facial treatments. Nestled within our hotel, Iris Spa offers a serene escape from the hustle and bustle of everyday life.'}
+          text={'Welcome to the Iris Spa, an intimate haven dedicated exclusively to the art of massage and facial treatments. Nestled within our hotel, Iris Spa offers a serene escape from the hustle and bustle of everyday life.'}
           btnHref={'/bar'}
           color={'black'}
+          mobImage={'/spa3.png'}
           title={'Spa Room'}
         />
         <GridBlock
+          hideMob={true}
           imgTemplate={'/spa{**}.png'}
           data={[
             "Facial treatments",

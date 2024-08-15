@@ -12,18 +12,33 @@ import AboutUs from "./pages/About";
 import Spa from "./pages/Spa";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import {useEffect} from "react";
+import React, {useEffect, useState} from "react";
+import Loader from "./components/core/Loader";
+import Footer from "./components/core/Footer";
 
 function App() {
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+
   useEffect(() => {
     AOS.init({
       duration: 1350, // Длительность анимации в миллисекундах
       disable: window.innerWidth < 1024
     });
+
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <Router className={'App'}>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/restaurant" element={<Restaurant />} />
@@ -32,35 +47,41 @@ function App() {
         <Route path="/bar" element={<Bar />} />
         <Route path="/spa" element={<Spa />} />
       </Routes>
-      <AnimatedCursor
-        innerSize={18}
-        outerSize={18}
-        color='193, 11, 111'
-        outerAlpha={0.4}
-        innerScale={0.8}
-        outerScale={2}
-        outerStyle={{
-          border: '2px solid #fff',
-          mixBlendMode: 'exclusion'
-        }}
-        clickables={[
-          'a',
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          'label[for]',
-          'select',
-          'textarea',
-          'button',
-          '.swiper-pagination-bullet',
-          '.link'
-        ]}
-        innerStyle={{
-          backgroundColor: '#fff'
-        }}
-      />
+
+      <Footer />
+
+      <Loader />
+      {isDesktop && (
+        <AnimatedCursor
+          innerSize={18}
+          outerSize={18}
+          color='193, 11, 111'
+          outerAlpha={0.4}
+          innerScale={0.8}
+          outerScale={2}
+          outerStyle={{
+            border: '2px solid #fff',
+            mixBlendMode: 'exclusion'
+          }}
+          clickables={[
+            'a',
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            'label[for]',
+            'select',
+            'textarea',
+            'button',
+            '.swiper-pagination-bullet',
+            '.link'
+          ]}
+          innerStyle={{
+            backgroundColor: '#fff'
+          }}
+        />
+      )}
     </Router>
   );
 }

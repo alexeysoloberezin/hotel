@@ -2,7 +2,7 @@ export const nav = [
   {
     link: "#about-us",
     id: "about-us",
-    name: "О нас"
+    name: "О нас"
   },
   {
     link: "#advantages",

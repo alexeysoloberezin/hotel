@@ -17,11 +17,11 @@ function MainBlockTemplate({video, image, title, description, children}) {
         <Header transparent={true}/>
 
         <div className={"relative z-10 text-center flex flex-col items-center"}>
-          <h1 data-aos="fade-up">{title}</h1>
-          <h3 data-aos="fade-up" data-aos-delay="200" className={"mt-2 lg:mb-[30px] mb-[25px]"}>
+          <h1 data-aos="fade-up" data-aos-delay="200">{title}</h1>
+          <h3 data-aos="fade-up" data-aos-delay="500" className={"mt-2 lg:mb-[30px] mb-[25px]"}>
             {description}
           </h3>
-          <div data-aos="fade-up" data-aos-delay="350">
+          <div data-aos="fade-up" data-aos-delay="800">
             { children }
           </div>
         </div>

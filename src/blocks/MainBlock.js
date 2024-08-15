@@ -2,7 +2,7 @@ import React from 'react';
 import Button from "../components/ui/Button";
 import MainBlockTemplate from "../components/core/MainBlockTemplate";
 
-function MainBlock(props) {
+function MainBlock() {
   return (
     <MainBlockTemplate
       title={'Iris Hotel Boston'}
