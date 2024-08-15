@@ -6,18 +6,20 @@ function Button({children, type, disabled,noAnimate, label, onClick, className,d
     'purple': 'bg-purple text-black ',
     'white': 'bg-white text-black ',
     'black': "bg-black text-white",
+    'red': "bg-red text-white border border-red border-1"
   }
   const hoverColors = {
     'purple': 'hover:bg-purpleDarken',
     'white': 'hover:border-white hover:bg-transparent',
     'white-2': 'hover:bg-dark hover:border-white hover:text-white',
     'black': "hover:bg-white hover:text-black hover:border-black",
+    'red': "hover:bg-dark hover:border-red",
   }
 
   return (
     <button data-aos={noAnimate ? '' : "fade-up"}  data-aos-delay={delay}  disabled={disabled} onClick={onClick} type={type} className={
       clsx(
-        " px-[20px] py-[10px] flex-nowrap uppercase border-1 border border-transparent flex items-center gap-[10px]  transition-all text-nowrap",
+        " px-[20px] py-[10px] flex-nowrap uppercase border-1 border border-transparent flex items-center gap-[10px]  transition-all  text-nowrap",
         colors[color],
         hoverColors[hoverColor || color],
         className,

@@ -37,7 +37,7 @@ module.exports = {
       purple: 'var(--purple)',
       purpleDarken: 'var(--purpleDarken)',
       white: 'var(--white)',
-      red: 'var(--red)',
+      red: '#A00000',
     },
   },
   plugins: [],
