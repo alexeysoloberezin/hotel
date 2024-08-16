@@ -7,6 +7,7 @@ function MainBlock() {
     <MainBlockTemplate
       title={'Iris Hotel Boston'}
       video={'/videoplayback.mp4'}
+      mobileGif={'/IMG_4931.gif'}
       description={' where design meets comfort'}
     >
       <Button label={'Book Now'}/>

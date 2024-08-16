@@ -28,14 +28,20 @@ function Accommodation(props) {
     },
     {
       price: '$486.00',
-      title: 'KING DELUXE',
-      img: '/accommodation3.jpg',
+      title: 'IRIS SUITE KING / SOFA QUEEN',
+      img: '/accommodation4.jpg',
       subtitle: 'Sleeps up to 2',
     },
     {
       price: '$486.00',
-      title: 'KING DELUXE',
-      img: '/accommodation3.jpg',
+      title: 'CORNER DELUXE TWO QUEENS',
+      img: '/accommodation5.jpg',
+      subtitle: 'Sleeps up to 2',
+    },
+    {
+      price: '$486.00',
+      title: 'KING DELUXE ADA',
+      img: '/accommodation6.jpg',
       subtitle: 'Sleeps up to 2',
     },
   ];

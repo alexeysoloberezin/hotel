@@ -1,9 +1,9 @@
 .swiper{
   margin-bottom: -80px;
-  overflow: visible !important;
+  //overflow: visible !important;
   .swiper-wrapper{
     padding-top: 0px;
-    overflow: visible !important;
+    //overflow: visible !important;
     padding-bottom: 80px;
     @media (max-width: 1024px) {
       padding-bottom: 20px  ;
@@ -30,16 +30,16 @@
     }
   }
   .swiper-slide .slide-content>div{
-    //opacity: 0.5;
-    //transform: scale(.55);
-    //transform-origin: bottom;
-    //transition: .6s ease-in-out;
+    opacity: 0.5;
+    transform: scale(.55);
+    transform-origin: bottom;
+    transition: .6s ease-in-out;
   }
   .swiper-slide{
     &.swiper-slide-active, &.swiper-slide-next, &.swiper-slide-next+div {
       .slide-content>div{
-        //transform: scale(1);
-        //opacity: 1;
+        transform: scale(1);
+        opacity: 1;
       }
     }
   }
