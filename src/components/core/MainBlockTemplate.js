@@ -1,28 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Header from "./Header";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 function MainBlockTemplate({video, image,mobileGif, title, description, children}) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 600px)');
-
-    // Функция для обновления состояния
-    const handleMediaChange = (e) => {
-      setIsMobile(e.matches);
-    };
-
-    // Добавляем слушатель изменений ширины экрана
-    mediaQuery.addEventListener('change', handleMediaChange);
-
-    // Инициализируем состояние при загрузке компонента
-    handleMediaChange(mediaQuery);
-
-    // Убираем слушатель при размонтировании компонента
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaChange);
-    };
-  }, []);
+  const isMobile = useMediaQuery(false, '(max-width: 600px)');
 
   return (
     <div>
