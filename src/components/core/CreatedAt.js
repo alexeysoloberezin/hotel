@@ -2,9 +2,9 @@ import React from 'react';
 
 function CreatedAt(props) {
   return (
-    <div className={"flex items-center gap-[15px] sm:flex-row flex-col"}>
-      <span className={"uppercase text-[13px]"}>designed and developed by</span>
-      <img src="/OffTheGrid.png" alt="Дизайн Лого"/>
+    <div className={"flex items-end gap-[15px]"}>
+      <span className={"text-[18px]"}>Design by</span>
+      <img src="/OffTheDrid.png" className={"max-w-[137px] mb-[3px]"} alt="Дизайн Лого"/>
     </div>
   );
 }

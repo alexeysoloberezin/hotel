@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import Form from "../../blocks/Form";
+import CreatedAt from "./CreatedAt";
 
 const Footer = () => {
   const navItems = [
@@ -43,19 +44,24 @@ const Footer = () => {
             </div>
             <div className={"mt-[40px] lg:block hidden"}>@2024</div>
           </div>
-          <div>
-            <ul className={"flex flex-col gap-[20px]"}>
+          <div className={"flex flex-col justify-between"}>
+            <ul className={"flex flex-col gap-[20px] mb-auto"}>
               {navItems.map((item, index) => (
                 <li key={index}><Link className={"uppercase"} to={item.to}>{item.name}</Link></li>
               ))}
             </ul>
+            <div className={"md:block hidden"}>
+              <CreatedAt />
+            </div>
           </div>
           <div>
             <Form/>
           </div>
         </div>
-        <div className={"mt-[40px] lg:hidden"}>@2024</div>
-
+        <div className={"mt-[40px] lg:hidden flex justify-between items-end"}>
+          <CreatedAt/>
+          <div className={''}>@2024</div>
+        </div>
       </div>
     </footer>
   );

@@ -239,6 +239,28 @@ input::placeholder {
   background-color: var(--dark) !important;
 }
 
+.mobMenu{
+  padding-top: 150px;
+  padding-bottom: 50px;
+  @media (max-width: 1024px) {
+    padding-top: 120px;
+  }
+  @media (max-height: 730px) {
+    padding-bottom: 20px;
+    padding-top: 100px;
+    .mobMenu-link{
+      font-size: 28px;
+    }
+  }
+  @media (max-height: 680px) {
+    .mobMenu_txt{
+      display: none;
+    }
+    .mobMenu_btn{
+      margin-bottom: 0 ;
+    }
+  }
+}
 @import "./blocks/burger";
 @import "./blocks/swiper";
 

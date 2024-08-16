@@ -26,7 +26,6 @@ function SpaRoom(props) {
         <SectionHeader
           text={'A cozy and relaxing space specially designed for maximum rest and rejuvenation. Music plays softly in the background, filling the space with the sounds of nature or soothing melodies that help release tension and immerse'}
           color={'white'}
-          btnHref={'/spa'}
           classText={"max-w-[640px]"}
           title={'Spa Room'}
         />

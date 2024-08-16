@@ -74,7 +74,7 @@ const Header = ({transparent}) => {
       </div>
 
       <div
-        className={clsx("fixed top-0 md:pt-[150px] pt-[120px] pb-[50px] h-screen w-screen left-0 bg-gold transition-all duration-500", {
+        className={clsx("mobMenu fixed top-0 h-screen w-screen left-0 bg-gold transition-all duration-500", {
           'opacity-100': isActiveBurger,
           'opacity-0 translate-y-[-110vh]': !isActiveBurger,
         })}>
@@ -85,7 +85,7 @@ const Header = ({transparent}) => {
           <ul className={"flex flex-col xl:items-start items-center gap-[20px] grow mb-auto w-fit"}>
             {navItems.map((item, index) => (
               <li key={index}
-                  className={"2xl:text-[50px] md:text-[40px] text-[32px] group 2xl:hover:text-[100px] xl:hover:text-[65px] w-fit text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
+                  className={"2xl:text-[50px] md:text-[40px] text-[32px] mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px] w-fit text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
                 <Link className={"flex items-center"} to={item.to} onClick={() => setIsActiveBurger(false)}>
                   {item.name}
                   <Arrow
@@ -101,12 +101,12 @@ const Header = ({transparent}) => {
           </ul>
 
           <div className={"flex md:w-full pt-[15px] justify-between md:flex-row flex-col-reverse  xl:text-left text-center md:items-end items-center  relative z-[20]"}>
-            <div className={""}>
+            <div className={"mobMenu_txt"}>
               30 Webster St <br/>
               Brookline, MA 02446<br/>
               United States of America
             </div>
-            <div className={"md:mb-0 mb-[30px]"}>
+            <div className={"md:mb-0 mb-[30px] mobMenu_btn"}>
               <Button label={'Book Now'} color={"white"} noAnimate={true}/>
             </div>
           </div>

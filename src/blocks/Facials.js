@@ -7,7 +7,7 @@ function FacialItem({imgTemplate, title, price, time, text, index}){
   return (
     <div
       data-aos="fade-up" data-aos-delay={index * 150}
-      className={"min-h-[420px] p-[20px] pt-[90px] flex flex-col items-center"} style={{background: `url(${imgTemplate.replace('{**}', index )}) center/cover no-repeat`}}>
+      className={"md:min-h-[420px] min-h-[390px] p-[20px] pt-[90px] flex flex-col items-center"} style={{background: `url(${imgTemplate.replace('{**}', index )}) center/cover no-repeat`}}>
       <div className={"flex items-end mb-[5px] font2"}>
         <span className={"text-[50px]"} style={{lineHeight: 1}}>{price} /</span>
         <h4 className={"ml-[15px]"}>{time}</h4>
