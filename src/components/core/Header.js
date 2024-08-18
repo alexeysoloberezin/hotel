@@ -4,9 +4,12 @@ import clsx from 'clsx'
 import {Link} from 'react-router-dom'
 import Arrow from "../icon/Arrow";
 import Button from "../ui/Button";
+import Image from "../ui/Image";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Header = ({transparent}) => {
   const [isActiveBurger, setIsActiveBurger] = useState(false)
+  const isNotATable = useMediaQuery(false, '(min-width: 1340px)')
   const navItems = [
     {
       to: '/about',
@@ -93,9 +96,12 @@ const Header = ({transparent}) => {
                     width={'75'} height={'13'}/>
                 </Link>
 
-                <img src={item.img}
-                     className={"fixed w-[520px] xl:block hidden pointer-events-none object-cover h-full top-0 right-0 z-10 opacity-0 group-hover:opacity-100 group-hover:delay-0 delay-300 transition-all duration-700"}
-                     alt=""/>
+                {isActiveBurger && isNotATable
+                  && <Image src={item.img}
+                            className={"fixed w-[520px] xl:block hidden pointer-events-none object-cover h-full top-0 right-0 z-10 opacity-0 group-hover:opacity-100 group-hover:delay-0 delay-300 transition-all duration-700"}
+                            alt=""/>
+                }
+
               </li>
             ))}
           </ul>

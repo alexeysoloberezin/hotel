@@ -15,6 +15,7 @@ import AOS from 'aos';
 import React, {useEffect, useState} from "react";
 import Loader from "./components/core/Loader";
 import Footer from "./components/core/Footer";
+import TestVideos from "./pages/TestVideos";
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
@@ -48,6 +49,7 @@ function App() {
         <Route path="/accommodation" element={<Accommodation />} />
         <Route path="/bar" element={<Bar />} />
         <Route path="/spa" element={<Spa />} />
+        <Route path="/testVideo" element={<TestVideos />} />
       </Routes>
 
       <Footer />

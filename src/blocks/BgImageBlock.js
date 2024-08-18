@@ -2,11 +2,17 @@ import React from 'react';
 import Button from "../components/ui/Button";
 import Arrow from "../components/icon/Arrow";
 import {Link} from "react-router-dom";
+import Image from "../components/ui/Image";
 
-function BgImageBlock({bg, topImg, children,href = '', hideBtn}) {
+function BgImageBlock({bg, topImg,noWebp, children,href = '', hideBtn}) {
   return (
-    <div className={"lg:py-[60px] py-[50px]"} style={{background: `url(${bg}) center/cover no-repeat`, backgroundAttachment: 'fixed'}}>
-      <div className="container h-full flex flex-col justify-between items-center md:min-h-[680px] min-h-[580px] gap-[20px]">
+    <div className={"lg:py-[60px] py-[50px] relative overflow-hidden"} >
+      <Image
+        noWebp={noWebp}
+        src={bg}
+        className={"w-[100%]  h-full object-cover absolute top-0 left-1/2 translate-x-[-50%]"}
+      />
+      <div className="container h-full flex flex-col justify-between relative z-10 items-center md:min-h-[680px] min-h-[580px] gap-[20px]">
         {topImg
           ? <img data-aos="fade-up" src={topImg} alt="topImg" className={"w-fit mx-auto max-w-[169px]"}/>
           : <div></div>
@@ -16,11 +22,11 @@ function BgImageBlock({bg, topImg, children,href = '', hideBtn}) {
         </div>
         {hideBtn
           ? <div></div>
-          : <Link to={href} data-aos="fade-up" data-aos-delay="600">
+          : <a href={href} data-aos="fade-up" data-aos-delay="600">
               <Button label={'see more'} color={"white"} hoverColor={'white-2'} className={"group"}>
                 <Arrow classes={"group-hover:fill-white fill-black"}/>
               </Button>
-            </Link>
+            </a>
         }
       </div>
     </div>

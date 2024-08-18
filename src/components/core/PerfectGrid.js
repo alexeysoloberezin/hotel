@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from "clsx";
+import Image from "../ui/Image";
 
 function PerfectGrid({imgTemplate, hideMob}) {
   const grid = [1, 1, 1, 1, 1]
@@ -19,8 +20,8 @@ function PerfectGrid({imgTemplate, hideMob}) {
       })
     }>
       {grid.map((el, index) => (
-        <img
-          data-aos="fade-up" data-aos-delay={index * 250 + ''}
+        <Image
+          dataAos={"fade-up"} delay={index * 250 + ''}
           className={clsx("w-full h-full object-cover",
           indexClasses[index]
         )} src={imgTemplate.replace('{**}', index + 1)} alt="bar-img"/>

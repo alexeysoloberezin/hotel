@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from "../components/ui/Image";
 
 function GridElsItem({img, title, text, index}) {
   return (
     <div className={"text-center"} data-aos="fade-up" data-aos-delay={index * 200 + 200}>
-      <img src={img} className={"w-full h-auto aspect-square"} alt=""/>
+      <Image src={img} className={"w-full h-auto aspect-square"} alt=""/>
       <div className={"text-[24px] mt-[35px] mb-[15px] uppercase"}>{title}</div>
       <div className={"max-w-[268px] mx-auto"}>{text}</div>
     </div>

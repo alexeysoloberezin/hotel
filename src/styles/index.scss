@@ -239,6 +239,11 @@ input::placeholder {
   background-color: var(--dark) !important;
 }
 
+.fullImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .mobMenu{
   padding-top: 150px;
   padding-bottom: 50px;
@@ -261,6 +266,8 @@ input::placeholder {
     }
   }
 }
+
+
 @import "./blocks/burger";
 @import "./blocks/swiper";
 

@@ -6,7 +6,8 @@ function MainBlock() {
   return (
     <MainBlockTemplate
       title={'Iris Hotel Boston'}
-      video={'/videoplayback.mp4'}
+      video={'/examples/videoplayback.mp4'}
+      videoWebM={'/examples/videoplayback.webm'}
       mobileGif={'/IMG_4931.gif'}
       description={' where design meets comfort'}
     >
