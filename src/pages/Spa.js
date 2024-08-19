@@ -14,7 +14,8 @@ function Spa(props) {
     <div>
       <MainBlockTemplate
         title={'Spa Room'}
-        image={'/spabg.png'}
+        video={'/spa.mp4'}
+        videoWebM={'/spa.webm'}
         description={'where design meets comfort'}
       >
         <div className={"md:block hidden"}>

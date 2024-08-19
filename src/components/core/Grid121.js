@@ -5,27 +5,42 @@ import Image from "../ui/Image";
 function Grid121({imgTemplate, hideMob}) {
   const grid = [1, 1, 1, 1]
 
-  const indexClasses = [
-    'row-span-2',
-    'h-[233px]',
-    'row-span-2',
-    'h-[233px]',
-  ]
   return (
     <div className={
-      clsx("lg:grid-cols-3 grid-cols-2 md:gap-[22px] gap-[15px]", {
-        'lg:grid hidden' :hideMob,
+      clsx("lg:grid-cols-3  md:gap-[22px] gap-[15px]", {
+        'lg:grid hidden': hideMob,
         'grid': !hideMob
       })
     }>
-      {grid.map((el, index) => (
+      <div>
+        <h2>At Nectar</h2>
+        <p className={"my-[25px] "}>everyone will find something to their taste, whether it’s warm conversations over a cup of espresso or
+          unforgettable evenings with friends enjoying a signature cocktail. </p>
         <Image
-          dataAos={"fade-up"} delay={index * 250 + ''}
+          dataAos={"fade-up"} delay={1 * 250 + ''}
           noWebp={true}
-          className={clsx("w-full h-full object-cover",
-          indexClasses[index]
-        )} src={imgTemplate.replace('{**}', index + 1)} alt="bar-img"/>
-      ))}
+          className={clsx("w-full h-[387px] object-cover ")}
+          src={imgTemplate.replace('{**}', 1)} alt="bar-img"/>
+      </div>
+      <div>
+        <Image
+          dataAos={"fade-up"} delay={2 * 250 + ''}
+          noWebp={true}
+          className={clsx("w-full h-[590px] object-cover")}
+          src={imgTemplate.replace('{**}', 2)} alt="bar-img"/>
+      </div>
+      <div className={"flex md:flex-col gap-[20px]"}>
+        <Image
+          dataAos={"fade-up"} delay={3 * 250 + ''}
+          noWebp={true}
+          className={clsx("w-full h-[284px] object-cover")}
+          src={imgTemplate.replace('{**}', 3)} alt="bar-img"/>
+        <Image
+          dataAos={"fade-up"} delay={4 * 250 + ''}
+          noWebp={true}
+          className={clsx("w-full h-[284px] object-cover")}
+          src={imgTemplate.replace('{**}', 4)} alt="bar-img"/>
+      </div>
     </div>
   );
 }

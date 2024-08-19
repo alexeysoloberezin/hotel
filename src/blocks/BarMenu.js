@@ -6,14 +6,15 @@ function BarMenu(props) {
 
   const coffee = [
     "1. Espresso",
-    "6. Latte",
-    "2. Cappuccino",
-    "7. Americano",
-    "3. Mocha",
-    "8. Flat White",
-    "4. Caramel Macchiato",
-    "9. Cold Brew",
-    "5. Vanilla Iced Latte"
+    "6. Flat White",
+    "2. Latte",
+    "7. Caramel Macchiato",
+    "3. Cappuccino",
+    "8. Cold Brew",
+    "4. Americano",
+    "9. Vanilla Iced Latte",
+    "5. Mocha"
+
   ]
 
   const lemonades = [
@@ -24,12 +25,12 @@ function BarMenu(props) {
     "5. Watermelon Lemonade"
   ]
 
-  const subtitle = 'lg:text-[32px] md:text-[27px] text-[22px] mt-[30px] mb-[20px]'
+  const subtitle = 'lg:text-[32px] md:text-[27px] text-[22px] mt-[35px] mb-[25px]'
   const grid = 'grid grid-cols-2 gap-y-[10px] gap-x-[5px]'
   return (
     <div className={"bg-dark md:py-[200px] py-[100px]"}>
       <div className="container">
-        <div className="grid lg:grid-cols-[1fr_38%_26%] gap-[20px]">
+        <div className="grid lg:grid-cols-[1fr_24%_24%_15%] md:grid-cols-[1fr_30%_19%] gap-[20px]">
           <div className={""}>
             <h2>Our bar menu</h2>
             <div className={clsx(subtitle)}>Coffee Selections:</div>
@@ -45,12 +46,16 @@ function BarMenu(props) {
               ))}
             </div>
           </div>
-          <div className={""}>
+          <div className={"lg:grid hidden grid-rows-2 gap-[20px]"}>
             <Image noWebp={true} className={"fullImg"} src={'/menuBar1.png'}/>
+            <Image noWebp={true} className={"fullImg"} src={'/menuBar2.png'}/>
+          </div>
+          <div className={""}>
+            <Image noWebp={true} className={"fullImg"} src={'/menuBar3.png'}/>
           </div>
           <div className={"grid grid-rows-2 gap-[20px]"}>
-            <Image noWebp={true} className={"fullImg"} src={'/menuBar2.png'}/>
-            <Image noWebp={true} className={"fullImg"} src={'/menuBar3.png'}/>
+            <Image noWebp={true} className={"fullImg"} src={'/menuBar4.png'}/>
+            <Image noWebp={true} className={"fullImg"} src={'/menuBar5.png'}/>
           </div>
         </div>
       </div>
