@@ -9,7 +9,7 @@ function Restaurant(props) {
     <div>
       <MainBlockTemplate
         title={'Petal Restaurant'}
-        image={'/bg1.jpg'}
+        video={'/bar.mp4'}
         description={'A culinary oasis of art and flavor'}
       >
       </MainBlockTemplate>

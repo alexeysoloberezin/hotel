@@ -11,7 +11,7 @@ function Bar(props) {
     <div>
       <MainBlockTemplate
         title={'Bar'}
-        video={'/bar.mp4'}
+        image={'/barBg.jpg'}
         description={'A culinary oasis of art and flavor'}
       >
       </MainBlockTemplate>
