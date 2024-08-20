@@ -22,14 +22,14 @@ function Grid121({imgTemplate, hideMob}) {
           className={clsx("w-full h-[387px] object-cover ")}
           src={imgTemplate.replace('{**}', 1)} alt="bar-img"/>
       </div>
-      <div>
+      <div className={"md:block hidden"}>
         <Image
           dataAos={"fade-up"} delay={2 * 250 + ''}
           noWebp={true}
           className={clsx("w-full h-[590px] object-cover")}
           src={imgTemplate.replace('{**}', 2)} alt="bar-img"/>
       </div>
-      <div className={"flex md:flex-col gap-[20px]"}>
+      <div className={"md:flex flex-col hidden gap-[20px]"}>
         <Image
           dataAos={"fade-up"} delay={3 * 250 + ''}
           noWebp={true}

@@ -53,7 +53,7 @@ function BarMenu(props) {
           <div className={""}>
             <Image noWebp={true} className={"fullImg"} src={'/menuBar3.png'}/>
           </div>
-          <div className={"grid grid-rows-2 gap-[20px]"}>
+          <div className={"lg:grid hidden  grid-rows-2 gap-[20px]"}>
             <Image noWebp={true} className={"fullImg"} src={'/menuBar4.png'}/>
             <Image noWebp={true} className={"fullImg"} src={'/menuBar5.png'}/>
           </div>

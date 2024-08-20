@@ -10,7 +10,7 @@ function Bar(props) {
   return (
     <div>
       <MainBlockTemplate
-        title={'Bar'}
+        title={'Nectar Bar'}
         image={'/barBg.jpg'}
         description={'A culinary oasis of art and flavor'}
       >

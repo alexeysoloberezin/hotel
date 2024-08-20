@@ -3,8 +3,12 @@ import MainBlockTemplate from "../components/core/MainBlockTemplate";
 import Interior from "../blocks/Interior";
 import OurMenu from "../blocks/OurMenu";
 import BgImageBlock from "../blocks/BgImageBlock";
+import Button from "../components/ui/Button";
+import SwiperImages from "../blocks/SwiperImages";
+
 
 function Restaurant(props) {
+  const els = [1, 2, 3]
   return (
     <div>
       <MainBlockTemplate
@@ -17,16 +21,15 @@ function Restaurant(props) {
 
       <div className={"bg-gold text-black md:py-[200px] py-[100px]"}>
         <div className="container text-center">
-          <h2 className={"max-w-[1036px] mx-auto"}>Petal Restaurant is more
-            <img className={"inline-block rounded-lg mx-[4px] md:max-w-[155px] max-w-[110px]"} src="/resaurTextImg1.png" alt=""/> than
-            just a dining
-            <img
-              src="/resaurTextImg2.png" alt="" className={"inline-block rounded-lg mx-[4px] md:max-w-[155px] max-w-[110px]"}/> experience; it's a journey of
-            taste and <img
-              src="/resaurTextImg3.png" alt="" className={"inline-block rounded-lg mx-[4px] md:max-w-[155px] max-w-[110px]"}/> artistry</h2>
-          <p className={"mt-[20px] max-w-[450px] mx-auto"}>Our restaurant is dedicated to crafting healthy and
-            delectable cuisine, designed to invigorate your senses
-            and nourish your body.</p>
+          <h2 className={" mx-auto"}>
+            Petal Restaurant is more than just a&nbsp;dining experience; it's a journey of&nbsp;taste and&nbsp;artistry
+          </h2>
+
+          <SwiperImages countEls={3} imgTemplate={'/res{**}.jpg'}/>
+
+          <div className={"flex justify-center"}>
+            <Button label={'Book TABLE'} color={'white'}></Button>
+          </div>
         </div>
       </div>
 
