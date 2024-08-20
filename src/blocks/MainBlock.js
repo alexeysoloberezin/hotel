@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from "../components/ui/Button";
 import MainBlockTemplate from "../components/core/MainBlockTemplate";
+import BookNow from "../components/ui/BookNow";
 
 function MainBlock() {
   return (
@@ -11,7 +12,7 @@ function MainBlock() {
       mobileGif={'/IMG_4931.gif'}
       description={' where design meets comfort'}
     >
-      <Button label={'Book Now'}/>
+      <BookNow />
     </MainBlockTemplate>
   );
 }

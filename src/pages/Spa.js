@@ -16,6 +16,7 @@ function Spa(props) {
         title={'Spa Room'}
         video={'/spa.mp4'}
         videoWebM={'/spa.webm'}
+        mobileGif={'/spa.gif'}
         description={'where design meets comfort'}
       >
         <div className={"md:block hidden"}>
