@@ -58,10 +58,10 @@ function Accommodation(props) {
 
         <Slider slidesData={accommodationData} />
 
-        <Link to={'/accommodation'}>
+        <a href={'/accommodation'}>
           <Button label={'Book Now'} className={"mt-[80px] mx-auto"}
                   color={"white"}/>
-        </Link>
+        </a>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
+import Image from "../components/ui/Image";
 
 function OurMenu(props) {
   return (
@@ -19,10 +20,10 @@ function OurMenu(props) {
         </div>
         <div className={"flex md:flex-row flex-col lg:w-[57%] lg:mt-0 mt-[30px] gap-[20px] shrink-0"}>
           <Zoom className="">
-            <img src="/menu_1.png" className={""} alt="Menu 1" />
+            <Image noWebp={true} src="/menu_1.png" className={""} alt="Menu 1" />
           </Zoom>
           <Zoom className="">
-            <img src="/menu_2.png" className={" "} alt="Menu 2" />
+            <Image noWebp={true} src="/menu_2.png" className={" "} alt="Menu 2" />
           </Zoom>
         </div>
 

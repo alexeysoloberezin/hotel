@@ -11,11 +11,7 @@ const Header = ({transparent}) => {
   const [isActiveBurger, setIsActiveBurger] = useState(false)
   const isNotATable = useMediaQuery(false, '(min-width: 1340px)')
   const navItems = [
-    {
-      to: '/about',
-      img: "/navImg1.png",
-      name: "About Us",
-    },
+
     {
       to: '/accommodation',
       img: "/navImg2.png",
@@ -26,15 +22,22 @@ const Header = ({transparent}) => {
       img: "/navImg3.png",
       name: 'Petal Restaurant'
     },
+
     {
       to: "/bar",
       img: "/navImg4.png",
       name: "Nectar Bar"
     },
+
     {
       to: "/spa",
       img: "/navImg5.png",
       name: "Spa Room"
+    },
+    {
+      to: '/about',
+      img: "/navImg1.png",
+      name: "About Us",
     },
   ];
 
@@ -60,12 +63,12 @@ const Header = ({transparent}) => {
         <a href={"tel:+18575766900"} className={"transition-colors md:block hidden"}>
           +1 857 576-6900
         </a>
-        <Link to={'/'} className={"relative w-[125px] h-[60px]"}>
+        <a href={'/'} className={"relative w-[125px] h-[60px]"}>
           <img className={clsx({
             'md:w-[124px] md:h-[62px]': isActiveBurger,
             'md:w-[125px] md:h-[51px]': !isActiveBurger
           }, "w-[90px] object-contain absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]")} src={!isActiveBurger ? '/logo.png' : '/logoBlack.png'} alt=""/>
-        </Link>
+        </a>
 
         <div className={"min-w-[142px]"}>
           <div className={clsx("menu-burger link", {
@@ -89,12 +92,12 @@ const Header = ({transparent}) => {
             {navItems.map((item, index) => (
               <li key={index}
                   className={"2xl:text-[50px] md:text-[40px] text-[32px] mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px] w-fit text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
-                <Link className={"flex items-center"} to={item.to} onClick={() => setIsActiveBurger(false)}>
+                <a className={"flex items-center"} href={item.to} onClick={() => setIsActiveBurger(false)}>
                   {item.name}
                   <Arrow
                     classes={"fill-black xl:block hidden group-hover:scale-100 group-hover:delay-[400ms] scale-0 transition-all duration-500  origin-left translate-y-[9px] ml-[40px]"}
                     width={'75'} height={'13'}/>
-                </Link>
+                </a>
 
                 {isActiveBurger && isNotATable
                   && <Image src={item.img}

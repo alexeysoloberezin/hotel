@@ -21,12 +21,10 @@ function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
-    setTimeout(() => {
-      AOS.init({
-        duration: 1350, // Длительность анимации в миллисекундах
-        disable: window.innerWidth < 1024
-      });
-    }, 2000)
+    AOS.init({
+      duration: 1350, // Длительность анимации в миллисекундах
+      disable: window.innerWidth < 1024
+    });
 
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
@@ -43,18 +41,18 @@ function App() {
     <Router className={'App'}>
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/restaurant" element={<Restaurant />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/accommodation" element={<Accommodation />} />
-        <Route path="/bar" element={<Bar />} />
-        <Route path="/spa" element={<Spa />} />
-        <Route path="/testVideo" element={<TestVideos />} />
+        <Route path="/" element={<Home/>}/>
+        <Route path="/restaurant" element={<Restaurant/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
+        <Route path="/accommodation" element={<Accommodation/>}/>
+        <Route path="/bar" element={<Bar/>}/>
+        <Route path="/spa" element={<Spa/>}/>
+        <Route path="/testVideo" element={<TestVideos/>}/>
       </Routes>
 
-      <Footer />
+      <Footer/>
 
-      <Loader />
+      <Loader/>
       {isDesktop && (
         <AnimatedCursor
           innerSize={18}

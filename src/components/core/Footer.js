@@ -47,7 +47,7 @@ const Footer = () => {
           <div className={"flex flex-col justify-between"}>
             <ul className={"flex flex-col gap-[20px] mb-auto"}>
               {navItems.map((item, index) => (
-                <li key={index}><Link className={"uppercase"} to={item.to}>{item.name}</Link></li>
+                <li key={index}><a className={"uppercase"} href={item.to}>{item.name}</a></li>
               ))}
             </ul>
             <div className={"md:block hidden"}>

@@ -11,6 +11,7 @@ function Interior(props) {
           btnHref={'/bar'}
           color={'black'}
           mobImage={'/interior_2.png'}
+
           title={'Interior'}
         />
         <PerfectGrid
