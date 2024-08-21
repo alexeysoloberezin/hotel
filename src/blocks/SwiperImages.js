@@ -16,7 +16,7 @@ function SwiperImages({children,showMy = false, countEls, imgTemplate}) {
   }, [])
 
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-delay="0">
       <Swiper
         modules={[Autoplay]}
         className={"!mb-[20px] mt-[50px] !overflow-visible"}
@@ -49,8 +49,6 @@ function SwiperImages({children,showMy = false, countEls, imgTemplate}) {
                     src={imgTemplate.replace('{**}', item)}
                     noWebp={true}
                     className={"imgsFull"}
-                    dataAos={'fade-up'}
-                    delay={item * 200}
                   />
                 </div>
               </SwiperSlide>

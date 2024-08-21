@@ -20,8 +20,8 @@ function Spa(props) {
         mobileGif={'/spa.gif'}
         description={'Your Sanctuary of Relaxation and Renewal'}
       >
-        <div className={"md:block hidden"}>
-          <a href="https://na.spatime.com/wag02446/4840817/home">
+        <div className={""}>
+          <a target={'_blank'} href="https://na.spatime.com/wag02446/4840817/home">
             <Button color={'red'} hoverColor={'red'}>
               Book now
             </Button>

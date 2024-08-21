@@ -46,8 +46,8 @@ function Nectar(props) {
           <SwiperSlide>
             <div className="slide-content">
               <Card
-                title={'In the evening'}
-                text={'unwind in our relaxed atmosphere with exclusive cocktails and a carefully curated wine selection'}
+                title={'Start your morning'}
+                text={'with a perfectly brewed coffee or enjoy a fragrant tea at any time of the day'}
                 img={'/nectar2.jpg'}
                 txtClass={'max-w-[312px]'}
               />
@@ -56,8 +56,8 @@ function Nectar(props) {
           <SwiperSlide>
             <div className="slide-content">
               <Card
-                title={'Start your morning '}
-                text={'with a perfectly brewed coffee or enjoy a fragrant tea at any time of the day'}
+                title={' In the evening'}
+                text={'unwind in our relaxed atmosphere with exclusive cocktails and a carefully curated wine selection'}
                 img={'/nectar3.jpg'}
                 txtClass={'max-w-[253px]'}
               />

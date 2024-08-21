@@ -118,7 +118,7 @@ const Form = (props) => {
   return (
     <div id={'form'} className={""}>
       <div className={' '}>
-        <div className={"uppercase lg:mb-[30px] mb-[20px]"}>Rrite your question <br/>and we will contact you!</div>
+        <div className={"uppercase lg:mb-[30px] mb-[20px]"}>Write your question <br/>and we will contact you!</div>
 
         <form className={"max-w-[780px]"} onSubmit={handleSubmit}>
           <div className={"grid gap-[15px] mb-[10px]"}>

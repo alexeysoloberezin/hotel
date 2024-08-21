@@ -18,9 +18,12 @@ function OurMenu(props) {
           <p> Our menu is an exquisite fusion of flavors, showcasing a dedication to freshness and innovation. Indulge
             in dishes that celebrate the season's finest ingredients, expertly prepared by our talented culinary team.</p>
         </div>
-        <div className={"flex md:flex-row flex-col lg:w-[57%] lg:mt-0 mt-[30px] gap-[20px] shrink-0"}>
+        <div className={"grid grid-cols-3 lg:w-[70%] lg:mt-0 mt-[30px] gap-[10px] shrink-0"}>
           <Zoom className="">
-            <Image noWebp={true} src="/menu_1.png" className={""} alt="Menu 1" />
+            <Image noWebp={true} src="/menu1.jpg" className={""} alt="Menu 1" />
+          </Zoom>
+          <Zoom className="">
+            <Image noWebp={true} src="/menu2.jpg" className={""} alt="Menu 1" />
           </Zoom>
           <Zoom className="">
             <Image noWebp={true} src="/menu_2.png" className={" "} alt="Menu 2" />

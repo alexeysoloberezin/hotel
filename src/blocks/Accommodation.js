@@ -4,6 +4,7 @@ import Button from "../components/ui/Button";
 import Slider from "../components/ui/SwiperBlock";
 import {SwiperSlide} from "swiper/react";
 import {Link} from "react-router-dom";
+import BookNow from "../components/ui/BookNow";
 
 
 function Accommodation(props) {
@@ -56,12 +57,14 @@ function Accommodation(props) {
           title={'Accommodation'}
         />
 
-        <Slider slidesData={accommodationData} />
+        <Slider slidesData={accommodationData}/>
 
-        <a href={'/accommodation'}>
-          <Button label={'Book Now'} className={"mt-[80px] mx-auto"}
-                  color={"white"}/>
-        </a>
+        <div className={"mt-[80px] mx-auto flex justify-center"}>
+          <BookNow
+            color={"white"}
+          />
+        </div>
+
       </div>
     </div>
   );
