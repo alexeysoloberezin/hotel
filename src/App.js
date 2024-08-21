@@ -39,7 +39,6 @@ function App() {
 
   return (
     <Router className={'App'}>
-
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/restaurant" element={<Restaurant/>}/>

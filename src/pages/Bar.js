@@ -12,7 +12,7 @@ function Bar(props) {
       <MainBlockTemplate
         title={'Nectar Bar'}
         image={'/barBg.jpg'}
-        description={'A culinary oasis of art and flavor'}
+        description={'A Lively Oasis of Flavors and Elegance'}
       >
       </MainBlockTemplate>
 

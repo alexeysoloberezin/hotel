@@ -10,6 +10,8 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 const Header = ({transparent}) => {
   const [isActiveBurger, setIsActiveBurger] = useState(false)
   const isNotATable = useMediaQuery(false, '(min-width: 1340px)')
+  const [readyImages, setReadyImages] = useState(false)
+
   const navItems = [
 
     {
@@ -48,11 +50,18 @@ const Header = ({transparent}) => {
 
   useEffect(() => {
     if (isActiveBurger) {
+      setReadyImages(true)
       document.querySelector('html').classList.add('blocked')
     } else {
       document.querySelector('html').classList.remove('blocked')
     }
   }, [isActiveBurger])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setReadyImages(true)
+    }, 1500)
+  }, []);
 
   return (
     <header
@@ -67,7 +76,8 @@ const Header = ({transparent}) => {
           <img className={clsx({
             'md:w-[124px] md:h-[62px]': isActiveBurger,
             'md:w-[125px] md:h-[51px]': !isActiveBurger
-          }, "w-[90px] object-contain absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]")} src={!isActiveBurger ? '/logo.png' : '/logoBlack.png'} alt=""/>
+          }, "w-[90px] object-contain absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]")}
+               src={!isActiveBurger ? '/logo.png' : '/logoBlack.png'} alt=""/>
         </a>
 
         <div className={"min-w-[142px]"}>
@@ -91,29 +101,30 @@ const Header = ({transparent}) => {
           <ul className={"flex flex-col xl:items-start items-center gap-[20px] grow mb-auto w-fit"}>
             {navItems.map((item, index) => (
               <li key={index}
-                  className={"2xl:text-[50px] md:text-[40px] text-[32px] mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px] w-fit text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
-                <a className={"flex items-center"} href={item.to} onClick={() => setIsActiveBurger(false)}>
+                  className={"2xl:text-[50px] md:text-[40px] text-[32px] mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px]  text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
+                <a className={"flex items-center"} href={item.to}>
                   {item.name}
                   <Arrow
                     classes={"fill-black xl:block hidden group-hover:scale-100 group-hover:delay-[400ms] scale-0 transition-all duration-500  origin-left translate-y-[9px] ml-[40px]"}
                     width={'75'} height={'13'}/>
                 </a>
-
-                {isActiveBurger && isNotATable
-                  && <Image src={item.img}
-                            className={"fixed w-[520px] xl:block hidden pointer-events-none object-cover h-full top-0 right-0 z-10 opacity-0 group-hover:opacity-100 group-hover:delay-0 delay-300 transition-all duration-700"}
-                            alt=""/>
-                }
-
+                {!!isNotATable && !!readyImages  && (
+                  <img
+                    className={'fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 opacity-0 group-hover:opacity-100 group-hover:delay-0 delay-300 transition-all duration-700'}
+                    src={item.img}
+                    alt={"nav img"}
+                  />
+                )}
               </li>
             ))}
-          </ul>
+        </ul>
 
-          <div className={"flex md:w-full pt-[15px] justify-between md:flex-row flex-col-reverse  xl:text-left text-center md:items-end items-center  relative z-[20]"}>
-            <div className={"mobMenu_txt"}>
-              30 Webster St <br/>
-              Brookline, MA 02446<br/>
-              United States of America
+        <div
+          className={"flex md:w-full pt-[15px] justify-between md:flex-row flex-col-reverse  xl:text-left text-center md:items-end items-center  relative z-[20]"}>
+          <div className={"mobMenu_txt"}>
+            30 Webster St <br/>
+            Brookline, MA 02446<br/>
+            United States of America
             </div>
             <div className={"md:mb-0 mb-[30px] mobMenu_btn"}>
               <Button label={'Book Now'} color={"white"} noAnimate={true}/>
@@ -123,41 +134,6 @@ const Header = ({transparent}) => {
 
         </div>
       </div>
-      {/*<div*/}
-      {/*  className={clsx("mx-auto  w-full flex gap-2 justify-between items-center", {'container': transparent})}>*/}
-      {/*  <nav*/}
-      {/*    className={clsx('flex xl:static  xl:pointer-events-auto z-40 point-event-none  fixed top-0 left-0 xl:w-fit w-full xl:flex-row flex-col items-center xl:pt-0 pt-[120px] top gap-[10px] transition-all duration-500', {*/}
-      {/*      "min-h-[100vh] opacity-100 bg-red px-[15px]": isActiveBurger,*/}
-      {/*      "sm:min-h-[43px] min-h-[43px] rounded-base xl:opacity-100 opacity-0  xl:translate-y-0 translate-y-[-120%]": !isActiveBurger*/}
-      {/*    })}>*/}
-      {/*    {navItems.map((item, index) => (*/}
-      {/*      <a onClick={(e) => handleClickLink(e, item.to)} key={index} href={`#${item.to}`}*/}
-      {/*         className={clsx("tag black mobFull", {'active': isActiveBurger})}>*/}
-      {/*        {item.name}*/}
-      {/*      </a>*/}
-      {/*    ))}*/}
-
-
-      {/*    <div*/}
-      {/*      className={"w-full grow mt-[5vh] h-full  flex-col justify-end items-center mt-auto pb-4 container xl:hidden flex"}>*/}
-      {/*      <Socials/>*/}
-      {/*      <div className={"py-[15px]"}></div>*/}
-      {/*    </div>*/}
-      {/*  </nav>*/}
-
-      {/*  <div className={'flex items-center justify-between xl:w-fit w-full '}>*/}
-      {/*    <div className={"flex flex-col gap-[10px]"}>*/}
-      {/*      <Link to={'/form'} className='tag red mobSm'>Записаться на обучение</Link>*/}
-      {/*      <a href={'/#contacts'} className='tag red mobSm'>оставить заявку</a>*/}
-      {/*    </div>*/}
-      {/*    <div className={'relative z-50 xl:hidden block'}>*/}
-      {/*      <Burger active={isActiveBurger} onClick={() => setIsActiveBurger(!isActiveBurger)}/>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-
-      {/*</div>*/}
-
-
     </header>
   );
 };

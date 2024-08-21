@@ -6,6 +6,7 @@ import SpaRoom from "../blocks/SpaRoom";
 import Facials from "../blocks/Facials";
 import Contacts from "../blocks/Contacts";
 import useMediaQuery from "../hooks/useMediaQuery";
+import BookNow from "../components/ui/BookNow";
 
 function Spa(props) {
   const isMobile = useMediaQuery(false, '(max-width: 600px)');
@@ -13,14 +14,14 @@ function Spa(props) {
   return (
     <div>
       <MainBlockTemplate
-        title={'Spa Room'}
+        title={'Iris Spa Room'}
         video={'/spa.mp4'}
         videoWebM={'/spa.webm'}
         mobileGif={'/spa.gif'}
-        description={'where design meets comfort'}
+        description={'Your Sanctuary of Relaxation and Renewal'}
       >
         <div className={"md:block hidden"}>
-          <Button label={'reservation'} color={"red"} hoverColor={"red"}></Button>
+          <BookNow color={"red"} hoverColor={"red"}/>
         </div>
       </MainBlockTemplate>
 
