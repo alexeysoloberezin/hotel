@@ -6,6 +6,7 @@ const SkipperWidget = () => {
         window.initSkipper({
           hotelId: "IRIS_HOTEL_BROOKLINE",
           target: "skipper-target",
+          isDynamic: true,
           targetIds: ["placeholder-id"],
           targetClasses: ["placeholder-class"],
           fallbackUrl: "",
