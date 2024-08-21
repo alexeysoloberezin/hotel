@@ -9,7 +9,7 @@ function SwiperImages({children,showMy = false, countEls, imgTemplate}) {
 
   useEffect(() => {
     const data = []
-    for (let i = 1; i < countEls; i++) {
+    for (let i = 1; i < countEls + 1; i++) {
       data.push(i)
     }
     setArr(data)
