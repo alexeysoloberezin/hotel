@@ -21,7 +21,11 @@ function Spa(props) {
         description={'Your Sanctuary of Relaxation and Renewal'}
       >
         <div className={"md:block hidden"}>
-          <BookNow color={"red"} hoverColor={"red"}/>
+          <a href="https://na.spatime.com/wag02446/4840817/home">
+            <Button color={'red'} hoverColor={'red'}>
+              Book now
+            </Button>
+          </a>
         </div>
       </MainBlockTemplate>
 

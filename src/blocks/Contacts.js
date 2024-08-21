@@ -2,7 +2,7 @@ import React from 'react';
 import FaqItem from "../components/ui/FaqItem";
 import clsx from "clsx";
 
-function ContactsBlock(){
+function ContactsBlock() {
   return (
     <>
       <h2 className={"mb-[20px]"}>Getting here</h2>
@@ -12,7 +12,7 @@ function ContactsBlock(){
   )
 }
 
-function ContactsSubtitle({img, title, imgClass, text}){
+function ContactsSubtitle({img, title, imgClass, text}) {
   return (
     <div>
       <div className={"flex gap-[15px]"}>
@@ -66,12 +66,8 @@ function Contacts({showHotelInfo}) {
             icon={'/icon_faq1.png'}
           >
             <div className={"flex flex-col md:gap-[10px] gap-[5px]"}>
-              <p>Distance from Property: 7.9 Miles</p>
-              <div> Phone Number: <a href="tel:+18002356426">+1 800-235-6426</a></div>
-              <a href="#" className={"underline"}>Visit Website</a>
-
-              <div className={"mt-[20px]"}>Alternate Airport Transportation:</div>
-              <div>MBTA- Green Lind C- Train, Coolidge corner; fee: 2.00 USD (one way)</div>
+              Enjoy the convenience of on-site parking at IRIS HOTEL Boston. For just $60 per day, you can rest easy
+              knowing your vehicle is secure and easily accessible throughout your stay.
             </div>
           </FaqItem>
 
@@ -90,35 +86,35 @@ function Contacts({showHotelInfo}) {
             </div>
           </FaqItem>
 
-          <FaqItem
-            delay={'450'}
-            title={'T.F. Green Airport'}
-            icon={'/icon_faq2.png'}
-          >
-            <div className={"flex flex-col md:gap-[10px] gap-[5px]"}>
-              <p>Distance from Property: 58.2 Miles</p>
-              <div>Phone Number: <a className={"underline"} href="tel:+18882687222">+1 888-268-7222</a></div>
-              <a href="#" className={"underline"}>Visit Website</a>
+          {/*<FaqItem*/}
+          {/*  delay={'450'}*/}
+          {/*  title={'T.F. Green Airport'}*/}
+          {/*  icon={'/icon_faq2.png'}*/}
+          {/*>*/}
+          {/*  <div className={"flex flex-col md:gap-[10px] gap-[5px]"}>*/}
+          {/*    <p>Distance from Property: 58.2 Miles</p>*/}
+          {/*    <div>Phone Number: <a className={"underline"} href="tel:+18882687222">+1 888-268-7222</a></div>*/}
+          {/*    <a href="#" className={"underline"}>Visit Website</a>*/}
 
-              <div className={"mt-[20px]"}>Alternate Airport Transportation:</div>
-              <div>Hello Limo; fee: 100.00 USD (one way); reservation required</div>
-            </div>
-          </FaqItem>
+          {/*    <div className={"mt-[20px]"}>Alternate Airport Transportation:</div>*/}
+          {/*    <div>Hello Limo; fee: 100.00 USD (one way); reservation required</div>*/}
+          {/*  </div>*/}
+          {/*</FaqItem>*/}
 
-          <FaqItem
-            delay={'600'}
-            title={'Manchester-Boston Regional Airport'}
-            icon={'/icon_faq2.png'}
-          >
-            <div className={"flex flex-col md:gap-[10px] gap-[5px]"}>
-              <p>Distance from Property: 55.6 Miles</p>
-              <div>Phone Number: <a className={"underline"} href="tel:+16036246556">+1 603-624-6556</a></div>
-              <a href="#" className={"underline"}>Visit Website</a>
+          {/*<FaqItem*/}
+          {/*  delay={'600'}*/}
+          {/*  title={'Manchester-Boston Regional Airport'}*/}
+          {/*  icon={'/icon_faq2.png'}*/}
+          {/*>*/}
+          {/*  <div className={"flex flex-col md:gap-[10px] gap-[5px]"}>*/}
+          {/*    <p>Distance from Property: 55.6 Miles</p>*/}
+          {/*    <div>Phone Number: <a className={"underline"} href="tel:+16036246556">+1 603-624-6556</a></div>*/}
+          {/*    <a href="#" className={"underline"}>Visit Website</a>*/}
 
-              <div className={"mt-[20px]"}>Alternate Airport Transportation:</div>
-              <div>Hello Limo; fee: 100.00 USD (one way); reservation required</div>
-            </div>
-          </FaqItem>
+          {/*    <div className={"mt-[20px]"}>Alternate Airport Transportation:</div>*/}
+          {/*    <div>Hello Limo; fee: 100.00 USD (one way); reservation required</div>*/}
+          {/*  </div>*/}
+          {/*</FaqItem>*/}
 
           <FaqItem
             delay={"750"}
@@ -134,16 +130,23 @@ function Contacts({showHotelInfo}) {
 
               <b>Bus Station:</b>
 
-              <a href="http://www.mbta.com/schedules_and_maps/rail/lines/stations/?stopId=191" className={"underline"}>South Station</a>
-              <a href="http://www.mbta.com/schedules_and_maps/rail/lines/stations/?stopId=13&lat=42.347153&lng=-71.075769" className={"underline"}>Back Bay Station</a>
+              <a href="http://www.mbta.com/schedules_and_maps/rail/lines/stations/?stopId=191" className={"underline"}>South
+                Station</a>
+              <a
+                href="http://www.mbta.com/schedules_and_maps/rail/lines/stations/?stopId=13&lat=42.347153&lng=-71.075769"
+                className={"underline"}>Back Bay Station</a>
               <b className={"mt-[20px] "}>Subway Station:</b>
 
-              <a href="http://www.mbta.com/schedules_and_maps/subway/" className={"underline"}>Greenline-Coolidge Corner 1 block</a>
+              <a href="http://www.mbta.com/schedules_and_maps/subway/" className={"underline"}>Greenline-Coolidge Corner
+                1 block</a>
 
               <b className={"mt-[20px]"}>Train Station:</b>
 
-              <a href="http://www.mbta.com/schedules_and_maps/rail/lines/stations/?stopId=13&lat=42.347153&lng=-71.075769" className={"underline"}> Back Bay Train Station</a>
-              <a href="http://www.mbta.com/schedules_and_maps/rail/lines/stations/?stopId=191" className={"underline"}>South Station Train Station</a>
+              <a
+                href="http://www.mbta.com/schedules_and_maps/rail/lines/stations/?stopId=13&lat=42.347153&lng=-71.075769"
+                className={"underline"}> Back Bay Train Station</a>
+              <a href="http://www.mbta.com/schedules_and_maps/rail/lines/stations/?stopId=191" className={"underline"}>South
+                Station Train Station</a>
             </div>
           </FaqItem>
         </div>

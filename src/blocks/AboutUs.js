@@ -18,7 +18,7 @@ function AboutUs(props) {
           imgTemplate={'/about{**}.jpg'}
           hideMob={true}
           data={[
-           "GYM",
+           "Gym",
             "Spa room",
             "Cozy lobby and polite staff",
             "Restaurant",

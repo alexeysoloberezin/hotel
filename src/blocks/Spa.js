@@ -21,7 +21,7 @@ function Spa(props) {
             "Relaxing atmosphere",
             "Massage",
             "Aromatherapy",
-            "Facial treatments"
+            "Foot massage"
           ]}
         />
       </div>
