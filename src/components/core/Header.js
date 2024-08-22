@@ -12,6 +12,7 @@ const Header = ({transparent}) => {
   const [isActiveBurger, setIsActiveBurger] = useState(false)
   const isNotATable = useMediaQuery(false, '(min-width: 1340px)')
   const [readyImages, setReadyImages] = useState(false)
+  const [activeLink, setActiveLink] = useState(null)
 
   const navItems = [
 
@@ -101,7 +102,10 @@ const Header = ({transparent}) => {
           </a>
           <ul className={"flex flex-col xl:items-start items-center gap-[20px] grow mb-auto w-fit"}>
             {navItems.map((item, index) => (
-              <li key={index}
+              <li 
+                onMouseEnter={() => setActiveLink(index)}
+                onMouseLeave={() => setActiveLink(false)}
+                key={index}
                   className={"2xl:text-[50px] md:text-[40px] text-[32px] mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px]  text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
                 <a className={"flex items-center"} href={item.to}>
                   {item.name}
@@ -109,15 +113,21 @@ const Header = ({transparent}) => {
                     classes={"fill-black xl:block hidden group-hover:scale-100 group-hover:delay-[400ms] scale-0 transition-all duration-500  origin-left translate-y-[9px] ml-[40px]"}
                     width={'75'} height={'13'}/>
                 </a>
-                {!!isNotATable && !!readyImages  && (
-                  <img
-                    className={'fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 opacity-0 group-hover:opacity-100 group-hover:delay-0 delay-300 transition-all duration-700'}
-                    src={item.img}
-                    alt={"nav img"}
-                  />
-                )}
               </li>
             ))}
+
+            {!!isNotATable && (
+              navItems.map((el, index) => (
+                <img
+                  className={clsx('fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 delay-300 transition-all duration-700', {
+                    'opacity-0': activeLink !== index,
+                    'opacity-100': activeLink === index,
+                  })}
+                  src={el.img}
+                  alt={"nav img"}
+                />
+              ))
+            )}
         </ul>
 
         <div

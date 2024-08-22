@@ -19,13 +19,13 @@ function OurMenu(props) {
             in dishes that celebrate the season's finest ingredients, expertly prepared by our talented culinary team.</p>
         </div>
         <div className={"grid grid-cols-3 lg:w-[70%] lg:mt-0 mt-[30px] gap-[10px] shrink-0"}>
-          <Zoom className="">
+          <Zoom className="" onClick={(e) => e.preventDefault()}>
             <Image noWebp={true} src="/menu1.jpg" className={""} alt="Menu 1" />
           </Zoom>
-          <Zoom className="">
+          <Zoom className="" onClick={(e) => e.preventDefault()}>
             <Image noWebp={true} src="/menu2.jpg" className={""} alt="Menu 1" />
           </Zoom>
-          <Zoom className="">
+          <Zoom className="" onClick={(e) => e.preventDefault()}>
             <Image noWebp={true} src="/menu_2.png" className={" "} alt="Menu 2" />
           </Zoom>
         </div>

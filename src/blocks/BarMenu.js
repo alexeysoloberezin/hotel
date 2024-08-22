@@ -47,15 +47,15 @@ function BarMenu(props) {
             </div>
           </div>
           <div className={"lg:grid hidden grid-rows-2 gap-[20px]"}>
-            <Image noWebp={true} className={"fullImg"} src={'/menuBar1.png'}/>
-            <Image noWebp={true} className={"fullImg"} src={'/menuBar2.png'}/>
+            <Image noWebp={true} className={"w-full object-cover h-[260px]"} src={'/menuBar1.png'}/>
+            <Image noWebp={true} className={"w-full object-cover h-[260px]"} src={'/menuBar2.png'}/>
           </div>
           <div className={""}>
-            <Image noWebp={true} className={"fullImg"} src={'/menuBar3.png'}/>
+            <Image noWebp={true} className={"w-full object-cover h-[540px]"} src={'/menuBar3.png'}/>
           </div>
-          <div className={"lg:grid hidden  grid-rows-2 gap-[20px]"}>
-            <Image noWebp={true} className={"fullImg"} src={'/menuBar4.png'}/>
-            <Image noWebp={true} className={"fullImg"} src={'/menuBar5.png'}/>
+          <div className={"md:grid hidden  grid-rows-2 gap-[20px]"}>
+            <Image noWebp={true} className={"w-full object-cover h-[260px]"} src={'/menuBar4.png'}/>
+            <Image noWebp={true} className={"w-full object-cover h-[260px]"} src={'/menuBar5.png'}/>
           </div>
         </div>
       </div>
