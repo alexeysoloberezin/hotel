@@ -91,15 +91,12 @@ const Form = (props) => {
 
     try {
       const message = `Name: ${form.name}\nNote: ${form.note}\nPhone: ${form.phone}\n`;
-      const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      const res = await fetch(`/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message
-        })
+        body: JSON.stringify({ to: form.name, subject: "Форма письма", text: message })
       });
 
       if (res.status !== 200) {
