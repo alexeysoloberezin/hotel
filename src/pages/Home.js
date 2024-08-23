@@ -18,7 +18,7 @@ const useHash = () => {
 
 function Home(props) {
   const hash = useHash()
-  const [isRender1, ref1] = useIsRender("0px 0px");
+  const [isRender1, ref1] = useIsRender("-10px 0px");
   const [isRender2, ref2] = useIsRender("20% 0px");
   const [isRender3, ref3] = useIsRender("20% 0px");
   const [isRender4, ref4] = useIsRender("20% 0px");
@@ -39,7 +39,7 @@ function Home(props) {
     <div className={clsx(' relative  flex flex-col')}>
       <MainBlock/>
 
-      <div ref={ref1} style={{minHeight:' 400px'}}>
+      <div ref={ref1} style={{minHeight:'80vh'}}>
         {isRender1 && (
           <Accommodation/>
         )}
