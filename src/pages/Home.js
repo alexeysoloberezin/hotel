@@ -19,11 +19,11 @@ const useHash = () => {
 function Home(props) {
   const hash = useHash()
   const [isRender1, ref1] = useIsRender("-10px 0px");
-  const [isRender2, ref2] = useIsRender("20% 0px");
-  const [isRender3, ref3] = useIsRender("20% 0px");
-  const [isRender4, ref4] = useIsRender("20% 0px");
-  const [isRender5, ref5] = useIsRender("20% 0px");
-  const [isRender6, ref6] = useIsRender("20% 0px");
+  const [isRender2, ref2] = useIsRender("0px 0px");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     if (hash) {
@@ -45,39 +45,26 @@ function Home(props) {
         )}
       </div>
       
-      <div ref={ref2} style={{minHeight:' 400px'}}>
+      <div ref={ref2} style={{minHeight:'80vh'}}>
         {isRender2 && (
-          <AboutUs/>
-        )}
-      </div>
+         <>
+           <AboutUs/>
 
-      <div ref={ref3} style={{minHeight:' 400px'}}>
-        {isRender3 && (
-         <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
-         <h1  data-aos="fade-up" data-aos-delay="0">Petal Restaurant</h1>
-         <p  data-aos="fade-up" data-aos-delay="200" className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
-           all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>
-         </BgImageBlock>
-        )}
-      </div>
+          <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
+            <h1  data-aos="fade-up" data-aos-delay="0">Petal Restaurant</h1>
+            <p  data-aos="fade-up" data-aos-delay="200" className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
+              all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>
+          </BgImageBlock>
 
-      <div ref={ref4} style={{minHeight:' 400px'}}>
-        {isRender4 && (
-         <Bar />
-        )}
-      </div>
+          <Bar />
 
-      <div ref={ref5} style={{minHeight:' 400px'}}>
-        {isRender5 && (
-        <Spa />
-        )}
-      </div>
+          <Spa />
 
-      <div ref={ref6} style={{minHeight:' 400px'}}>
-        {isRender6 && (
-        <Contacts />
+          <Contacts />
+         </>
         )}
       </div>
+      
     </div>
   );
 }
