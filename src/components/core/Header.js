@@ -103,7 +103,7 @@ const Header = ({transparent}) => {
           <a href={"tel:+18575766900"} className={"transition-colors md:hidden mb-[50px] underline"}>
             +1 857 576-6900
           </a>
-          <ul className={"flex flex-col  xl:items-start items-center gap-[20px] grow mb-auto w-fit"}>
+          <ul className={"flex flex-col  xl:items-start items-center gap-[20px] mb-[20px] w-fit"}>
             {navItems.map((item, index) => (
               <li 
                 onMouseEnter={() => setActiveLink(index)}
