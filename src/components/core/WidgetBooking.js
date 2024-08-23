@@ -1,7 +1,33 @@
 import React, {useEffect} from 'react';
 
 const SkipperWidget = () => {
-    useEffect(() => {
+  useEffect(() => {
+    const script1 = document.createElement("script");
+    script1.src = "https://widget.skipperhospitality.com/cash-sdk.umd.js";
+    script1.async = true;
+    script1.type = "module";
+    document.head.appendChild(script1);
+
+    const link1 = document.createElement("link");
+    link1.rel = "preload";
+    link1.href = "https://widget.skipperhospitality.com/style.css";
+    link1.as = "style";
+    link1.crossOrigin = "anonymous";
+    document.head.appendChild(link1);
+
+    const link2 = document.createElement("link");
+    link2.rel = "preload";
+    link2.href = "https://widget.skipperhospitality.com/site-base.css";
+    link2.as = "style";
+    link2.crossOrigin = "anonymous";
+    document.head.appendChild(link2);
+
+    const link3 = document.createElement("link");
+    link3.rel = "preconnect";
+    link3.href = "https://cash-api.skipperhospitality.com";
+    document.head.appendChild(link3);
+
+    script1.onload = () => {
       if (window.initSkipper) {
         window.initSkipper({
           hotelId: "IRIS_HOTEL_BROOKLINE",
@@ -32,7 +58,16 @@ const SkipperWidget = () => {
           }
         });
       }
-    }, [])
+    };
+
+    return () => {
+      // Удаляем скрипты и стили при размонтировании компонента
+      document.head.removeChild(script1);
+      document.head.removeChild(link1);
+      document.head.removeChild(link2);
+      document.head.removeChild(link3);
+    };
+  }, []);
 
 
     return (
