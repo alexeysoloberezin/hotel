@@ -18,7 +18,7 @@ const useHash = () => {
 
 function Home(props) {
   const hash = useHash()
-  const [isRender1, ref1] = useIsRender({rootMargin: "0px 0px"});
+  const [isRender1, ref1] = useIsRender("0px 0px");
   const [isRender2, ref2] = useIsRender();
   const [isRender3, ref3] = useIsRender();
   const [isRender4, ref4] = useIsRender();
