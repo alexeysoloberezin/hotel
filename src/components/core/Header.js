@@ -18,29 +18,29 @@ const Header = ({transparent}) => {
 
     {
       to: '/accommodation',
-      img: "/navImg2.png",
+      img: "/navImg2",
       name: "Accommodation",
     },
     {
       to: '/restaurant',
-      img: "/navImg3.png",
+      img: "/navImg3",
       name: 'Petal Restaurant'
     },
 
     {
       to: "/bar",
-      img: "/navImg4.png",
+      img: "/navImg4",
       name: "Nectar Bar"
     },
 
     {
       to: "/spa",
-      img: "/navImg5.png",
+      img: "/navImg5",
       name: "Spa Room"
     },
     {
       to: '/about',
-      img: "/navImg1.png",
+      img: "/navImg1",
       name: "About Us",
     },
   ];
@@ -118,14 +118,26 @@ const Header = ({transparent}) => {
 
             {!!isNotATable && (
               navItems.map((el, index) => (
-                <img
-                  className={clsx('fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 delay-300 transition-all duration-700', {
+                // <Image
+                //   className={clsx('fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 delay-300 transition-all duration-700', {
+                //     'opacity-0': activeLink !== index,
+                //     'opacity-100': activeLink === index,
+                //   })}
+                //   src={el.img}
+                //   alt={"nav img"}
+                // />
+                <picture  className={clsx('fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 delay-300 transition-all duration-700', {
+                      'opacity-0': activeLink !== index,
+                    })}>
+                  <source srcSet={el.img + '.webp'} type="image/webp"/>
+                  <img
+                   className={clsx('fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 delay-300 transition-all duration-700', {
                     'opacity-0': activeLink !== index,
-                    'opacity-100': activeLink === index,
                   })}
-                  src={el.img}
-                  alt={"nav img"}
-                />
+                    src={el.img + '.png'} // Ленивая загрузка
+                    alt={'NavImage'}
+                  />
+                </picture>
               ))
             )}
         </ul>
