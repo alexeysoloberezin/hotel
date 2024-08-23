@@ -17,7 +17,7 @@ const useHash = () => {
   return location.hash;
 };
 
-function Home(props) {
+function Home({skipperIsReady, onInitSkipper}) {
   const hash = useHash()
   const [isRender1, ref1] = useIsRender("-30px 0px");
   const [isRender2, ref2] = useIsRender("50% 0px", 0);
@@ -35,7 +35,7 @@ function Home(props) {
   }, []);
   return (
     <div className={clsx(' relative  flex flex-col homePage')}>
-      <MainBlock />
+      <MainBlock skipperIsReady={skipperIsReady} onInitSkipper={onInitSkipper}/>
 
       <div ref={ref1} style={{minHeight:'80vh'}}>
         {isRender1 && (

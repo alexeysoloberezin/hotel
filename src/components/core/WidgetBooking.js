@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 
-const SkipperWidget = () => {
+const SkipperWidget = ({onInitSkipper}) => {
   let script1 = null;
   let link1 = null;
   let link2 = null;
@@ -63,9 +63,11 @@ const SkipperWidget = () => {
               stateOpacity: 0.4
             }
           });
+
+          onInitSkipper()
         }
       };
-    }, 4000)
+    }, 2000)
 
     return () => {
       // Удаляем скрипты и стили при размонтировании компонента

@@ -15,9 +15,15 @@ import Loader from "./components/core/Loader";
 import Footer from "./components/core/Footer";
 import TestVideos from "./pages/TestVideos";
 import LoadChatScript from './components/core/LoadChatScript';
+import SkipperWidget from './components/core/WidgetBooking'
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+  const [skipperIsReady, setSkipperIsReady] = useState(false)
+
+  const initSkipper = () => {
+    setSkipperIsReady(true)
+  }
 
   useEffect(() => {
     window.scrollTo(0,0)
@@ -35,17 +41,18 @@ function App() {
   return (
     <Router className={'App'}>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/restaurant" element={<Restaurant/>}/>
-        <Route path="/about" element={<AboutUs/>}/>
-        <Route path="/accommodation" element={<Accommodation/>}/>
-        <Route path="/bar" element={<Bar/>}/>
-        <Route path="/spa" element={<Spa/>}/>
-        <Route path="/testVideo" element={<TestVideos/>}/>
+        <Route path="/" element={<Home skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+        <Route path="/restaurant" element={<Restaurant skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+        <Route path="/about" element={<AboutUs skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+        <Route path="/accommodation" element={<Accommodation skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+        <Route path="/bar" element={<Bar skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+        <Route path="/spa" element={<Spa skipperIsReady={skipperIsReady} onInitSkipper={initSkipper} />}/>
+        <Route path="/testVideo" element={<TestVideos skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
       </Routes>
 
       <Footer/>
 
+      <SkipperWidget onInitSkipper={initSkipper}/>
       <Loader/>
       <LoadChatScript />
       {/* {isDesktop && (
