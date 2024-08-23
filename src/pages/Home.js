@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import clsx from "clsx";
 import {Route, useLocation} from "react-router-dom";
 import MainBlock from "../blocks/MainBlock";
@@ -10,6 +10,7 @@ import Spa from "../blocks/Spa";
 import Contacts from "../blocks/Contacts";
 import Footer from "../components/core/Footer";
 import useIsRender from '../hooks/useIsRender';
+import AOS from 'aos';
 
 const useHash = () => {
   const location = useLocation();
@@ -18,11 +19,20 @@ const useHash = () => {
 
 function Home(props) {
   const hash = useHash()
-  const [isRender1, ref1] = useIsRender("-10px 0px");
-  const [isRender2, ref2] = useIsRender("0px 0px");
+  const [isRender, setIsRender] = useState(false)
+  // const [isRender1, ref1] = useIsRender("-10px 0px");
+  // const [isRender2, ref2] = useIsRender("0px 0px");
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    setTimeout(() => {
+      setIsRender(true)
+      AOS.init({
+        duration: 1350, // Длительность анимации в миллисекундах
+        disable: window.innerWidth < 1024
+      });
+    }, 3000)
   }, []);
 
   useEffect(() => {
@@ -39,14 +49,14 @@ function Home(props) {
     <div className={clsx(' relative  flex flex-col')}>
       <MainBlock/>
 
-      <div ref={ref1} style={{minHeight:'80vh'}}>
-        {isRender1 && (
+      <div style={{minHeight:'80vh'}}>
+        {isRender && (
           <Accommodation/>
         )}
       </div>
       
-      <div ref={ref2} style={{minHeight:'80vh'}}>
-        {isRender2 && (
+      <div style={{minHeight:'80vh'}}>
+        {isRender && (
          <>
            <AboutUs/>
 
