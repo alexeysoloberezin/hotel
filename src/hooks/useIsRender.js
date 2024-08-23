@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 
-const useIsRender = () => {
+const useIsRender = ({
+    rootMargin = '50% 0px', // Загрузка за 1,5 экрана до видимости
+    threshold = 0 
+}) => {
     const [isRender, setIsRender] = useState(false);
     const ref = useRef(null);
 
@@ -11,8 +14,8 @@ const useIsRender = () => {
             },
             {
                 root: null, // Отслеживаем в пределах вьюпорта
-                rootMargin: '50% 0px', // Загрузка за 1,5 экрана до видимости
-                threshold: 0 
+                rootMargin: rootMargin, // Загрузка за 1,5 экрана до видимости
+                threshold: threshold
             }
         );
 

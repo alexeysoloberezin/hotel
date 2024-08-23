@@ -9,6 +9,7 @@ import Bar from "../blocks/Bar";
 import Spa from "../blocks/Spa";
 import Contacts from "../blocks/Contacts";
 import Footer from "../components/core/Footer";
+import useIsRender from '../hooks/useIsRender';
 
 const useHash = () => {
   const location = useLocation();
@@ -17,6 +18,7 @@ const useHash = () => {
 
 function Home(props) {
   const hash = useHash()
+  const [isRender, ref] = useIsRender({rootMargin: "0px 0px"});
 
   useEffect(() => {
     if (hash) {
@@ -31,7 +33,7 @@ function Home(props) {
   return (
     <div className={clsx(' relative  flex flex-col')}>
       <MainBlock/>
-      <Accommodation/>
+      {/* <Accommodation/>
       <AboutUs/>
 
       <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
@@ -43,7 +45,7 @@ function Home(props) {
       <Bar />
 
       <Spa />
-      <Contacts />
+      <Contacts /> */}
     </div>
   );
 }
