@@ -69,10 +69,10 @@ const SkipperWidget = () => {
 
     return () => {
       // Удаляем скрипты и стили при размонтировании компонента
-      document.head.removeChild(script1);
-      document.head.removeChild(link1);
-      document.head.removeChild(link2);
-      document.head.removeChild(link3);
+      script1 && document.head.removeChild(script1);
+      link1 && document.head.removeChild(link1);
+      link2 && document.head.removeChild(link2);
+      link3 && document.head.removeChild(link3);
     };
   }, []);
 

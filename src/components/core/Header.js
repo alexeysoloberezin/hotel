@@ -13,6 +13,7 @@ const Header = ({transparent}) => {
   const isNotATable = useMediaQuery(false, '(min-width: 1340px)')
   const [readyImages, setReadyImages] = useState(false)
   const [activeLink, setActiveLink] = useState(null)
+  const [isAnimate, setIsAnimate] = useState(false)
 
   const navItems = [
 
@@ -52,9 +53,11 @@ const Header = ({transparent}) => {
 
   useEffect(() => {
     if (isActiveBurger) {
+      setIsAnimate(true)
       setReadyImages(true)
       document.querySelector('html').classList.add('blocked')
     } else {
+      setIsAnimate(false)
       document.querySelector('html').classList.remove('blocked')
     }
   }, [isActiveBurger])
@@ -100,13 +103,15 @@ const Header = ({transparent}) => {
           <a href={"tel:+18575766900"} className={"transition-colors md:hidden mb-[50px] underline"}>
             +1 857 576-6900
           </a>
-          <ul className={"flex flex-col xl:items-start items-center gap-[20px] grow mb-auto w-fit"}>
+          <ul className={"flex flex-col  xl:items-start items-center gap-[20px] grow mb-auto w-fit"}>
             {navItems.map((item, index) => (
               <li 
                 onMouseEnter={() => setActiveLink(index)}
                 onMouseLeave={() => setActiveLink(false)}
                 key={index}
-                  className={"2xl:text-[50px] md:text-[40px] text-[32px] mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px]  text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
+                className={clsx("2xl:text-[50px] md:text-[40px] text-[32px] opacity-0 mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px]  text-black transition-all duration-500 leading-tight font2 origin-left w-fit", {
+                  'isAnimate': isActiveBurger,
+                })}>
                 <a className={"flex items-center"} href={item.to}>
                   {item.name}
                   <Arrow
