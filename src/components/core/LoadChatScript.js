@@ -3,15 +3,18 @@ import { useEffect } from 'react';
 const LoadChatScript = () => {
   useEffect(() => {
     // Функция, которая загружает скрипт
+     
     const loadScript = () => {
-      const script = document.createElement('script');
-      script.id = 'chatway';
-      script.async = true;
-      script.src = 'https://cdn.chatway.app/widget.js?id=qCL2jCKMnOwb';
-      document.body.appendChild(script);
+        setTimeout(() => {
+            const script = document.createElement('script');
+            script.id = 'chatway';
+            script.async = true;
+            script.src = 'https://cdn.chatway.app/widget.js?id=qCL2jCKMnOwb';
+            document.body.appendChild(script);
+        }, 3000)
     };
 
-    // Добавляем обработчик события загрузки окна
+
     window.addEventListener('load', loadScript);
 
     // Очищаем обработчик при размонтировании компонента

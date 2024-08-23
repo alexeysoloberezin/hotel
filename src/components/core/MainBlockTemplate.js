@@ -44,7 +44,6 @@ function MainBlockTemplate({video,videoWebM, image,mobileGif, title, description
           </Animation>
         </div>
         <img src="/ArrowDownWhite.png" className={"relative z-10 h-[44px] animate-bounce"} alt=""/>
-
       </div>
     </div>
   );
