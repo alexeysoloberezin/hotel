@@ -18,7 +18,12 @@ const useHash = () => {
 
 function Home(props) {
   const hash = useHash()
-  const [isRender, ref] = useIsRender({rootMargin: "0px 0px"});
+  const [isRender1, ref1] = useIsRender({rootMargin: "0px 0px"});
+  const [isRender2, ref2] = useIsRender();
+  const [isRender3, ref3] = useIsRender();
+  const [isRender4, ref4] = useIsRender();
+  const [isRender5, ref5] = useIsRender();
+  const [isRender6, ref6] = useIsRender();
 
   useEffect(() => {
     if (hash) {
@@ -33,19 +38,53 @@ function Home(props) {
   return (
     <div className={clsx(' relative  flex flex-col')}>
       <MainBlock/>
-      {/* <Accommodation/>
-      <AboutUs/>
 
-      <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
-        <h1  data-aos="fade-up" data-aos-delay="0">Petal Restaurant</h1>
-        <p  data-aos="fade-up" data-aos-delay="200" className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
-          all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>
-      </BgImageBlock>
+      {isRender1 && (
+        <div ref={ref1}>
+          <Accommodation/>
+        </div>
+      )}
+      
 
-      <Bar />
+      
+      {isRender2 && (
+        <div ref={ref2}>
+          <AboutUs/>
+        </div>
+      )}
 
-      <Spa />
-      <Contacts /> */}
+      {isRender3 && (
+        <div ref={ref3}>
+           <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
+              <h1  data-aos="fade-up" data-aos-delay="0">Petal Restaurant</h1>
+              <p  data-aos="fade-up" data-aos-delay="200" className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
+                all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>
+            </BgImageBlock>
+        </div>
+      )}
+     
+      {isRender4 && (
+        <div ref={ref4}>
+            <Bar />
+        </div>
+      )}
+    
+      {isRender5 && (
+        <div ref={ref5}>
+            <Spa />
+        </div>
+      )}
+
+      {isRender6 && (
+        <div ref={ref6}>
+           <Contacts />
+        </div>
+      )}
+
+    
+
+      
+ 
     </div>
   );
 }
