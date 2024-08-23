@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from "clsx";
 import Image from "../ui/Image";
+import Animation from '../Animation';
 
 function PerfectGrid({imgTemplate, hideMob}) {
   const grid = [1, 1, 1, 1, 1]
@@ -20,12 +21,13 @@ function PerfectGrid({imgTemplate, hideMob}) {
       })
     }>
       {grid.map((el, index) => (
-        <Image
-          noWebp={true}
-          dataAos={"fade-up"} delay={index * 250 + ''}
-          className={clsx("w-full h-full object-cover",
-          indexClasses[index]
-        )} src={imgTemplate.replace('{**}', index + 1)} alt="bar-img"/>
+        <Animation delay={index * .5 + 's'} className={indexClasses[index]}>
+          <Image
+            noWebp={true}
+            className={clsx("w-full h-full object-cover",
+          )} src={imgTemplate.replace('{**}', index + 1)} alt="bar-img"/>
+        </Animation>
+        
       ))}
     </div>
   );

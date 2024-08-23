@@ -6,7 +6,7 @@ import Image from "../components/ui/Image";
 
 function BgImageBlock({bg, topImg,noWebp, children,href = '', hideBtn}) {
   return (
-    <div className={"lg:py-[60px] py-[50px] relative overflow-hidden"} >
+    <div className={"lg:py-[60px] py-[50px] relative overflow-hidden bg-dark"} >
       <Image
         noWebp={noWebp}
         src={bg}

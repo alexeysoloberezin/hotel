@@ -5,12 +5,14 @@ import OurMenu from "../blocks/OurMenu";
 import BgImageBlock from "../blocks/BgImageBlock";
 import Button from "../components/ui/Button";
 import SwiperImages from "../blocks/SwiperImages";
+import AosInit from '../components/core/AosInit';
 
 
 function Restaurant(props) {
   const els = [1, 2, 3]
   return (
     <div>
+      <AosInit />
       <MainBlockTemplate
         title={'Petal Restaurant'}
         video={'/bar.mp4'}

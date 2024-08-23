@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 
 const useIsRender = (
-     rootMargin, // Загрузка за 1,5 экрана до видимости
-    threshold 
+    rootMargin = '50% 0px',
+    threshold = 0, // Порог видимости для активации
+    delay = 0 // Задержка в миллисекундах
 ) => {
     const [isRender, setIsRender] = useState(false);
     const ref = useRef(null);
@@ -10,12 +11,19 @@ const useIsRender = (
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setIsRender(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    // Устанавливаем состояние рендера с задержкой, если оно еще не установлено
+                    if (!isRender) {
+                        setTimeout(() => {
+                            setIsRender(true);
+                        }, delay);
+                    }
+                }
             },
             {
-                root: null, // Отслеживаем в пределах вьюпорта
-                rootMargin: rootMargin || '50% 0px', // Загрузка за 1,5 экрана до видимости
-                threshold: threshold || 0
+                root: null,
+                rootMargin,
+                threshold
             }
         );
 
@@ -29,7 +37,7 @@ const useIsRender = (
                 observer.unobserve(currentElement);
             }
         };
-    }, []);
+    }, [isRender, rootMargin, threshold, delay]); // Добавляем isRender в зависимости
 
     return [isRender, ref];
 };

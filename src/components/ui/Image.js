@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
+import Animation from '../Animation';
 
 // Функция для замены расширения файла на .webp
 const getWebpSrc = (src) => {
@@ -28,7 +29,7 @@ const Image = ({
       },
       {
         root: null, // viewport
-        rootMargin: '50% 0px', // Загрузка за 1,5 экрана до видимости
+        rootMargin: '300px 0px', // Загрузка за 1,5 экрана до видимости
         threshold: 0 // Изображение будет загружено, когда хотя бы 1 пиксель его будет видно
       }
     );
@@ -47,28 +48,30 @@ const Image = ({
   const srcWebp = getWebpSrc(src); // Получаем путь к изображению в формате WebP
 
   return (
-    !noWebp ? (
-      <picture className={className} {...props}>
-        {isVisible && <source srcSet={srcWebp} type="image/webp"/>}
-        <img
-          ref={imgRef}
-          className={className}
-          data-aos={dataAos}
-          data-aos-delay={delay}
-          src={isVisible ? src : undefined} // Ленивая загрузка
-          alt={alt}
-        />
-      </picture>
-    ) : (
-      <img
-        ref={imgRef}
-        className={className}
-        data-aos={dataAos}
-        data-aos-delay={delay}
-        src={isVisible ? src : undefined} // Ленивая загрузка
-        alt={alt}
-      />
-    )
+    <Animation>
+      {!noWebp ? (
+        <picture className={className} {...props}>
+          {isVisible && <source srcSet={srcWebp} type="image/webp"/>}
+          <img
+            ref={imgRef}
+            className={className}
+            data-aos={dataAos}
+            data-aos-delay={delay}
+            src={isVisible ? src : undefined} // Ленивая загрузка
+            alt={alt}
+          />
+          </picture>
+        ) : (
+          <img
+            ref={imgRef}
+            className={className}
+            data-aos={dataAos}
+            data-aos-delay={delay}
+            src={isVisible ? src : undefined} // Ленивая загрузка
+            alt={alt}
+          />
+        )}
+    </Animation>
   );
 };
 

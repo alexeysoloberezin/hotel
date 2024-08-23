@@ -10,6 +10,7 @@ import Spa from "../blocks/Spa";
 import Contacts from "../blocks/Contacts";
 import Footer from "../components/core/Footer";
 import useIsRender from '../hooks/useIsRender';
+import Animation from '../components/Animation';
 
 const useHash = () => {
   const location = useLocation();
@@ -19,13 +20,10 @@ const useHash = () => {
 function Home(props) {
   const hash = useHash()
   const [isRender1, ref1] = useIsRender("-30px 0px");
-  const [isRender2, ref2] = useIsRender("20% 0px");
-  const [isRender3, ref3] = useIsRender("20% 0px");
-  const [isRender4, ref4] = useIsRender("20% 0px");
-  const [isRender5, ref5] = useIsRender("20% 0px");
-  const [isRender6, ref6] = useIsRender("20% 0px");
+  const [isRender2, ref2] = useIsRender("50% 0px", 0);
 
   useEffect(() => {
+    window.scrollTo(0,0)
     if (hash) {
       const section = document.getElementById(hash.slice(1));
       if (section) {
@@ -36,8 +34,8 @@ function Home(props) {
     }
   }, []);
   return (
-    <div className={clsx(' relative  flex flex-col')}>
-      <MainBlock/>
+    <div className={clsx(' relative  flex flex-col homePage')}>
+      <MainBlock />
 
       <div ref={ref1} style={{minHeight:'80vh'}}>
         {isRender1 && (
@@ -45,37 +43,23 @@ function Home(props) {
         )}
       </div>
       
-      <div ref={ref2} style={{minHeight:' 400px'}}>
+      <div ref={ref2} style={{minHeight:'100vh'}}>
         {isRender2 && (
-          <AboutUs/>
-        )}
-      </div>
-
-      <div ref={ref3} style={{minHeight:' 400px'}}>
-        {isRender3 && (
-         <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
-         <h1  data-aos="fade-up" data-aos-delay="0">Petal Restaurant</h1>
-         <p  data-aos="fade-up" data-aos-delay="200" className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
-           all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>
-         </BgImageBlock>
-        )}
-      </div>
-
-      <div ref={ref4} style={{minHeight:' 400px'}}>
-        {isRender4 && (
-         <Bar />
-        )}
-      </div>
-
-      <div ref={ref5} style={{minHeight:' 400px'}}>
-        {isRender5 && (
-        <Spa />
-        )}
-      </div>
-
-      <div ref={ref6} style={{minHeight:' 400px'}}>
-        {isRender6 && (
-        <Contacts />
+          <>
+              <AboutUs/>
+              <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
+                <Animation>
+                 <h1 >Petal Restaurant</h1>
+                </Animation>
+                <Animation>
+                  <p  className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
+                  all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>
+                </Animation>
+              </BgImageBlock>
+              <Bar />
+              <Spa />
+              <Contacts />
+          </>
         )}
       </div>
     </div>

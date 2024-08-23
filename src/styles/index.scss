@@ -37,6 +37,12 @@ input {
   font-size: 16px;
 }
 
+.homePage{
+  [data-aos^=fade][data-aos^=fade]{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 
 .font2 {
   font-family: var(--font2);

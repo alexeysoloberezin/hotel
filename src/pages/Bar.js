@@ -5,10 +5,12 @@ import Grid121 from "../components/core/Grid121";
 import SectionHeader from "../components/ui/SectionHeader";
 import BarMenu from "../blocks/BarMenu";
 import BgImageBlock from "../blocks/BgImageBlock";
+import AosInit from '../components/core/AosInit';
 
 function Bar(props) {
   return (
     <div>
+      <AosInit />
       <MainBlockTemplate
         title={'Nectar Bar'}
         image={'/barBg.jpg'}

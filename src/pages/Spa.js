@@ -7,12 +7,14 @@ import Facials from "../blocks/Facials";
 import Contacts from "../blocks/Contacts";
 import useMediaQuery from "../hooks/useMediaQuery";
 import BookNow from "../components/ui/BookNow";
+import AosInit from '../components/core/AosInit';
 
 function Spa(props) {
   const isMobile = useMediaQuery(false, '(max-width: 600px)');
 
   return (
     <div>
+      <AosInit />
       <MainBlockTemplate
         title={'Iris Spa Room'}
         video={'/spa.mp4'}
