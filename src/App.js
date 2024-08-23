@@ -10,8 +10,6 @@ import Bar from "./pages/Bar";
 import Accommodation from "./pages/Accommodation";
 import AboutUs from "./pages/About";
 import Spa from "./pages/Spa";
-import 'aos/dist/aos.css';
-import AOS from 'aos';
 import React, {useEffect, useState} from "react";
 import Loader from "./components/core/Loader";
 import Footer from "./components/core/Footer";
