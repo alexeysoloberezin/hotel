@@ -28,10 +28,12 @@ function Home(props) {
 
     setTimeout(() => {
       setIsRender(true)
-      AOS.init({
-        duration: 1350, // Длительность анимации в миллисекундах
-        disable: window.innerWidth < 1024
-      });
+      setTimeout(() => {
+        AOS.init({
+          duration: 1350, // Длительность анимации в миллисекундах
+          disable: window.innerWidth < 1024
+        });
+      }, 2000)
     }, 3000)
   }, []);
 
