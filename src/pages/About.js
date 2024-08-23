@@ -1,11 +1,9 @@
 import React from 'react';
 import MainBlockTemplate from "../components/core/MainBlockTemplate";
-import AosInit from '../components/core/AosInit';
 
 function AboutUs(props) {
   return (
     <>
-      <AosInit />
       <MainBlockTemplate
       title={'About Us'}
       image={'/bg1.jpg'}

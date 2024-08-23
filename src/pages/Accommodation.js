@@ -1,11 +1,9 @@
 import React from 'react';
 import MainBlockTemplate from "../components/core/MainBlockTemplate";
-import AosInit from '../components/core/AosInit';
 
 function Accommodation(props) {
   return (
     <div>
-      <AosInit />
       <MainBlockTemplate
         title={'accommodation'}
         image={'/bg1.jpg'}

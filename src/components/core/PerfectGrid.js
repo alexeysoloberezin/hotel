@@ -21,7 +21,7 @@ function PerfectGrid({imgTemplate, hideMob}) {
       })
     }>
       {grid.map((el, index) => (
-        <Animation delay={index * .5 + 's'} className={indexClasses[index]}>
+        <Animation delay={index * .2 + 's'} className={indexClasses[index]}>
           <Image
             noWebp={true}
             className={clsx("w-full h-full object-cover",

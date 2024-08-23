@@ -19,8 +19,7 @@ function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
-
-
+    window.scrollTo(0,0)
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
     };

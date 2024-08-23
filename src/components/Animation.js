@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import useIsRender from '../hooks/useIsRender';
 
 function Animation({children, delay, className}) {
-    const [isRender, ref] = useIsRender("300px 0px", 1.0);
+    const [isRender, ref] = useIsRender("50px 0px", 1.0);
 
     useEffect(() => {
       
