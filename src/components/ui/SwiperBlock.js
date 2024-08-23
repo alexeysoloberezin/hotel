@@ -14,7 +14,7 @@ function AccommodationItem({title, subtitle, price, img}){
         className={"w-full aspect-square object-cover"}
         dataAos={"fade-up"} delay={"0"}
       />
-      <h4 className={"mt-[10px] mb-[5px] font2"} data-aos="fade-up" data-aos-delay="150">{title}</h4>
+      <h4 className={"mt-[10px] mb-[5px] font2 uppercase"}>{title}</h4>
       {/*<p className={"mb-[20px] lg:block hidden"} data-aos="fade-up" data-aos-delay="300">{subtitle}</p>*/}
       {/*<p data-aos="fade-up" data-aos-delay="450" className={'lg:block hidden'}>from <b>{price}</b> / night</p>*/}
     </div>

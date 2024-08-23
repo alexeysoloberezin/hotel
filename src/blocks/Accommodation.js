@@ -17,7 +17,7 @@ function Accommodation(props) {
     },
     {
       price: '$450.00',
-      title: 'TWO QUEENS',
+      title: 'Two Queens Deluxe',
       img: '/accommodation2.jpg',
       subtitle: 'Sleeps up to 4',
     },

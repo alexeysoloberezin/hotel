@@ -29,7 +29,7 @@ function Restaurant(props) {
           </Animation>
 
            <Animation>
-           <SwiperImages countEls={3} imgTemplate={'/res{**}.jpg'}/>
+            <SwiperImages countEls={4} imgTemplate={'/res{**}.jpg'}/>
            </Animation>
 
           <div className={"flex justify-center"}>

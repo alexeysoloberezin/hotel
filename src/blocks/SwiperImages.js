@@ -16,10 +16,11 @@ function SwiperImages({children,showMy = false, countEls, imgTemplate}) {
   }, [])
 
   return (
-    <div data-aos="fade-up" data-aos-delay="0">
+    <div >
       <Swiper
         modules={[Autoplay]}
-        className={"!mb-[20px] mt-[50px] !overflow-visible"}
+        className={"!mb-[20px] mt-[50px] md:!overflow-hidden !overflow-visible"}
+        loop={true}
         autoplaySpeed={400}
         autoplay={{
           delay: 2500,

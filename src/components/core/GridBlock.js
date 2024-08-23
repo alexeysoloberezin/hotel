@@ -15,7 +15,7 @@ function GridBlock({data, imgTemplate, type = 'type1', hideMob}) {
   const textClass = "mt-[5px] font2 md:text-left md:mx-0 mx-auto max-w-[230px] md:max-w-fit text-center text-[24px] uppercase md:normal-case"
 
   return (
-    <div className={clsx('text-black md:grid-cols-3 gap-[20px]', {
+    <div className={clsx('text-black md:grid-cols-[29%_1fr_29%] gap-[20px]', {
       'lg:grid hidden' :hideMob,
       'grid': !hideMob
     })}>

@@ -48,7 +48,7 @@ function App() {
 
       <Loader/>
       <LoadChatScript />
-      {isDesktop && (
+      {/* {isDesktop && (
         <AnimatedCursor
           innerSize={18}
           outerSize={18}
@@ -78,7 +78,7 @@ function App() {
             backgroundColor: '#fff'
           }}
         />
-      )}
+      )} */}
     </Router>
   );
 }

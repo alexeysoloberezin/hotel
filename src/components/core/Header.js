@@ -79,8 +79,8 @@ const Header = ({transparent}) => {
         </a>
         <a href={'/'} className={"relative w-[125px] h-[60px]"}>
           <img className={clsx({
-            'md:w-[124px] md:h-[62px]': isActiveBurger,
-            'md:w-[125px] md:h-[51px]': !isActiveBurger
+            'md:w-[154px] md:h-[82px]': isActiveBurger,
+            'md:w-[165px] md:h-[71px]': !isActiveBurger
           }, "w-[90px] object-contain absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]")}
                src={!isActiveBurger ? '/logo.png' : '/logoBlack.png'} alt=""/>
         </a>

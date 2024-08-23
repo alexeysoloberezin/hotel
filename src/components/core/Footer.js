@@ -42,7 +42,7 @@ const Footer = () => {
               Brookline, MA 02446<br/>
               United States of America
             </div>
-            <div className={"mt-[40px] lg:block hidden"}>@2024</div>
+            <div className={"mt-[40px] lg:block hidden"}>@2024 Wagner Hospitality Management.<br/> All rights reserved.</div>
           </div>
           <div className={"flex flex-col justify-between"}>
             <ul className={"flex flex-col gap-[20px] mb-auto"}>
@@ -50,9 +50,9 @@ const Footer = () => {
                 <li key={index}><a className={"uppercase"} href={item.to}>{item.name}</a></li>
               ))}
             </ul>
-            <div className={"md:block hidden"}>
+            {/* <div className={"hidden"}>
               <CreatedAt />
-            </div>
+            </div> */}
           </div>
           <div>
             <Form/>
