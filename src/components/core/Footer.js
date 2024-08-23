@@ -59,8 +59,8 @@ const Footer = () => {
           </div>
         </div>
         <div className={"mt-[40px] lg:hidden flex justify-between items-end"}>
-          <CreatedAt/>
-          <div className={''}>@2024</div>
+          {/* <CreatedAt/> */}
+          <div className={''}>@2024 Wagner Hospitality Management.<br/> All rights reserved.</div>
         </div>
       </div>
     </footer>
