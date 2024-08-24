@@ -18,29 +18,44 @@ const Header = ({transparent}) => {
   const navItems = [
 
     {
-      to: '/accommodation',
+      to: '?sbe_internalLink',
+      dataTestid: 'linkElement',
+      target: '_self',
+      className: 'Y3Mib0',
       img: "/navImg2",
       name: "Accommodation",
     },
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: '/restaurant',
       img: "/navImg3",
       name: 'Petal Restaurant'
     },
 
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: "/bar",
       img: "/navImg4",
       name: "Nectar Bar"
     },
 
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: "/spa",
       img: "/navImg5",
       name: "Spa Room"
     },
     {
-      to: '/about',
+      dataTestid: 'linkElement',
+      target: '_self',
+      className: 'Y3Mib0',
+      to: '?sbe_internalLink',
       img: "/navImg1",
       name: "About Us",
     },
@@ -112,7 +127,7 @@ const Header = ({transparent}) => {
                 className={clsx("2xl:text-[50px] md:text-[40px] text-[32px] opacity-0 mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px]  text-black transition-all duration-500 leading-tight font2 origin-left w-fit", {
                   'isAnimate': isActiveBurger,
                 })}>
-                <a className={"flex items-center"} href={item.to}>
+                <a className={`flex items-center ${item.className}`} href={item.to} data-testid={item.dataTestid} target={item.target}>
                   {item.name}
                   <Arrow
                     classes={"fill-black xl:block hidden group-hover:scale-100 group-hover:delay-[400ms] scale-0 transition-all duration-500  origin-left translate-y-[9px] ml-[40px]"}
