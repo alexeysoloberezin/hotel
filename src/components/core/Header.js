@@ -12,34 +12,51 @@ const Header = ({transparent}) => {
   const [isActiveBurger, setIsActiveBurger] = useState(false)
   const isNotATable = useMediaQuery(false, '(min-width: 1340px)')
   const [readyImages, setReadyImages] = useState(false)
+  const [activeLink, setActiveLink] = useState(null)
+  const [isAnimate, setIsAnimate] = useState(false)
 
   const navItems = [
 
     {
-      to: '/accommodation',
-      img: "/navImg2.png",
+      to: '?sbe_internalLink',
+      dataTestid: 'linkElement',
+      target: '_self',
+      className: 'Y3Mib0',
+      img: "/navImg2",
       name: "Accommodation",
     },
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: '/restaurant',
-      img: "/navImg3.png",
+      img: "/navImg3",
       name: 'Petal Restaurant'
     },
 
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: "/bar",
-      img: "/navImg4.png",
+      img: "/navImg4",
       name: "Nectar Bar"
     },
 
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: "/spa",
-      img: "/navImg5.png",
+      img: "/navImg5",
       name: "Spa Room"
     },
     {
-      to: '/about',
-      img: "/navImg1.png",
+      dataTestid: 'linkElement',
+      target: '_self',
+      className: 'Y3Mib0',
+      to: '?sbe_internalLink',
+      img: "/navImg1",
       name: "About Us",
     },
   ];
@@ -51,9 +68,11 @@ const Header = ({transparent}) => {
 
   useEffect(() => {
     if (isActiveBurger) {
+      setIsAnimate(true)
       setReadyImages(true)
       document.querySelector('html').classList.add('blocked')
     } else {
+      setIsAnimate(false)
       document.querySelector('html').classList.remove('blocked')
     }
   }, [isActiveBurger])
@@ -75,8 +94,8 @@ const Header = ({transparent}) => {
         </a>
         <a href={'/'} className={"relative w-[125px] h-[60px]"}>
           <img className={clsx({
-            'md:w-[124px] md:h-[62px]': isActiveBurger,
-            'md:w-[125px] md:h-[51px]': !isActiveBurger
+            'md:w-[154px] md:h-[82px]': isActiveBurger,
+            'md:w-[165px] md:h-[71px]': !isActiveBurger
           }, "w-[90px] object-contain absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]")}
                src={!isActiveBurger ? '/logo.png' : '/logoBlack.png'} alt=""/>
         </a>
@@ -99,25 +118,48 @@ const Header = ({transparent}) => {
           <a href={"tel:+18575766900"} className={"transition-colors md:hidden mb-[50px] underline"}>
             +1 857 576-6900
           </a>
-          <ul className={"flex flex-col xl:items-start items-center gap-[20px] grow mb-auto w-fit"}>
+          <ul className={"flex flex-col  xl:items-start items-center gap-[20px] mb-[20px] w-fit"}>
             {navItems.map((item, index) => (
-              <li key={index}
-                  className={"2xl:text-[50px] md:text-[40px] text-[32px] mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px]  text-black transition-all duration-500 leading-tight font2 origin-left w-fit"}>
-                <a className={"flex items-center"} href={item.to}>
+              <li 
+                onMouseEnter={() => setActiveLink(index)}
+                onMouseLeave={() => setActiveLink(false)}
+                key={index}
+                className={clsx("2xl:text-[50px] md:text-[40px] text-[32px] opacity-0 mobMenu-link group 2xl:hover:text-[100px] xl:hover:text-[65px]  text-black transition-all duration-500 leading-tight font2 origin-left w-fit", {
+                  'isAnimate': isActiveBurger,
+                })}>
+                <a className={`flex items-center ${item.className}`} href={item.to} data-testid={item.dataTestid} target={item.target}>
                   {item.name}
                   <Arrow
                     classes={"fill-black xl:block hidden group-hover:scale-100 group-hover:delay-[400ms] scale-0 transition-all duration-500  origin-left translate-y-[9px] ml-[40px]"}
                     width={'75'} height={'13'}/>
                 </a>
-                {!!isNotATable && !!readyImages  && (
-                  <img
-                    className={'fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 opacity-0 group-hover:opacity-100 group-hover:delay-0 delay-300 transition-all duration-700'}
-                    src={item.img}
-                    alt={"nav img"}
-                  />
-                )}
               </li>
             ))}
+
+            {!!isNotATable && (
+              navItems.map((el, index) => (
+                // <Image
+                //   className={clsx('fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 delay-300 transition-all duration-700', {
+                //     'opacity-0': activeLink !== index,
+                //     'opacity-100': activeLink === index,
+                //   })}
+                //   src={el.img}
+                //   alt={"nav img"}
+                // />
+                <picture  className={clsx('fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 delay-300 transition-all duration-700', {
+                      'opacity-0': activeLink !== index,
+                    })}>
+                  <source srcSet={el.img + '.webp'} type="image/webp"/>
+                  <img
+                   className={clsx('fixed w-[520px] pointer-events-none object-cover h-full top-0 right-0 z-10 delay-300 transition-all duration-700', {
+                    'opacity-0': activeLink !== index,
+                  })}
+                    src={el.img + '.png'} // Ленивая загрузка
+                    alt={'NavImage'}
+                  />
+                </picture>
+              ))
+            )}
         </ul>
 
         <div

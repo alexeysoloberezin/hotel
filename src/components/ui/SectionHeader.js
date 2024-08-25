@@ -4,6 +4,7 @@ import Button from "./Button";
 import clsx from "clsx";
 import Arrow from "../icon/Arrow";
 import Image from "./Image";
+import Animation from '../Animation';
 
 function SectionHeader({title, text, btnHref,bigMob, color = 'black', mobImage, classText}) {
   const colors = {
@@ -19,8 +20,12 @@ function SectionHeader({title, text, btnHref,bigMob, color = 'black', mobImage, 
   }
   return (
     <div className={clsx('flex lg:items-center lg:flex-row flex-col gap-[20px] md:mb-[50px] mb-[30px]', colors[color].text)}>
-      <h2 data-aos="fade-up" data-aos-delay="0" className={clsx("text-nowrap lg:min-w-[34%]", {'bigMob': bigMob})}>{title}</h2>
-      <p data-aos="fade-up" data-aos-delay="200" className={clsx(classText)}>{text}</p>
+      <Animation>
+      <h2  className={clsx("text-nowrap lg:min-w-[34%]", {'bigMob': bigMob})}>{title}</h2>
+      </Animation>
+      <Animation  delay={'.2s'}>
+        <p className={clsx(classText)}>{text}</p>
+      </Animation>
       {mobImage && <Image src={mobImage} noWebp={true} alt="" className={"max-h-[600px] object-cover lg:hidden"}/>}
       {btnHref
         ? <a href={btnHref} className={"lg:mx-0 lg:mt-0 mt-[30px] mx-auto"}>

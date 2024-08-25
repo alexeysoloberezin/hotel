@@ -3,24 +3,27 @@ import SectionHeader from "../components/ui/SectionHeader";
 import clsx from "clsx";
 import Contacts from "./Contacts";
 import Image from "../components/ui/Image";
+import Animation from '../components/Animation';
 
 function FacialItem({imgTemplate, title, price, time, text, index}){
   return (
-    <div
-      data-aos="fade-up" data-aos-delay={index * 150}
-      className={"md:min-h-[420px] min-h-[390px] p-[20px] pt-[90px]  relative"}>
-      <Image src={imgTemplate.replace('{**}', index )} className={"absolute top-0 left-0 w-full h-full object-cover"}/>
-      <div className={"relative z-10 flex flex-col items-center"}>
-        <div className={"flex items-end mb-[5px] font2"}>
-          <span className={"text-[50px]"} style={{lineHeight: 1}}>{price} /</span>
-          <h4 className={"ml-[15px]"}>{time}</h4>
+    <Animation
+      delay={index * 0.1 + 's'}
+     >
+      <div  className={"md:min-h-[420px] min-h-[390px] p-[20px] pt-[90px]  relative"}>
+        <Image src={imgTemplate.replace('{**}', index )} className={"absolute top-0 left-0 w-full h-full object-cover"}/>
+        <div className={"relative z-10 flex flex-col items-center"}>
+          <div className={"flex items-end mb-[5px] font2"}>
+            <span className={"text-[50px]"} style={{lineHeight: 1}}>{price} /</span>
+            <h4 className={"ml-[15px]"}>{time}</h4>
+          </div>
+          <h4 className={"my-[10px] uppercase"}>
+            {title}
+          </h4>
+          <div className={"mt-[5px] text-center"}>{text}</div>
         </div>
-        <h4 className={"my-[10px] uppercase"}>
-          {title}
-        </h4>
-        <div className={"mt-[5px] text-center"}>{text}</div>
       </div>
-    </div>
+    </Animation>
   )
 }
 

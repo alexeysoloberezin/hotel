@@ -1,6 +1,7 @@
 import React from 'react';
 import FaqItem from "../components/ui/FaqItem";
 import clsx from "clsx";
+import useIsRender from '../hooks/useIsRender';
 
 function ContactsBlock() {
   return (
@@ -33,7 +34,6 @@ function ContactsSubtitle({img, title, imgClass, text}) {
 }
 
 function Contacts({showHotelInfo}) {
-
   return (
     <div className={"bg-dark lg:py-[200px] py-[100px]"}>
       {showHotelInfo
@@ -79,7 +79,7 @@ function Contacts({showHotelInfo}) {
             <div className={"flex flex-col md:gap-[10px] gap-[5px]"}>
               <p>Distance from Property: 7.9 Miles</p>
               <div>Phone Number: <a className={"underline"} href="tel:+18002356426">+1 800-235-6426</a></div>
-              <a href="#" className={"underline"}>Visit Website</a>
+              <a href="https://www.massport.com/logan-airport" className={"underline"}>Visit Website</a>
 
               <div className={"mt-[20px]"}>Alternate Airport Transportation:</div>
               <div>MBTA- Green Lind C- Train, Coolidge corner; fee: 2.00 USD (one way)</div>
@@ -154,12 +154,15 @@ function Contacts({showHotelInfo}) {
           <div className={"lg:hidden"}>
             <ContactsBlock/>
           </div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.07429109242!2d-71.12498232340367!3d42.34093943630878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379be3edbe67d%3A0x4b233be88bcacf73!2zMzAgV2Vic3RlciBTdCwgQnJvb2tsaW5lLCBNQSAwMjQ0Niwg0KHQqNCQ!5e0!3m2!1sen!2sid!4v1723112850025!5m2!1sen!2sid"
-            allowFullScreen="" loading="lazy"
-            className={"aspect-video w-full lg:min-h-[550px] md:min-h-[400px] min-h-[250px]"}
-            referrerPolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+
+            <iframe 
+              className={"aspect-video w-full lg:min-h-[550px] md:min-h-[400px] min-h-[250px]"}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.074592970278!2d-71.122327!3d42.340933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379be3ec50ab1%3A0x24633e9bd497a8b!2sIris%20Hotel%20Boston!5e0!3m2!1sen!2sus!4v1724361826199!5m2!1sen!2sus" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div> 
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Header from "./Header";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import Animation from '../Animation';
 
 function MainBlockTemplate({video,videoWebM, image,mobileGif, title, description, children}) {
   const isMobile = useMediaQuery(false, '(max-width: 600px)');
@@ -29,16 +30,20 @@ function MainBlockTemplate({video,videoWebM, image,mobileGif, title, description
         <Header transparent={true}/>
 
         <div className={"relative z-10 text-center flex grow h-full justify-center flex-col items-center"}>
-          <h1 data-aos="fade-up" data-aos-delay="200">{title}</h1>
-          <h3 data-aos="fade-up" data-aos-delay="500" className={"mt-2 lg:mb-[30px] mb-[25px]"}>
-            {description}
-          </h3>
-          <div data-aos="fade-up" data-aos-delay="800">
+          <Animation>
+            <h1 >{title}</h1>
+          </Animation>
+       
+          <Animation delay={'.5s'}>
+            <h3  className={"mt-2 lg:mb-[30px] mb-[25px]"}>
+              {description}
+            </h3>
+          </Animation>
+          <Animation delay={'.8s'}>
             {children}
-          </div>
+          </Animation>
         </div>
         <img src="/ArrowDownWhite.png" className={"relative z-10 h-[44px] animate-bounce"} alt=""/>
-
       </div>
     </div>
   );

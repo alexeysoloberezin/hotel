@@ -11,10 +11,10 @@ function Loader(props) {
     setEndFin(false)
     setStart(true);
 
-    setTimeout(() => setEnd(true), 2000);
+    setTimeout(() => setEnd(true), 1000);
     setTimeout(() => {
       setEndFin(true)
-    }, 2500);
+    }, 1500);
   }, []);
 
   return (

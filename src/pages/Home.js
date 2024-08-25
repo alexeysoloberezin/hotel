@@ -9,16 +9,21 @@ import Bar from "../blocks/Bar";
 import Spa from "../blocks/Spa";
 import Contacts from "../blocks/Contacts";
 import Footer from "../components/core/Footer";
+import useIsRender from '../hooks/useIsRender';
+import Animation from '../components/Animation';
 
 const useHash = () => {
   const location = useLocation();
   return location.hash;
 };
 
-function Home(props) {
+function Home({skipperIsReady, onInitSkipper}) {
   const hash = useHash()
+  const [isRender1, ref1] = useIsRender("-30px 0px");
+  const [isRender2, ref2] = useIsRender("50% 0px", 0);
 
   useEffect(() => {
+    window.scrollTo(0,0)
     if (hash) {
       const section = document.getElementById(hash.slice(1));
       if (section) {
@@ -29,21 +34,34 @@ function Home(props) {
     }
   }, []);
   return (
-    <div className={clsx(' relative  flex flex-col')}>
-      <MainBlock/>
-      <Accommodation/>
-      <AboutUs/>
+    <div className={clsx(' relative  flex flex-col homePage')}>
+      <MainBlock skipperIsReady={skipperIsReady} onInitSkipper={onInitSkipper}/>
 
-      <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
-        <h1  data-aos="fade-up" data-aos-delay="0">Petal Restaurant</h1>
-        <p  data-aos="fade-up" data-aos-delay="200" className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
-          all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>
-      </BgImageBlock>
-
-      <Bar />
-
-      <Spa />
-      <Contacts />
+      <div ref={ref1} style={{minHeight:'80vh'}}>
+        {isRender1 && (
+          <Accommodation/>
+        )}
+      </div>
+      
+      <div ref={ref2} style={{minHeight:'100vh'}}>
+        {isRender2 && (
+          <>
+              <AboutUs/>
+              <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
+                <Animation>
+                 <h1 >Petal Restaurant</h1>
+                </Animation>
+                <Animation>
+                  <p  className={"max-w-[578px] mt-[20px]"}>Indulge in breakfast or dinner in our elegantly adorned restaurant, featuring a selection of healthy cuisine,
+                  all while marveling at the ceiling painted by the renowned Italian artist, Giovanni De Cunto. </p>
+                </Animation>
+              </BgImageBlock>
+              <Bar />
+              <Spa />
+              <Contacts />
+          </>
+        )}
+      </div>
     </div>
   );
 }

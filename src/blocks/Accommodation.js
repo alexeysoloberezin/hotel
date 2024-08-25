@@ -17,16 +17,16 @@ function Accommodation(props) {
     },
     {
       price: '$450.00',
-      title: 'TWO QUEENS',
+      title: 'Two Queens Deluxe',
       img: '/accommodation2.jpg',
       subtitle: 'Sleeps up to 4',
     },
-    {
-      price: '$486.00',
-      title: 'KING DELUXE',
-      img: '/accommodation3.jpg',
-      subtitle: 'Sleeps up to 2',
-    },
+    // {
+    //   price: '$486.00',
+    //   title: 'KING DELUXE',
+    //   img: '/accommodation3.jpg',
+    //   subtitle: 'Sleeps up to 2',
+    // },
     {
       price: '$486.00',
       title: 'IRIS SUITE KING / SOFA QUEEN',

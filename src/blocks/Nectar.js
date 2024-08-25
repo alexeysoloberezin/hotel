@@ -4,6 +4,7 @@ import image from "../components/ui/Image";
 import clsx from "clsx";
 import SwiperImages from "./SwiperImages";
 import {SwiperSlide} from "swiper/react";
+import Animation from '../components/Animation';
 
 function Card({title, text, img, txtClass}) {
   return (
@@ -26,12 +27,13 @@ function Nectar(props) {
   return (
     <div className="md:py-[200px] py-[100px] bg-gold text-black">
       <div className="container">
-        <div
+        <Animation
           className={"text-center lg:text-[50px] md:text-[40px] text-[30px]  leading-[1.1] max-w-[910px] md:mb-[70px] mb-[30px] mx-auto"}>Welcome
           to Nectar — the heart of IRIS HOTEL Boston, where sophistication meets comfort
-        </div>
+        </Animation>
 
-
+        
+        <Animation>
         <SwiperImages showMy={true}>
           <SwiperSlide>
             <div className="slide-content">
@@ -63,7 +65,10 @@ function Nectar(props) {
               />
             </div>
           </SwiperSlide>
+          
         </SwiperImages>
+        </Animation>
+      
       </div>
 
     </div>);

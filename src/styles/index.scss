@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap');
-
 @import "fonts";
 
 @tailwind base;
@@ -24,6 +22,9 @@
   --green: #00C853;
 }
 
+.cash-widget-overlay-container{
+  cursor: default !important;
+}
 .imgsFull {
   img {
     width: 100%;
@@ -36,6 +37,58 @@ input {
   font-size: 16px;
 }
 
+.isAnimate{
+  animation: .8s leftToRight forwards;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50px);
+  &:nth-child(1){
+    animation-delay: 800ms;
+  }
+  &:nth-child(2){
+    animation-delay: 900ms;
+  }
+  &:nth-child(3){
+    animation-delay: 1000ms;
+  }
+  &:nth-child(4){
+    animation-delay: 1100ms;
+  }
+  &:nth-child(5){
+    animation-delay: 1200ms;
+  }
+  &:nth-child(6){
+    animation-delay: 1300ms;
+  }
+  @keyframes leftToRight {
+    0%{
+      transform: translateX(-50px);
+      opacity: 0;
+      pointer-events: none;
+    }
+    90%{
+      transform: translateX(0px);
+      opacity: 1;
+      pointer-events: none;
+    }
+    100%{
+      transform: translateX(0px);
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}
+
+.homePage{
+  [data-aos^=fade][data-aos^=fade]{
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.link{
+  cursor: pointer;
+}
 
 .font2 {
   font-family: var(--font2);

@@ -2,8 +2,9 @@ import React from 'react';
 import Button from "../components/ui/Button";
 import MainBlockTemplate from "../components/core/MainBlockTemplate";
 import BookNow from "../components/ui/BookNow";
+import clsx from 'clsx';
 
-function MainBlock() {
+function MainBlock({skipperIsReady, onInitSkipper}) {
   return (
     <MainBlockTemplate
       title={'Iris Hotel Boston'}
@@ -12,7 +13,7 @@ function MainBlock() {
       mobileGif={'/IMG_4931.gif'}
       description={' where design meets comfort'}
     >
-      <BookNow />
+      <div className={clsx('duration-300 transition',{'opacity-0': !skipperIsReady})}><BookNow /></div>
     </MainBlockTemplate>
   );
 }
