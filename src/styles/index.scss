@@ -76,6 +76,9 @@ body, html, #root {
   overflow-x: hidden;
   transition: background-color .3s;
 }
+.cash-widget-overlay-container, .cursor-def {
+  cursor: default !important;
+}
 html{
   //max-height: 100vh;
 }
