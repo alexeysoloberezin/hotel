@@ -156,7 +156,7 @@ const Form = (props) => {
             'bg-red': statusMessage === 'error',
           })}
       >
-        {statusMessage === 'success' ? 'Ваша заявка успешно отправлена!' : 'Ошибка отправки заявки!'}
+        {statusMessage === 'success' ? 'Your request has been successfully completed' : 'Sending error'}
       </div>
     </div>
   );

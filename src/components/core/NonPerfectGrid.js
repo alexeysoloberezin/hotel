@@ -5,7 +5,7 @@ import Image from "../ui/Image";
 function NonPerfectGrid({imgTemplate}) {
   return (
     <div className="grid grid-cols-3 gap-[20px]">
-      <div>
+      <div className={"flex flex-col gap-[20px]"}>
         <Image className={clsx("w-full h-full object-cover",
         )} src={imgTemplate.replace('{**}', 1)} noWebp={true} alt="accom-img"></Image>
         <Image className={clsx("w-full h-full object-cover",
@@ -15,7 +15,7 @@ function NonPerfectGrid({imgTemplate}) {
         <Image className={clsx("w-full h-full object-cover",
         )} src={imgTemplate.replace('{**}', 3)} noWebp={true} alt="accom-img"></Image>
       </div>
-      <div>
+      <div className={"flex flex-col gap-[20px]"}>
         <Image className={clsx("w-full h-full object-cover",
         )} src={imgTemplate.replace('{**}', 4)} noWebp={true} alt="accom-img"></Image>
         <Image className={clsx("w-full h-full object-cover",
