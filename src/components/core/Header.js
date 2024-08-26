@@ -16,12 +16,11 @@ const Header = ({transparent}) => {
   const [isAnimate, setIsAnimate] = useState(false)
 
   const navItems = [
-
     {
-      to: '?sbe_internalLink',
-      dataTestid: 'linkElement',
-      target: '_self',
-      className: 'Y3Mib0',
+      to: '/accommodation',
+      dataTestid: '',
+      target: '',
+      className: '',
       img: "/navImg2",
       name: "Accommodation",
     },
@@ -118,7 +117,7 @@ const Header = ({transparent}) => {
           <a href={"tel:+18575766900"} className={"transition-colors md:hidden mb-[50px] underline"}>
             +1 857 576-6900
           </a>
-          <ul className={"flex flex-col  xl:items-start items-center gap-[20px] mb-[20px] w-fit"}>
+          <ul className={"flex flex-col  xl:items-start items-center gap-[20px] mb-[20px] lg:grow w-fit"}>
             {navItems.map((item, index) => (
               <li 
                 onMouseEnter={() => setActiveLink(index)}

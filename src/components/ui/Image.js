@@ -10,6 +10,7 @@ const Image = ({
                  src,
                  alt,
                  dataAos,
+                animationClass,
                  noWebp = false,
                  isBg = false,
                  delay,
@@ -48,7 +49,7 @@ const Image = ({
   const srcWebp = getWebpSrc(src); // Получаем путь к изображению в формате WebP
 
   return (
-    <Animation>
+    <Animation animationClass={animationClass}>
       {!noWebp ? (
         <picture className={className} {...props}>
           {isVisible && <source srcSet={srcWebp} type="image/webp"/>}

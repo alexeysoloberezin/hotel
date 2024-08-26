@@ -6,24 +6,46 @@ import CreatedAt from "./CreatedAt";
 const Footer = () => {
   const navItems = [
     {
-      to: '/about',
-      name: "About Us",
-    },
-    {
       to: '/accommodation',
+      dataTestid: '',
+      target: '',
+      className: '',
+      img: "/navImg2",
       name: "Accommodation",
     },
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: '/restaurant',
+      img: "/navImg3",
       name: 'Petal Restaurant'
     },
+
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: "/bar",
+      img: "/navImg4",
       name: "Nectar Bar"
     },
+
     {
+      dataTestid: '',
+      target: '',
+      className: '',
       to: "/spa",
+      img: "/navImg5",
       name: "Spa Room"
+    },
+    {
+      dataTestid: 'linkElement',
+      target: '_self',
+      className: 'Y3Mib0',
+      to: '?sbe_internalLink',
+      img: "/navImg1",
+      name: "About Us",
     },
   ];
 
@@ -47,7 +69,7 @@ const Footer = () => {
           <div className={"flex flex-col justify-between"}>
             <ul className={"flex flex-col gap-[20px] mb-auto"}>
               {navItems.map((item, index) => (
-                <li key={index}><a className={"uppercase"} href={item.to}>{item.name}</a></li>
+                <li key={index}><a className={`uppercase ${item.className}`} data-testid={item.dataTestid} target={item.target} href={item.to}>{item.name}</a></li>
               ))}
             </ul>
             {/* <div className={"hidden"}>

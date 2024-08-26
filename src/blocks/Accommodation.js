@@ -1,51 +1,12 @@
 import React from 'react';
 import SectionHeader from "../components/ui/SectionHeader";
-import Button from "../components/ui/Button";
 import Slider from "../components/ui/SwiperBlock";
-import {SwiperSlide} from "swiper/react";
-import {Link} from "react-router-dom";
 import BookNow from "../components/ui/BookNow";
+import {accommodationData} from "../data/accod";
 
 
 function Accommodation(props) {
-  const accommodationData = [
-    {
-      price: '$522.00',
-      title: 'JUNIOR SUITE KING / SOFA QUEEN',
-      img: '/accommodation1.jpg',
-      subtitle: 'Sleeps up to 4',
-    },
-    {
-      price: '$450.00',
-      title: 'Two Queens Deluxe',
-      img: '/accommodation2.jpg',
-      subtitle: 'Sleeps up to 4',
-    },
-    // {
-    //   price: '$486.00',
-    //   title: 'KING DELUXE',
-    //   img: '/accommodation3.jpg',
-    //   subtitle: 'Sleeps up to 2',
-    // },
-    {
-      price: '$486.00',
-      title: 'IRIS SUITE KING / SOFA QUEEN',
-      img: '/accommodation4.jpg',
-      subtitle: 'Sleeps up to 2',
-    },
-    {
-      price: '$486.00',
-      title: 'CORNER DELUXE TWO QUEENS',
-      img: '/accommodation5.jpg',
-      subtitle: 'Sleeps up to 2',
-    },
-    {
-      price: '$486.00',
-      title: 'KING DELUXE ADA',
-      img: '/accommodation6.jpg',
-      subtitle: 'Sleeps up to 2',
-    },
-  ];
+  const accommodations = accommodationData('accommodation');
 
   return (
     <div className={"bg-gold lg:py-[216px] py-[100px]"}>
@@ -57,14 +18,13 @@ function Accommodation(props) {
           title={'Accommodation'}
         />
 
-        <Slider slidesData={accommodationData}/>
+        <Slider slidesData={accommodations}/>
 
         <div className={"mt-[80px] mx-auto flex justify-center"}>
           <BookNow
             color={"white"}
           />
         </div>
-
       </div>
     </div>
   );

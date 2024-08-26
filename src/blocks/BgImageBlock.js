@@ -1,9 +1,8 @@
 import React from 'react';
 import Button from "../components/ui/Button";
 import Arrow from "../components/icon/Arrow";
-import {Link} from "react-router-dom";
-import Image from "../components/ui/Image";
 import Animation from '../components/Animation';
+import clsx from "clsx";
 
 function BgImageBlock({bg, topImg,noWebp, children,href = '', hideBtn}) {
   return (
@@ -12,7 +11,7 @@ function BgImageBlock({bg, topImg,noWebp, children,href = '', hideBtn}) {
         src={bg}
         className={"w-[100%]  h-full object-cover absolute top-0 left-1/2 translate-x-[-50%]"}
       />
-      <div className="container h-full flex flex-col justify-between relative z-10 items-center md:min-h-[680px] min-h-[580px] gap-[20px]">
+      <div className={clsx("container h-full flex flex-col justify-between relative z-10 items-center md:min-h-[680px] min-h-[580px] gap-[20px]")}>
         {topImg
           ? <img  src={topImg} alt="topImg" className={"w-fit mx-auto max-w-[169px]"}/>
           : <div></div>
