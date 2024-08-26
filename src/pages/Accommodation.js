@@ -54,7 +54,7 @@ function Accommodation(props) {
         a closet.
       </BlockT>
 
-      <BgImage img={'bg5.jpg'}>
+      <BgImage img={'/bg5.jpg'}>
         <Animation>
           <div className={"md:text-[30px] text-[18px] md:max-w-fit max-w-[205px] text-center leading-normal max-w-[771px]"}>
             Sink into our plush, luxuriously appointed bedding, which promises a restful night's sleep like no other.

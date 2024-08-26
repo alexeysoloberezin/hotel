@@ -2,20 +2,23 @@ import React from 'react';
 import {Autoplay} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Image from "../components/ui/Image";
+import Animation from "../components/Animation";
 
 function AboutBlock({imgTemplate}) {
   const arr = [1,1,1]
   return (
-    <div className={"bg-gold py-[200px] text-black text-center"}>
+    <div className={"bg-gold lg:py-[200px] py-[100px] text-black md:text-center"}>
       <div className="container">
-        <div className={'text-[50px] leading-snug font2 mb-[50px]'}>Welcome to IRIS HOTEL Boston</div>
-        <p className={"max-w-[552px] mx-auto"}> your ideal choice for a comfortable and stylish stay in Boston. We take pride in
-          providing our guests with
-          an unforgettable experience through exceptional service and a unique atmosphere</p>
+        <Animation>
+          <div className={'text-[50px] leading-snug font2 md:mb-[50px] mb-[30px]'}>Welcome to IRIS HOTEL Boston</div>
+        </Animation>
+        <Animation>
+          <p className={"max-w-[552px] mx-auto"}>Your ideal choice for a comfortable and stylish stay in Boston, we take pride in providing our guests with an unforgettable experience through exceptional service and a unique atmosphere.</p>
+        </Animation>
 
         <Swiper
           modules={[Autoplay]}
-          className={"!mb-[0px] mt-[70px] md:!overflow-hidden !overflow-visible"}
+          className={"!mb-[0px] md:mt-[70px] mt-[50px] md:!overflow-hidden !overflow-visible"}
           loop={true}
           autoplaySpeed={400}
           autoplay={{

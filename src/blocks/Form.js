@@ -156,7 +156,7 @@ const Form = (props) => {
             'bg-red': statusMessage === 'error',
           })}
       >
-        {statusMessage === 'success' ? 'Your request has been successfully completed' : 'Sending error'}
+        {statusMessage === 'success' ? 'Your request has been successfully completed' : 'Error sending form'}
       </div>
     </div>
   );

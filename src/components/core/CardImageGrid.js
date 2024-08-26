@@ -1,0 +1,59 @@
+import React from 'react';
+import clsx from "clsx";
+import Animation from "../Animation";
+
+function CardImage({img, title,text, link, linkText,classes }) {
+  return (
+    <Animation animationClass={'w-full h-full'}>
+      <div className={clsx({
+          "h-full": !classes
+        },
+        "flex flex-col min-h-[250px] md:aspect-auto aspect-square w-full justify-end px-[20px] py-[15px]",
+        classes)} style={{background: `url(${img}) center/cover no-repeat`}}>
+        <div className={"text-[24px] mb-[15px]"}>{title}</div>
+        <div>
+          {text}
+          <a href={link} className={"underline pl-[2px] hover:no-underline underline-offset-2"}>[{linkText}]</a>
+        </div>
+      </div>
+    </Animation>
+  )
+}
+
+function CardImageGrid({title, text, data}) {
+  return (
+    <div className={"bg-[#0E4840] lg:py-[200px] py-[100px]"}>
+      <div className="container">
+        <div className={"grid lg:grid-cols-[33%_55%] mb-[50px]"}>
+          <div className={'text-[50px] leading-snug font2 '}>{title}</div>
+          <div className={"pt-[8px] max-w-[466px]"}>{text}
+          </div>
+        </div>
+        <div className={"grid lg:grid-cols-3  gap-[20px]"}>
+          <div className={"flex flex-col gap-[20px]"}>
+            <CardImage
+              classes={'h-[283px]'}
+              {...data[0]}
+            />
+            <CardImage
+              classes={'h-[319px]'}
+              {...data[1]}
+            />
+          </div>
+          <div className={""}>
+            <CardImage
+              {...data[2]}
+            />
+          </div>
+          <div>
+            <CardImage
+              {...data[3]}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default CardImageGrid;
