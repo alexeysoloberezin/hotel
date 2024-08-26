@@ -36,7 +36,7 @@ function Accommodation(props) {
 
       <ZBlock
         title={'Iris Suite'}
-        imgTemplate={'/accom{**}.jpg'}
+        imgTemplate={'/suite{**}.jpg'}
         text1={'Our accommodations offer a range of options, including our exquisite Iris Suite, complete with  a Jacuzzi and a fireplace, making it the perfect choice for honeymooners and couples celebrating their special day'}
         text2={'You can even arrange a rehearsal dinner in our Petal Restaurant, where delicious cuisine meets artistic ambiance'}
       >
