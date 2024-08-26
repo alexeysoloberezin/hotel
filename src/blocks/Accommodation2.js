@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from "swiper/modules";
 import Image from "../components/ui/Image";
-import {accommodationData} from "../data/accod";
+import {accommodationDataBig} from "../data/accod";
 import Animation from "../components/Animation";
 
 function Accommodation2(props) {
-  const accommodations = accommodationData('roomBig');
+  const accommodations = accommodationDataBig('roomBig');
   const [currentTitle, setCurrentTitle] = useState(accommodations[0]?.title);
 
   const handleSlideChange = (swiper) => {
