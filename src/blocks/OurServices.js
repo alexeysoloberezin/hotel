@@ -5,7 +5,7 @@ import Animation from "../components/Animation";
 function Item({title, children, img}){
   return (
     <div className={"flex lg:flex-col flex-col-reverse"}>
-      <Image src={img} alt={'Our Service Img'} className={'aspect-square md:aspect-auto object-cover'} noWebp={true} ></Image>
+      <Image src={img} alt={'Our Service Img'} className={'aspect-square md:aspect-auto md:h-[282px] md:w-full object-cover'} noWebp={true} ></Image>
       <Animation delay={'.2s'} className={'text-[34px] lg:mt-[32px] mb-[20px] lg:order-none order-3'}>{title}</Animation>
       <Animation delay={'.4s'} className={"lg:mb-0 mb-[30px]"}>{children}</Animation>
     </div>

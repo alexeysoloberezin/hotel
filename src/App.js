@@ -4,7 +4,6 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from "./pages/Home";
-import AnimatedCursor from "react-animated-cursor";
 import Restaurant from "./pages/Restaurant";
 import Bar from "./pages/Bar";
 import Accommodation from "./pages/Accommodation";
