@@ -13,7 +13,9 @@ function CardImage({img, title,text, link, linkText,classes }) {
         <div className={"text-[24px] mb-[15px]"}>{title}</div>
         <div>
           {text}
-          <a href={link} className={"underline pl-[2px] hover:no-underline underline-offset-2"}>[{linkText}]</a>
+          {link &&
+            <a href={link} className={"underline pl-[2px] hover:no-underline underline-offset-2"}>[{linkText}]</a>
+          }
         </div>
       </div>
     </Animation>
@@ -45,9 +47,14 @@ function CardImageGrid({title, text, data}) {
               {...data[2]}
             />
           </div>
-          <div>
+          <div className={"flex flex-col gap-[20px]"}>
             <CardImage
+              classes={'h-[283px]'}
               {...data[3]}
+            />
+            <CardImage
+              classes={'h-[319px]'}
+              {...data[4]}
             />
           </div>
         </div>

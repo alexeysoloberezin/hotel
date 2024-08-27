@@ -69,6 +69,13 @@ function AboutUs(props) {
             text: "An engaging destination for the whole family with marine life exhibits and interactive displays.",
             link: "https://www.neaq.org/",
             linkText: "Check out the New England Aquarium"
+          },
+          {
+            img: "/explore5.jpg",
+            title: 'The Boston Public Library',
+            text: "One of the largest public libraries in the United States. The library building is one of the finest examples of neo-Renaissance architecture in America",
+            link: "",
+            linkText: ""
           }
         ]}
       />
