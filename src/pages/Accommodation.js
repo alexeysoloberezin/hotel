@@ -56,7 +56,7 @@ function Accommodation(props) {
 
       <BgImage img={'/bg5.jpg'}>
         <Animation>
-          <div className={"md:text-[30px] text-[18px] md:max-w-fit max-w-[205px] text-center leading-normal max-w-[771px]"}>
+          <div className={"md:text-[30px] text-[18px] md:max-w-[771px] max-w-[205px] text-center leading-normal max-w-[771px]"}>
             Sink into our plush, luxuriously appointed bedding, which promises a restful night's sleep like no other.
             Wrap yourself in the sumptuous bathrobes and slip into the soft slippers provided for your ultimate
             relaxation.

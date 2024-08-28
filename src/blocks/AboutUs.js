@@ -20,7 +20,7 @@ function AboutUs(props) {
           data={[
            "Gym",
             "Spa room",
-            "Cozy lobby and polite staff",
+            "Front Desk Lobby",
             "Restaurant",
             "Bar"
           ]}

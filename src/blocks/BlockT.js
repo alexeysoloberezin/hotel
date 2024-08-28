@@ -20,18 +20,18 @@ function BlockT({title, children, imgTemplate}) {
           </div>
           {!isMob ? (
             <div className={"flex gap-[20px]"}>
-              <div className={"flex flex-col w-[310px] gap-[20px]"}>
+              <div className={"flex flex-col w-[333px] gap-[20px]"}>
                 <Image
                   alt={"image"}
                   noWebp={true}
-                  className={"h-[196px] w-full"}
+                  className={"h-[252px] w-full object-cover"}
                   src={imgTemplate.replace('{**}', 1)}
                 ></Image>
                 <Image
                   alt={"image"}
-                  className={"h-[196px] w-full"}
+                  className={"h-[255px] w-full object-cover"}
                   noWebp={true}
-                  src={imgTemplate.replace('{**}', 3)}
+                  src={imgTemplate.replace('{**}', 2)}
                 ></Image>
               </div>
               <div>
@@ -40,7 +40,7 @@ function BlockT({title, children, imgTemplate}) {
                   noWebp={true}
                   className={"h-full w-full object-cover"}
                   animationClass={"h-full w-[420px]"}
-                  src={imgTemplate.replace('{**}', 2)}
+                  src={imgTemplate.replace('{**}', 3)}
                 ></Image>
               </div>
             </div>

@@ -48,8 +48,8 @@ function Spa(props) {
         title={'Our Service'}
         arr={[
           {
-            title: 'Hydro Therapy',
-            text: 'Relieve discomfort and promote physical well-being',
+            title: 'Deep Cleansing Facial',
+            text: 'Focuses on removing impurities and unclogging pores. It often includes a steam treatment, exfoliation, and extractions.',
             img: '/ourService_1.png'
           },
           {

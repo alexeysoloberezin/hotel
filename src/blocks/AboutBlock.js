@@ -20,11 +20,9 @@ function AboutBlock({imgTemplate}) {
           modules={[Autoplay]}
           className={"!mb-[0px] md:mt-[70px] mt-[50px] md:!overflow-hidden !overflow-visible"}
           loop={true}
-          preloadImages={false}
-          watchSlidesProgress={true}
           autoplaySpeed={400}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           slidesPerView={1}
