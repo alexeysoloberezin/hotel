@@ -74,9 +74,31 @@ function AboutUs(props) {
             img: "/explore5.jpg",
             title: 'The Boston Public Library',
             text: "One of the largest public libraries in the United States. The library building is one of the finest examples of neo-Renaissance architecture in America",
-            link: "",
-            linkText: ""
-          }
+            link: "https://maps.app.goo.gl/Q2DKM77bbQEhtBbj7?g_st=com.google.maps.preview.copy",
+            linkText: "Visitor The Boston Public Library"
+          },
+          {
+            img: "/explore6.jpg",
+            title: 'Coolidge Corner Theatre',
+            text: "The Coolidge Corner Theater is a nonprofit independent film center and community cultural center in the Coolidge Corner neighborhood of Brooklyn",
+            link: "https://www.google.com/maps/place/Coolidge+Corner+Theatre/@42.3426766,-71.1224952,17z/data=!3m1!4b1!4m6!3m5!1s0x89e379bfbf3bb16b:0xb1a8317019f31a71!8m2!3d42.3426766!4d-71.1224952!16s%2Fm%2F0cz840w?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D",
+            linkText: "Visitor Coolidge Corner Theatre"
+          },
+          {
+            img: "/explore7.jpg",
+            title: 'View Boston',
+            text: "View Boston is an observatory that offers views of the city from the top three levels of the iconic Prudential Tower",
+            link: "https://www.google.com/maps?q=View+Boston,+800+Boylston+St+Floor+52,+Boston,+MA+02199&ftid=0x89e37b541b934729:0xfeeeb662fb79f2a2&entry=gps&lucs=,94224825,94227247,94227248,47071704,47069508,94218641,94203019,47084304,94208458,94208447&g_ep=CAISDTYuMTI5LjEuODA5MjAYACCenQoqWiw5NDIyNDgyNSw5NDIyNzI0Nyw5NDIyNzI0OCw0NzA3MTcwNCw0NzA2OTUwOCw5NDIxODY0MSw5NDIwMzAxOSw0NzA4NDMwNCw5NDIwODQ1OCw5NDIwODQ0N0ICVVM%3D&g_st=com.google.maps.preview.copy",
+            linkText: "Visitor View Boston"
+          },
+          {
+            img: "/explore8.jpg",
+            title: 'Fenway Park',
+            text: "Baseball stadium near Kenmore Square in Boston, Massachusetts. The Boston Red Sox have played their home games at this stadium Fenway Park ",
+            link: "https://www.google.com/maps?q=Fenway+Park,+4+Jersey+St,+Boston,+MA+02215&ftid=0x89e379f63f253f6f:0xa2800dcb647a5504&entry=gps&lucs=,94224825,94227247,94227248,47071704,47069508,94218641,94203019,47084304,94208458,94208447&g_ep=CAISDTYuMTI5LjEuODA5MjAYACCs3wEqWiw5NDIyNDgyNSw5NDIyNzI0Nyw5NDIyNzI0OCw0NzA3MTcwNCw0NzA2OTUwOCw5NDIxODY0MSw5NDIwMzAxOSw0NzA4NDMwNCw5NDIwODQ1OCw5NDIwODQ0N0ICVVM%3D&g_st=com.google.maps.preview.copy",
+            linkText: "Visitor Fenway Park"
+          },
+
         ]}
       />
 

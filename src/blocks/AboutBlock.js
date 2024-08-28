@@ -5,7 +5,7 @@ import Image from "../components/ui/Image";
 import Animation from "../components/Animation";
 
 function AboutBlock({imgTemplate}) {
-  const arr = [1,1,1]
+  const arr = [1,1,1,1,1,1]
   return (
     <div className={"bg-gold lg:py-[200px] py-[100px] text-black md:text-center"}>
       <div className="container">

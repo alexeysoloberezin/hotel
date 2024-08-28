@@ -22,10 +22,10 @@ function ContactUs(props) {
               <div><b>Check-out:</b> by 11:00 AM</div>
             </div>
             <div>
-              <b>Phone:</b> [your phone number]
+              <b>Phone:</b> <a href="tel:+18575766900">+1 857 576-6900</a>
             </div>
             <div>
-              <b>Email:</b> [your email]
+              <b>Email:</b> <a href="mailto:info@irishotelboston.com">info@irishotelboston.com</a>
             </div>
           </div>
         </div>

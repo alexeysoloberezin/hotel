@@ -58,6 +58,20 @@ function CardImageGrid({title, text, data}) {
             />
           </div>
         </div>
+        <div className={"grid lg:grid-cols-3 gap-[20px] mt-[20px]"}>
+          <CardImage
+            classes={'h-[319px]'}
+            {...data[5]}
+          />
+          <CardImage
+            classes={'h-[319px]'}
+            {...data[6]}
+          />
+          <CardImage
+            classes={'h-[319px]'}
+            {...data[7]}
+          />
+        </div>
       </div>
     </div>
   );

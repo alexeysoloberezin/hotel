@@ -16,14 +16,13 @@ function OurServices(props) {
   return (
     <div className={"bg-dark text-white lg:py-[200px] py-[100px]"}>
       <div className="container">
-        <Animation className={'text-[50px] leading-snug font2 '}>Our Services</Animation>
+        <Animation className={'text-[50px] leading-snug font2 '}>Amenities</Animation>
         <div className={"grid lg:grid-cols-3 lg:gap-[20px] gap-[55px] md:mt-[50px] mt-[30px]"}>
           <Item
             img={'/ourServices1.jpg'}
-            title={'Restaurant and Bar'}
+            title={'Bar Nectar'}
           >
-            Enjoy exquisite dishes and a variety of drinks at&nbsp;our&nbsp;restaurant and bar, Nectar, where each morning begins with aromatic coffee and tea
-          </Item>
+            Enjoy exquisite dishes and a variety of drinks  at our restaurant and bar, Nectar, where each morning begins with aromatic coffee and tea</Item>
           <Item
             img={'/ourServices2.jpg'}
             title={'Spa'}
@@ -32,9 +31,27 @@ function OurServices(props) {
           </Item>
           <Item
             img={'/ourServices3.jpg'}
-            title={'Parking'}
+            title={'Petal Restaurant'}
           >
-            For your convenience, we offer <br/> parking at a rate of $60 per day
+            Indulge in relaxation at our spa, offering  a wide range of facial and body treatments
+          </Item>
+          <Item
+            img={'/ourServices4.jpg'}
+            title={'Fitness Center'}
+          >
+            Stay active during your stay with our fully equipped gym, featuring everything you need for a great workout
+          </Item>
+          <Item
+            img={'/ourServices5.jpg'}
+            title={'Board room'}
+          >
+            We also offer a board room, perfect for formal meetings and presentations
+          </Item>
+          <Item
+            img={'/ourServices6.jpg'}
+            title={'Business conference'}
+          >
+            For those who need to stay productive, our business lounge provides a quiet space to work on your computer and hold private meetings.
           </Item>
         </div>
       </div>

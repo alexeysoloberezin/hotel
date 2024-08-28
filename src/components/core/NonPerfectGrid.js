@@ -21,9 +21,9 @@ function NonPerfectGrid({imgTemplate}) {
             )} src={imgTemplate.replace('{**}', 3)} noWebp={true} alt="accom-img"></Image>
           </div>
           <div className={"flex flex-col gap-[20px]"}>
-            <Image className={clsx("w-full h-full object-cover",
+            <Image className={clsx("w-full h-[307px] object-cover",
             )} src={imgTemplate.replace('{**}', 4)} noWebp={true} alt="accom-img"></Image>
-            <Image className={clsx("w-full h-full object-cover",
+            <Image className={clsx("w-full h-[271px] object-cover",
             )} src={imgTemplate.replace('{**}', 5)} noWebp={true} alt="accom-img"></Image>
           </div>
         </div>
