@@ -51,10 +51,10 @@ const Header = ({transparent}) => {
       name: "Spa Room"
     },
     {
-      dataTestid: 'linkElement',
-      target: '_self',
-      className: 'Y3Mib0',
-      to: '?sbe_internalLink',
+      dataTestid: '',
+      target: '',
+      className: '',
+      to: '/about',
       img: "/navImg1",
       name: "About Us",
     },
