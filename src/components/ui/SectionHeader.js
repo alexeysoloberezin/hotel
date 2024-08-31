@@ -26,7 +26,7 @@ function SectionHeader({title, text, btnHref,bigMob, color = 'black', mobImage, 
       <Animation  delay={'.2s'}>
         <p className={clsx(classText)}>{text}</p>
       </Animation>
-      {mobImage && <Image src={mobImage} noWebp={true} alt="" className={"max-h-[600px] object-cover lg:hidden"}/>}
+      {mobImage && <Image src={mobImage} noWebp={true} alt="" className={"max-h-[600px] min-h-[340px] object-cover lg:hidden"}/>}
       {btnHref
         ? <a href={btnHref} className={"lg:mx-0 lg:mt-0 mt-[30px] mx-auto"}>
           <Button

@@ -62,8 +62,26 @@
       }
     }
   }
+
+
 }
 
+
+.defSwiper{
+  .swiper-button-prev{
+    left: 10px;
+  }
+  .swiper-button-prev, .swiper-button-next{
+    top: 50%;
+    user-select: none;
+    opacity: 0.4;
+    transform: translateY(-50%);
+    transition: .3s;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
 .sliderTitle{
   max-width: calc(100% - 570px - 185px);
 }
