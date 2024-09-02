@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 function OurMenu(props) {
   const isDesktop = useMediaQuery(false, '(min-width: 1340px)')
   const arr = [1, 1, 1, 1,1]
+
   return (
     <div className={"bg-dark lg:py-[200px] py-[100px]"}>
       <div className={"container lg:flex justify-between gap-[50px]"}>
