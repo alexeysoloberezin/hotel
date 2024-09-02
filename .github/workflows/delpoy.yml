@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh -o StrictHostKeyChecking=no user@your_server_ip << 'EOF'
+          ssh -o StrictHostKeyChecking=no root@103.54.58.185 << 'EOF'
             cd /var/www/iris/
             git pull origin main
             # Запуск команд для деплоя (например, перезапуск сервиса, компиляция кода и т.д.)
