@@ -16,17 +16,18 @@ jobs:
       - name: Install expect
         run: sudo apt-get update && sudo apt-get install -y expect
 
-      - name: Setup SSH with passphrase
+      - name: Start SSH agent and add key
         run: |
-          # Создаем скрипт для передачи пароля
-          echo "set timeout -1" > /tmp/ssh-add.exp
-          echo "spawn ssh-add <(echo \"$SSH_PRIVATE_KEY\" | base64 -d)" >> /tmp/ssh-add.exp
-          echo "expect \"Enter passphrase for\"" >> /tmp/ssh-add.exp
-          echo "send \"$SSH_PASSPHRASE\r\"" >> /tmp/ssh-add.exp
-          echo "expect eof" >> /tmp/ssh-add.exp
+          # Запуск SSH-агента
+          eval $(ssh-agent -s)
           
-          # Запускаем скрипт
-          expect /tmp/ssh-add.exp
+          # Использование expect для добавления ключа с паролем
+          expect <<- DONE
+          spawn ssh-add /dev/stdin <<< "$SSH_PRIVATE_KEY"
+          expect "Enter passphrase"
+          send "$SSH_PASSPHRASE\r"
+          expect eof
+          DONE
         env:
           SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
