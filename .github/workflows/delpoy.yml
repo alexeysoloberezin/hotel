@@ -13,10 +13,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Install expect
+        run: sudo apt-get update && sudo apt-get install -y expect
+
+      - name: Setup SSH with passphrase
+        run: |
+          # Создаем скрипт для передачи пароля
+          echo "set timeout -1" > /tmp/ssh-add.exp
+          echo "spawn ssh-add <(echo \"$SSH_PRIVATE_KEY\" | base64 -d)" >> /tmp/ssh-add.exp
+          echo "expect \"Enter passphrase for\"" >> /tmp/ssh-add.exp
+          echo "send \"$SSH_PASSPHRASE\r\"" >> /tmp/ssh-add.exp
+          echo "expect eof" >> /tmp/ssh-add.exp
+          
+          # Запускаем скрипт
+          expect /tmp/ssh-add.exp
+        env:
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy to server
         run: |
