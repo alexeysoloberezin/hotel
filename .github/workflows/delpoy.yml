@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main  # Или другая ветка, которую вы используете для деплоя
+      - main  # Укажите ветку, которую вы используете для деплоя
 
 jobs:
   deploy:
@@ -13,31 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install expect
-        run: sudo apt-get update && sudo apt-get install -y expect
-
-      - name: Start SSH agent and add key
+      - name: Set up SSH
         run: |
-          # Запуск SSH-агента
-          eval $(ssh-agent -s)
-          
-          # Использование expect для добавления ключа с паролем
-          expect <<- DONE
-          spawn ssh-add /dev/stdin <<< "$SSH_PRIVATE_KEY"
-          expect "Enter passphrase"
-          send "$SSH_PASSPHRASE\r"
-          expect eof
-          DONE
-        env:
-          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 103.54.58.185 >> ~/.ssh/known_hosts
 
       - name: Deploy to server
         run: |
           ssh -o StrictHostKeyChecking=no root@103.54.58.185 << 'EOF'
             cd /var/www/iris/
             git pull origin main
-            # Запуск команд для деплоя (например, перезапуск сервиса, компиляция кода и т.д.)
             npm install
             npm run build
           EOF
