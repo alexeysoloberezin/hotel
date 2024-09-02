@@ -1,0 +1,29 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main  # Или другая ветка, которую вы используете для деплоя
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to server
+        run: |
+          ssh -o StrictHostKeyChecking=no user@your_server_ip << 'EOF'
+            cd /var/www/iris/
+            git pull origin main
+            # Запуск команд для деплоя (например, перезапуск сервиса, компиляция кода и т.д.)
+            npm install
+            npm run build
+          EOF
