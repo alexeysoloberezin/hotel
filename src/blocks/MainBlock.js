@@ -11,6 +11,10 @@ function MainBlock({skipperIsReady, onInitSkipper}) {
       video={'/examples/videoplayback.mp4'}
       videoWebM={'/examples/videoplayback.webm'}
       mobileGif={'/IMG_4931.gif'}
+      preview={{
+        mob: '/mainPreview_mob.jpg',
+        desc: '/mainPreview.jpg'
+      }}
       description={' where design meets comfort'}
     >
       <div className={clsx('duration-300 transition',{'opacity-0': !skipperIsReady})}><BookNow /></div>

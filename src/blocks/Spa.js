@@ -11,7 +11,7 @@ function Spa(props) {
           btnHref={'/spa'}
           color={'black'}
           mobImage={'/spa3.png'}
-          title={'Lash Lamination'}
+          title={'Iris Spa Room'}
         />
         <GridBlock
           hideMob={true}

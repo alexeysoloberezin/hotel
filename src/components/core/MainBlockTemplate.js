@@ -3,26 +3,42 @@ import Header from "./Header";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import Animation from '../Animation';
 
-function MainBlockTemplate({video,videoWebM, image,mobileGif, title, description, children}) {
+function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, description, children}) {
   const isMobile = useMediaQuery(false, '(max-width: 600px)');
+  const [imageSrc, setImageSrc] = useState(preview.mob);
+
+
+  useEffect(() => {
+    const img = new Image();
+
+    if (isMobile && mobileGif) {
+      img.onload = () => {
+        setImageSrc(mobileGif);
+      };
+
+      img.src = mobileGif;
+    }
+  }, [isMobile, mobileGif, preview]);
 
   return (
     <div>
       <div className={"h-screen relative flex flex-col justify-center items-center pt-[80px] pb-[80px]"}>
         <div>
-          {isMobile && mobileGif ? (
-            <img
-              src={mobileGif}
-              alt=""
-              className="absolute top-0 left-1/2 translate-x-[-50%] w-fit max-w-fit h-full"
-            />
-          ) : video ? (
-            <video autoPlay  preload="auto" loop muted className="absolute top-0 left-0 w-full h-full object-cover">
+          {image ? (
+            <img src={image} alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
+          ) : video && !isMobile ? (
+            <video
+              autoPlay
+              preload="auto"
+              loop
+              muted
+              className={`absolute top-0 left-0 w-full h-full object-cover`}
+            >
               <source src={videoWebM} type="video/webm" />
               <source src={video} type="video/mp4" />
             </video>
           ) : (
-            <img src={image} className="absolute top-0 left-0 w-full h-full object-cover" alt="" />
+            <img src={imageSrc} alt=""  className="absolute top-0 left-0 w-full h-full object-cover" />
           )}
 
           <div className={"overlay-after"}></div>
