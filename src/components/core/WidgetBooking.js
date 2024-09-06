@@ -67,7 +67,7 @@ const SkipperWidget = ({onInitSkipper}) => {
           onInitSkipper()
         }
       };
-    }, 2000)
+    }, 0)
 
     return () => {
       // Удаляем скрипты и стили при размонтировании компонента
