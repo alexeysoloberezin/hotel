@@ -52,7 +52,7 @@ function App() {
       <Footer/>
 
       <SkipperWidget onInitSkipper={initSkipper}/>
-      <Loader/>
+      {/*<Loader/>*/}
       <LoadChatScript />
       {/* {isDesktop && (
         <AnimatedCursor
