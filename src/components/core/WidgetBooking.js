@@ -12,6 +12,7 @@ const SkipperWidget = ({onInitSkipper}) => {
       script1.src = "https://widget.skipperhospitality.com/cash-sdk.umd.js";
       script1.async = true;
       script1.type = "module";
+      script1.defer = true;
       document.head.appendChild(script1);
   
       link1 = document.createElement("link");
@@ -70,7 +71,6 @@ const SkipperWidget = ({onInitSkipper}) => {
     }, 0)
 
     return () => {
-      // Удаляем скрипты и стили при размонтировании компонента
       script1 && document.head.removeChild(script1);
       link1 && document.head.removeChild(link1);
       link2 && document.head.removeChild(link2);
