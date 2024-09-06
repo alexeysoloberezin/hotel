@@ -8,9 +8,10 @@ function MainBlock({skipperIsReady, onInitSkipper}) {
   return (
     <MainBlockTemplate
       title={'Iris Hotel Boston'}
-      video={'/examples/videoplayback.mp4'}
-      videoWebM={'/examples/videoplayback.webm'}
-      mobileGif={'/IMG_4931.gif'}
+      image={'/bg1.jpg'}
+      // video={'/examples/videoplayback.mp4'}
+      // videoWebM={'/examples/videoplayback.webm'}
+      // mobileGif={'/IMG_4931.gif'}
       description={' where design meets comfort'}
     >
       <div className={clsx('duration-300 transition',{'opacity-0': !skipperIsReady})}><BookNow /></div>
