@@ -18,19 +18,20 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
 
       img.src = mobileGif;
     }
-  }, [isMobile, mobileGif, preview]);
+  }, [isMobile, mobileGif]);
 
   return (
     <div>
       <div className={"h-screen relative flex flex-col justify-center items-center pt-[80px] pb-[80px]"}>
         <div>
           {image ? (
-            <img src={image} alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
+            <img src={image} alt="" fetchpriority="high" className="absolute top-0 left-0 w-full h-full object-cover" />
           ) : video && !isMobile ? (
             <video
               autoPlay
               preload="auto"
               loop
+              fetchpriority="high"
               muted
               className={`absolute top-0 left-0 w-full h-full object-cover`}
             >
@@ -38,7 +39,7 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
               <source src={video} type="video/mp4" />
             </video>
           ) : (
-            <img src={imageSrc} alt=""  className="absolute top-0 left-0 w-full h-full object-cover" />
+            <img src={imageSrc} alt="" fetchpriority="high" className="absolute top-0 left-0 w-full h-full object-cover" />
           )}
 
           <div className={"overlay-after"}></div>

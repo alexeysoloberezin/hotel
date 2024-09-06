@@ -36,7 +36,7 @@ function Loader(props) {
           'opacity-0 pointer-events-none': end
         })}
       >
-        <img src={imageSrc} alt="" className="mb-4 "/>
+        <img src={imageSrc} alt=""  fetchpriority="high" className="mb-4 "/>
 
         <div className={clsx("md:w-[372px] w-[320px] h-[6px] loader-bar-wrp rounded-full block overflow-hidden")}>
           <div className={clsx("loader-bar h-[6px] ", {
