@@ -14,7 +14,6 @@ import Loader from "./components/core/Loader";
 import Footer from "./components/core/Footer";
 import TestVideos from "./pages/TestVideos";
 import LoadChatScript from './components/core/LoadChatScript';
-import SkipperWidget from './components/core/WidgetBooking'
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
@@ -51,7 +50,7 @@ function App() {
 
       <Footer/>
 
-      <SkipperWidget onInitSkipper={initSkipper}/>
+      {/*<SkipperWidget onInitSkipper={initSkipper}/>*/}
       <Loader/>
       <LoadChatScript />
       {/* {isDesktop && (
