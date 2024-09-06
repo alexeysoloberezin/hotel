@@ -8,9 +8,10 @@ function MainBlock({skipperIsReady, onInitSkipper}) {
   return (
     <MainBlockTemplate
       title={'Iris Hotel Boston'}
-      video={'/examples/videoplayback.mp4'}
-      videoWebM={'/examples/videoplayback.webm'}
-      mobileGif={'/IMG_4931.gif'}
+      image={'/mainPreview_mob.jpg'}
+      // video={'/examples/videoplayback.mp4'}
+      // videoWebM={'/examples/videoplayback.webm'}
+      // mobileGif={'/IMG_4931.gif'}
       preview={{
         mob: '/mainPreview_mob.jpg',
         desc: '/mainPreview.jpg'
