@@ -26,42 +26,42 @@ function OurMenu(props) {
             in dishes that celebrate the season's finest ingredients, expertly prepared by our talented culinary
             team.</p>
         </div>
-        <div className={" lg:w-[63%] lg:mt-0 mt-[30px] gap-[10px] shrink-0 defSwiper"}>
-          <Swiper
-            modules={[Autoplay, Navigation]}
-            navigation={true}
-            className={"!mb-[0px] mt-[0px]"}
-            loop={true}
-            autoplaySpeed={400}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
-            slidesPerView={1}
-            spaceBetween={20}
-            breakpoints={{
-              1024: {
-                slidesPerView: 2,
-                spaceBetween: 20
-              },
-            }}
-          >
-            {arr.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div className="slide-content min-h-[300px]">
-                  {isDesktop ? (
-                    <Zoom className="" onClick={(e) => e.preventDefault()}>
-                      <img src={`/menu${index + 1}.jpg`} className={""} alt="Menu 1"/>
-                    </Zoom>
-                  ) : (
-                    <img  src={`/menu${index + 1}.jpg`} className={""} alt="Menu 1"/>
-                  )}
+        {/*<div className={" lg:w-[63%] lg:mt-0 mt-[30px] gap-[10px] shrink-0 defSwiper"}>*/}
+        {/*  <Swiper*/}
+        {/*    modules={[Autoplay, Navigation]}*/}
+        {/*    navigation={true}*/}
+        {/*    className={"!mb-[0px] mt-[0px]"}*/}
+        {/*    loop={true}*/}
+        {/*    autoplaySpeed={400}*/}
+        {/*    autoplay={{*/}
+        {/*      delay: 3500,*/}
+        {/*      disableOnInteraction: false,*/}
+        {/*    }}*/}
+        {/*    slidesPerView={1}*/}
+        {/*    spaceBetween={20}*/}
+        {/*    breakpoints={{*/}
+        {/*      1024: {*/}
+        {/*        slidesPerView: 2,*/}
+        {/*        spaceBetween: 20*/}
+        {/*      },*/}
+        {/*    }}*/}
+        {/*  >*/}
+        {/*    {arr.map((item, index) => (*/}
+        {/*      <SwiperSlide key={index}>*/}
+        {/*        <div className="slide-content min-h-[300px]">*/}
+        {/*          {isDesktop ? (*/}
+        {/*            <Zoom className="" onClick={(e) => e.preventDefault()}>*/}
+        {/*              <img src={`/menu${index + 1}.jpg`} className={""} alt="Menu 1"/>*/}
+        {/*            </Zoom>*/}
+        {/*          ) : (*/}
+        {/*            <img  src={`/menu${index + 1}.jpg`} className={""} alt="Menu 1"/>*/}
+        {/*          )}*/}
 
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        {/*        </div>*/}
+        {/*      </SwiperSlide>*/}
+        {/*    ))}*/}
+        {/*  </Swiper>*/}
+        {/*</div>*/}
       </div>
     </div>
   );
