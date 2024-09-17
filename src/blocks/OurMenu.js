@@ -1,15 +1,10 @@
-import React, {useState} from 'react';
-import Zoom from 'react-medium-image-zoom';
+import React from 'react';
 import 'react-medium-image-zoom/dist/styles.css';
-import Image from "../components/ui/Image";
-import useMediaQuery from '../hooks/useMediaQuery';
-import {Autoplay, Navigation } from "swiper/modules";
-import {Swiper, SwiperSlide} from "swiper/react";
 import 'swiper/css/navigation';
 
 function OurMenu(props) {
-  const isDesktop = useMediaQuery(false, '(min-width: 1340px)')
-  const arr = [1, 1, 1, 1,1]
+  // const isDesktop = useMediaQuery(false, '(min-width: 1340px)')
+  // const arr = [1, 1, 1, 1]
 
   return (
     <div className={"bg-dark lg:py-[200px] py-[100px]"}>
@@ -26,7 +21,7 @@ function OurMenu(props) {
             in dishes that celebrate the season's finest ingredients, expertly prepared by our talented culinary
             team.</p>
         </div>
-        {/*<div className={" lg:w-[63%] lg:mt-0 mt-[30px] gap-[10px] shrink-0 defSwiper"}>*/}
+        {/*<div className={" lg:w-[65%] lg:mt-0 mt-[30px] gap-[10px] shrink-0 defSwiper"}>*/}
         {/*  <Swiper*/}
         {/*    modules={[Autoplay, Navigation]}*/}
         {/*    navigation={true}*/}
@@ -51,10 +46,10 @@ function OurMenu(props) {
         {/*        <div className="slide-content min-h-[300px]">*/}
         {/*          {isDesktop ? (*/}
         {/*            <Zoom className="" onClick={(e) => e.preventDefault()}>*/}
-        {/*              <img src={`/menu${index + 1}.jpg`} className={""} alt="Menu 1"/>*/}
+        {/*              <img src={`/menu/menu_${index + 1}.png`} className={""} alt="Menu 1"/>*/}
         {/*            </Zoom>*/}
         {/*          ) : (*/}
-        {/*            <img  src={`/menu${index + 1}.jpg`} className={""} alt="Menu 1"/>*/}
+        {/*            <img  src={`/menu/menu_${index + 1}.png`} className={""} alt="Menu 1"/>*/}
         {/*          )}*/}
 
         {/*        </div>*/}

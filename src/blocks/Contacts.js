@@ -1,7 +1,6 @@
 import React from 'react';
 import FaqItem from "../components/ui/FaqItem";
 import clsx from "clsx";
-import useIsRender from '../hooks/useIsRender';
 
 function ContactsBlock() {
   return (
@@ -157,10 +156,11 @@ function Contacts({showHotelInfo}) {
 
             <iframe 
               className={"aspect-video w-full lg:min-h-[550px] md:min-h-[400px] min-h-[250px]"}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.074592970278!2d-71.122327!3d42.340933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379be3ec50ab1%3A0x24633e9bd497a8b!2sIris%20Hotel%20Boston!5e0!3m2!1sen!2sus!4v1724361826199!5m2!1sen!2sus" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.074592970278!2d-71.122327!3d42.340933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379be3ec50ab1%3A0x24633e9bd497a8b!2sIris%20Hotel%20Boston!5e0!3m2!1sen!2sus!4v1724361826199!5m2!1sen!2sus"
+              allowFullScreen=""
+              title={'map'}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade">
             </iframe>
         </div> 
       </div>

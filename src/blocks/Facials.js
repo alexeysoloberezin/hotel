@@ -1,7 +1,6 @@
 import React from 'react';
 import SectionHeader from "../components/ui/SectionHeader";
 import clsx from "clsx";
-import Contacts from "./Contacts";
 import Image from "../components/ui/Image";
 import Animation from '../components/Animation';
 
@@ -132,6 +131,7 @@ confidence and vitality`,
         <div className={clsx(grid, 'md:mb-[165px] mb-[60px]')}>
           {arr.map((el, index) => (
             <FacialItem
+              key={el.title}
               text={el.text}
               title={el.title}
               time={el.time}
@@ -161,6 +161,7 @@ confidence and vitality`,
         <div className={clsx(grid)}>
           {arr2.map((el, index) => (
             <FacialItem
+              key={el.title}
               text={el.text}
               title={el.title}
               time={el.time}
