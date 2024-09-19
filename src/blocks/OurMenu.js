@@ -30,15 +30,11 @@ function OurMenu(props) {
                 </div>
                 <div className={" lg:w-[65%] lg:mt-0 mt-[30px] gap-[10px] shrink-0 defSwiper"}>
                     <Swiper
-                        modules={[Autoplay, Navigation]}
+                        modules={[Navigation]}
                         navigation={true}
                         className={"!mb-[0px] mt-[0px]"}
                         loop={true}
                         autoplaySpeed={400}
-                        autoplay={{
-                            delay: 3500,
-                            disableOnInteraction: false,
-                        }}
                         slidesPerView={1}
                         spaceBetween={20}
                         breakpoints={{
