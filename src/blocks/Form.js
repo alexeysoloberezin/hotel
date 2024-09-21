@@ -105,7 +105,7 @@ const Form = (props) => {
       }
       setSuccess();
       resetForm();
-      window.location.href = '/thanks.html'
+      // window.location.href = '/thanks.html'
     } catch (err) {
       setError();
     } finally {
