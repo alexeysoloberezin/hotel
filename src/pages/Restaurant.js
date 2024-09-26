@@ -16,7 +16,6 @@ function Restaurant(props) {
         title={'Petal Restaurant'}
         video={'/bar.mp4'}
         mobileGif={'/bar.gif'}
-        description={'A culinary oasis of art and flavor'}
       >
       </MainBlockTemplate>
 

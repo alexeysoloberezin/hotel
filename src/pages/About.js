@@ -14,7 +14,6 @@ function AboutUs(props) {
       <MainBlockTemplate
         title={'About Us'}
         image={'/aboutBg.jpg'}
-        description={'A culinary oasis of art and flavor'}
       >
       </MainBlockTemplate>
 
