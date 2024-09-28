@@ -17,7 +17,6 @@ function AboutUs(props) {
       >
       </MainBlockTemplate>
 
-
       <AboutBlock imgTemplate={'/aboutImg{**}.jpg'}></AboutBlock>
 
       <div className={"bg-purple lg:py-[200px] py-[100px] text-black"}>
