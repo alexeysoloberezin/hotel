@@ -83,7 +83,7 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
                   class="absolute top-0 left-0 w-full h-full object-cover"
                   width="100%"
                   >
-                  <source src=${videoWebM} type="video/webm" />
+<!--                  <source src=${videoWebM} type="video/webm" />-->
                   <source src="${video}" type="video/mp4" />
                 <track kind="caption" />
                 </video>`
