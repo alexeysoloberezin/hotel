@@ -22,8 +22,9 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
             <video
               autoPlay
               preload="auto"
-              loop
-              muted
+              loop={true}
+              muted={true}
+              playsInline={true}
               className={`absolute top-0 left-0 w-full h-full object-cover`}
             >
               <source src={videoWebM} type="video/webm" />

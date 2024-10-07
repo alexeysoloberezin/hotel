@@ -32,6 +32,32 @@
     object-fit: cover;
   }
 }
+.eventsPackaj{
+  .swiper-pagination.swiper-pagination-bullets{
+    //bottom: -20px !important;
+  }
+}
+.custom-pagination{
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  .swiper-pagination-bullet{
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    margin: 0 2px;
+    cursor: pointer;
+    opacity: 0.5;
+    flex-shrink: 0;
+    &.swiper-pagination-bullet-active{
+      opacity: 1;
+    }
+    @media (max-width: 1024px) {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
 
 input {
   font-size: 16px;
