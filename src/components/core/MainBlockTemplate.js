@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Header from "./Header";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import Animation from '../Animation';
@@ -7,6 +7,19 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
   const isMobile = useMediaQuery(false, '(max-width: 600px)');
 
 
+  const videoHTML = `
+    <video
+      preload="auto"
+      autoplay
+      loop
+      playsinline
+      muted
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    >
+      <source src="${videoWebM}" type="video/webm" />
+      <source src="${video}" type="video/mp4" />
+    </video>
+  `;
 
   return (
     <div>
@@ -19,18 +32,7 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
               className={`absolute top-0 left-1/2 translate-x-[-50%] w-fit max-w-fit h-full`}
             />
           ) : video ? (
-            <video
-              preload="auto"
-              autoPlay={true}
-              loop={true}
-              controls={false}
-              playsInline
-              muted
-              className={`absolute top-0 left-0 w-full h-full object-cover`}
-            >
-              <source src={videoWebM} type="video/webm" />
-              <source src={video} type="video/mp4" />
-            </video>
+            <div dangerouslySetInnerHTML={{__html: videoHTML}}/>
 
           ) : (
             <img
