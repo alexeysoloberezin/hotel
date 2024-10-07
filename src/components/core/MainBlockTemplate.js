@@ -96,7 +96,6 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
           <Animation delay={'.5s'}>
             <h3  className={"mt-2 lg:mb-[30px] mb-[25px]"}>
               {description}
-              <span style={{opacity: .2}}>{JSON.stringify(errorLoadVideo)}</span>
             </h3>
           </Animation>
           <Animation delay={'.8s'}>
