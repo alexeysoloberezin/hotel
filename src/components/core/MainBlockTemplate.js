@@ -34,9 +34,12 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
             promise
               .then(() => {
                 // видео воспроизводится успешно
+                alert('S')
               })
               .catch(() => {
+                alert('1 ' + JSON.stringify(isMobile))
                 if(isMobile){
+                  alert('2')
                   setErrorLoadVideo(true)
                 }
               });
