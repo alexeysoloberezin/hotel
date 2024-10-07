@@ -25,31 +25,12 @@ function EventCard({title, color, children, classes, titleClass}) {
 
 function EventsPage(props) {
   const isTable = useMediaQuery(false, '(max-width: 1340px)')
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      video.muted = true; // Обязательно убедись, что звук выключен
-      video.play(); // Принудительно запускаем видео
-    }
-  }, []);
 
   return (
     <div>
 
-      <video
-        ref={videoRef}
-        autoPlay
-        preload="auto"
-        loop={true}
-        muted={true}
-        playsInline={true}
-        className={`w-screen h-screen object-cover`}
-      >
-        <source src={'/ev/events.mp4'} type="video/mp4"/>
-      </video>
 
+      <img src="/ev/test.webp" alt=""/>
       <MainBlockTemplate
         title={'Events'}
         video={'/ev/events.mp4'}
