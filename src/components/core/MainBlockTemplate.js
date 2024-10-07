@@ -20,16 +20,18 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
             />
           ) : video ? (
             <video
-              autoPlay
               preload="auto"
+              autoPlay={true}
               loop={true}
-              muted={true}
-              playsInline={true}
+              controls={false}
+              playsInline
+              muted
               className={`absolute top-0 left-0 w-full h-full object-cover`}
             >
               <source src={videoWebM} type="video/webm" />
               <source src={video} type="video/mp4" />
             </video>
+
           ) : (
             <img
               src={image}

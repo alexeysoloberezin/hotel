@@ -28,9 +28,6 @@ function EventsPage(props) {
 
   return (
     <div>
-
-
-      <img src="/ev/test.webp" alt=""/>
       <MainBlockTemplate
         title={'Events'}
         video={'/ev/events.mp4'}
