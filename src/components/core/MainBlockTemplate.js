@@ -37,10 +37,8 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
             promise
               .then(() => {
                 // видео воспроизводится успешно
-                alert('h')
               })
               .catch(() => {
-                alert('b')
                 // если воспроизведение не удалось, скрываем видео и показываем альтернативу
                 videoParentRef.current.style.display = "none";
               });
