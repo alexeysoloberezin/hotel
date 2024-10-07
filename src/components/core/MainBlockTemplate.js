@@ -33,15 +33,9 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
           if (promise && promise.then) {
             promise
               .then(() => {
-                // видео воспроизводится успешно
-                alert('S')
               })
               .catch(() => {
-                alert('1 ' + JSON.stringify(isMobile))
-                if(isMobile){
-                  alert('2')
                   setErrorLoadVideo(true)
-                }
               });
           }
         }, 0);
@@ -54,7 +48,7 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
     <div>
       <div className={"h-screen relative flex flex-col justify-center items-center pt-[80px] pb-[80px]"}>
         <div>
-          {errorLoadVideo ? (
+          {errorLoadVideo && isMobile ? (
             <img
               src={mobileGif}
               alt=""
