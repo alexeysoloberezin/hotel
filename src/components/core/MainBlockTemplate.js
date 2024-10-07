@@ -21,18 +21,14 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
       // получаем ссылку на элемент <video>
       const player = videoParentRef.current.children[0];
 
-      // если ссылка на видео получена
       if (player) {
-        // устанавливаем атрибуты видео через JS (политика WebKit)
         player.controls = false;
         player.playsInline = true;
         player.muted = true;
         player.setAttribute("muted", ""); // все возможные варианты
         player.autoplay = true;
 
-        // используем setTimeout для асинхронного вызова
         setTimeout(() => {
-          // player.play() может вернуть promise
           const promise = player.play();
           if (promise && promise.then) {
             promise
@@ -43,8 +39,6 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
                 if(isMobile){
                   setErrorLoadVideo(true)
                 }
-                // если воспроизведение не удалось, скрываем видео и показываем альтернативу
-                videoParentRef.current.style.display = "none";
               });
           }
         }, 0);
@@ -79,7 +73,7 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
                   >
 <!--                  <source src=${videoWebM} type="video/webm" />-->
                   <source src="${video}" type="video/mp4" />
-                <track kind="caption" />
+                    <track kind="caption" />
                 </video>`
                       }}
                 />
@@ -91,18 +85,21 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
             />
           )}
 
-          <div className={"overlay-after"}></div>
+          <div className={"overlay-after"}>
+
+          </div>
         </div>
         <Header transparent={true}/>
 
         <div className={"relative z-10 text-center flex grow h-full justify-center flex-col items-center"}>
           <Animation>
-            <h1 >{title}</h1>
+            <h1 >{title} </h1>
           </Animation>
        
           <Animation delay={'.5s'}>
             <h3  className={"mt-2 lg:mb-[30px] mb-[25px]"}>
               {description}
+              <span style={{opacity: .2}}>{JSON.stringify(errorLoadVideo)}</span>
             </h3>
           </Animation>
           <Animation delay={'.8s'}>
