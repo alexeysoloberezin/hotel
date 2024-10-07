@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import MainBlockTemplate from "../components/core/MainBlockTemplate";
 import BookNow from "../components/ui/BookNow";
 import clsx from "clsx";
@@ -25,9 +25,31 @@ function EventCard({title, color, children, classes, titleClass}) {
 
 function EventsPage(props) {
   const isTable = useMediaQuery(false, '(max-width: 1340px)')
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true; // Обязательно убедись, что звук выключен
+      video.play(); // Принудительно запускаем видео
+    }
+  }, []);
 
   return (
     <div>
+
+      <video
+        ref={videoRef}
+        autoPlay
+        preload="auto"
+        loop={true}
+        muted={true}
+        playsInline={true}
+        className={`w-screen h-screen object-cover`}
+      >
+        <source src={'/ev/events.mp4'} type="video/mp4"/>
+      </video>
+
       <MainBlockTemplate
         title={'Events'}
         video={'/ev/events.mp4'}
@@ -49,12 +71,13 @@ function EventsPage(props) {
               </Animation>
               <Animation>
                 <p className={"sm:mb-[30px]"}>Whether it's an intimate gathering, a grand wedding reception, or
-                a
-                corporate
-                event, Petal Restaurant
-                offers
-                a beautiful and versatile space for your special occasion. With the capacity to host up to 50 guests, we
-                provide an elegant setting and exceptional service to make your event unforgettable</p>
+                  a
+                  corporate
+                  event, Petal Restaurant
+                  offers
+                  a beautiful and versatile space for your special occasion. With the capacity to host up to 50 guests,
+                  we
+                  provide an elegant setting and exceptional service to make your event unforgettable</p>
               </Animation>
 
               <div className={"justify-center sm:flex hidden"}>
@@ -93,7 +116,7 @@ function EventsPage(props) {
 
               <div className={"grid md:grid-cols-[2fr_1fr] md:gap-[20px] gap-[12px]"}>
                 <div className={"grid grid-cols-2 md:gap-[20px] gap-[12px]"}>
-                <EventCard color={'white'} title={'Capacity: '}>
+                  <EventCard color={'white'} title={'Capacity: '}>
                     <p className={'md:text-[18px] text-[14px] font-medium '}>Up to 50 guests</p>
                   </EventCard>
                   <EventCard color={'white'} title={'Weekly Rates: '}>
@@ -104,7 +127,9 @@ function EventsPage(props) {
                   </EventCard>
 
                   <EventCard color={'white'} title={'Lunch Events:'}>
-                    <p className={'md:text-[16px] text-[13px] font-medium opacity-70 sm:mt-[10px] my-[4px] sm:mb-[9px]'}>(12:00 PM -
+                    <p
+                      className={'md:text-[16px] text-[13px] font-medium opacity-70 sm:mt-[10px] my-[4px] sm:mb-[9px]'}>(12:00
+                      PM -
                       3:00 PM)</p>
                     <p className={'md:text-[18px] text-[14px] font-medium '}>Minimum $3,000</p>
                   </EventCard>
@@ -115,12 +140,14 @@ function EventsPage(props) {
                       <div className={'md:text-[25px] text-[20px] sm:mb-[10px] mb-[4px] font-medium'}
                            style={{lineHeight: 1.1}}>Venue Rental:
                       </div>
-                      <p className={'md:text-[16px] text-[14px] font-medium opacity-70 sm:mt-[10px] mt-[3px] mb-[15px]'}>(Friday,
+                      <p
+                        className={'md:text-[16px] text-[14px] font-medium opacity-70 sm:mt-[10px] mt-[3px] mb-[15px]'}>(Friday,
                         Saturday,
                         Sunday): </p>
                     </div>
                     <div className={"sm:w-fit w-[70%]"}>
-                      <p className={'md:text-[18px] text-[14px] font-medium  sm:mb-[15px] mb-[3px]'}>$6,000 for exclusive
+                      <p className={'md:text-[18px] text-[14px] font-medium  sm:mb-[15px] mb-[3px]'}>$6,000 for
+                        exclusive
                         use </p>
                       <p className={'md:text-[18px] text-[14px] font-medium '}>from 5:00 PM <br/>to 10:00 PM</p>
                     </div>
@@ -147,34 +174,38 @@ function EventsPage(props) {
         <div className="container">
           <div className={clsx('gap-[20px]', !isTable ? 'grid-cols-2 grid' : 'flex flex-col-reverse')}>
             <div>
-                <ImageChanger
-                  swiperClass={'h-[360px]'}
-                  slideClass={'h-full w-full'}
-                  swiperSlideClass={'h-full w-full'}
-                  imgTemplate={'/add/add{**}.jpg'}
-                  classes={'h-full w-full object-cover'}
-                />
+              <ImageChanger
+                swiperClass={'h-[360px]'}
+                slideClass={'h-full w-full'}
+                swiperSlideClass={'h-full w-full'}
+                imgTemplate={'/add/add{**}.jpg'}
+                classes={'h-full w-full object-cover'}
+              />
             </div>
             <div>
               <h2 className={'text-black mb-[30px] bigMob'}>Additional Services:</h2>
               <div className={"grid md:grid-cols-[2fr_1fr] md:gap-[20px] gap-[12px]"}>
                 <div className={"grid grid-cols-2 md:gap-[20px] gap-[12px]"}>
                   <EventCard color={'gold'} title={'Live Music:'}>
-                    <p className={'md:text-[18px] text-[14px] font-medium leading-tight'}>Available for weekend evenings</p>
+                    <p className={'md:text-[18px] text-[14px] font-medium leading-tight'}>Available for weekend
+                      evenings</p>
                   </EventCard>
                   <EventCard color={'gold'} title={'Decorators: '}>
-                    <p className={'md:text-[18px] text-[14px] font-medium leading-tight'}>Available at an additional charge</p>
+                    <p className={'md:text-[18px] text-[14px] font-medium leading-tight'}>Available at an additional
+                      charge</p>
                   </EventCard>
                   <EventCard color={'gold'} title={'Custom Menu:'} classes={'col-span-2 lg:max-w-[314px]'}>
                     {/*<p className={'md:text-[16px] text-[14px] font-medium opacity-70 mt-[10px] mb-[9px]'}>(12:00 PM - 3:00 PM)</p>*/}
-                    <p className={'md:text-[18px] text-[14px] font-medium leading-tight'}>Tailored to your preferences, with final
+                    <p className={'md:text-[18px] text-[14px] font-medium leading-tight'}>Tailored to your preferences,
+                      with final
                       approval by our
                       chef, Igor</p>
                   </EventCard>
                 </div>
                 <div>
                   <EventCard color={'gold'} title={'Buffet or À la Carte: '} classes={'grid-rows-2 h-full'}>
-                    <p className={'md:text-[18px] text-[14px] font-medium leading-tight md:mb-[15px]'}>Choose from our flexible dining
+                    <p className={'md:text-[18px] text-[14px] font-medium leading-tight md:mb-[15px]'}>Choose from our
+                      flexible dining
                       options to suit
                       your event</p>
                   </EventCard>
@@ -246,7 +277,7 @@ function EventsPage(props) {
               )}
             </div>
             <div>
-            {!isTable && (
+              {!isTable && (
                 <img src="/decor/decor2.jpg" className={'w-[310px] h-[313px] object-cover mt-[-70px]'} alt=""/>
               )}
             </div>
