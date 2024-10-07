@@ -32,6 +32,7 @@ function EventsPage(props) {
         title={'Events'}
         video={'/ev/events.mp4'}
         videoWebM={'/ev/events.webm'}
+        mobileGif={'/ev/events.gif'}
       >
       </MainBlockTemplate>
 
