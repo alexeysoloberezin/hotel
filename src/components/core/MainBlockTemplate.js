@@ -19,24 +19,17 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
               className={`absolute top-0 left-1/2 translate-x-[-50%] w-fit max-w-fit h-full`}
             />
           ) : video ? (
-            // <video
-            //   autoPlay
-            //   preload="auto"
-            //   loop
-            //   muted={true}
-            //   playsInline={true}
-            //   className={`absolute top-0 left-0 w-full h-full object-cover`}
-            // >
-            //   <source src={videoWebM} type="video/webm" />
-            //   <source src={video} type="video/mp4" />
-            // </video>
-            <ReactPlayer
-              url={video}
-              playing={true} // This enables autoplay
-              muted={true}   // Mute the video to ensure autoplay works
-              loop={true}    // Optional: loop the video
-              controls={false}
-            />
+            <video
+              autoPlay
+              preload="auto"
+              loop
+              muted={true}
+              playsInline={true}
+              className={`absolute top-0 left-0 w-full h-full object-cover`}
+            >
+              <source src={videoWebM} type="video/webm" />
+              <source src={video} type="video/mp4" />
+            </video>
           ) : (
             <img
               src={image}
