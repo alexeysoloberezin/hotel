@@ -11,6 +11,7 @@ const isSafari = () => {
 
 function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, description, children}) {
   const isMobile = useMediaQuery(false, '(max-width: 600px)');
+  const [errorLoadVideo, setErrorLoadVideo] = useState(false);
 
   const videoParentRef = useRef(null);
 
@@ -39,6 +40,9 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
                 // видео воспроизводится успешно
               })
               .catch(() => {
+                if(isMobile){
+                  setErrorLoadVideo(true)
+                }
                 // если воспроизведение не удалось, скрываем видео и показываем альтернативу
                 videoParentRef.current.style.display = "none";
               });
@@ -53,24 +57,13 @@ function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, des
     <div>
       <div className={"h-screen relative flex flex-col justify-center items-center pt-[80px] pb-[80px]"}>
         <div>
-          {isMobile && mobileGif ? (
+          {errorLoadVideo ? (
             <img
               src={mobileGif}
               alt=""
               className={`absolute top-0 left-1/2 translate-x-[-50%] w-fit max-w-fit h-full`}
             />
           ) : video ? (
-            // <video
-            //   autoPlay
-            //   preload="auto"
-            //   loop
-            //   muted={true}
-            //   playsInline={true}
-            //   className={`absolute top-0 left-0 w-full h-full object-cover`}
-            // >
-            //   <source src={videoWebM} type="video/webm" />
-            //   <source src={video} type="video/mp4" />
-            // </video>
             <div
               ref={videoParentRef}
               dangerouslySetInnerHTML={{
