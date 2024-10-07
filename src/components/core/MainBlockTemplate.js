@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from 'react';
 import Header from "./Header";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import Animation from '../Animation';
-import ReactPlayer from 'react-player'
 
 
 function MainBlockTemplate({video,videoWebM,preview, image,mobileGif, title, description, children}) {
