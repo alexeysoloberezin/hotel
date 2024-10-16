@@ -27,7 +27,7 @@ function EventsPage(props) {
   const isTable = useMediaQuery(false, '(max-width: 1340px)')
 
   return (
-    <div>
+    <div className={"event"}>
       <MainBlockTemplate
         title={'Events'}
         video={'/ev/events.mp4'}
@@ -44,9 +44,9 @@ function EventsPage(props) {
               </Animation>
 
             </div>
-            <div className={"max-w-[638px] sm:text-center sm:pt-[32px]"}>
+            <div className={"max-w-[638px] md:text-center sm:pt-[32px]"}>
               <Animation>
-                <h2 className={"mb-[25px]"}>Host Your Event <br/>at Petal Restaurant</h2>
+                <h2 className={"mb-[25px] bigMob"}>Host Your Event <br/>at Petal Restaurant</h2>
               </Animation>
               <Animation>
                 <p className={"sm:mb-[30px]"}>Whether it's an intimate gathering, a grand wedding reception, or
@@ -59,22 +59,23 @@ function EventsPage(props) {
                   provide an elegant setting and exceptional service to make your event unforgettable</p>
               </Animation>
 
-              <div className={"justify-center sm:flex hidden"}>
+              <div className={"justify-center md:flex hidden"}>
                 <BookNow color={'white'} hoverColor={'purple'}/>
               </div>
             </div>
             <div className={'lg:block hidden'}>
-              <Animation><img src="/event/ev2.jpg" className={'w-[269px] aspect-square mt-[-70px]'} alt=""/>
+              <Animation>
+                <img src="/event/ev2.jpg" className={'w-[269px] aspect-square mt-[-70px]'} alt=""/>
               </Animation>
 
             </div>
           </div>
-          <div className={"flex justify-around  sm:mt-[50px] mt-[20px] gap-[20px]"}>
+          <div className={"md:flex justify-around  md:mt-[50px] mt-[20px] md:gap-[20px]"}>
             <Animation> <img src="/event/ev3.jpg" className={'lg:w-[292px] md:block hidden object-cover lg:h-[292px]'}
                              alt=""/>
             </Animation>
 
-            <Animation> <img src="/event/ev4.jpg" className={'lg:w-[328px] object-cover lg:h-[328px]'} alt=""/>
+            <Animation> <img src="/event/ev4.jpg" className={'lg:w-[328px] w-full max-w-[400px] object-cover lg:h-[328px]'} alt=""/>
             </Animation>
 
           </div>
@@ -231,7 +232,7 @@ function EventsPage(props) {
 
       <EventsPackaj/>
 
-      <div className={'bg-gold lg:py-[200px] py-[100px] text-black'}>
+      <div className={'md:bg-gold bg-purple lg:py-[200px] pt-[100px] pb-[50px] text-black'}>
         <div className={'container '}>
           <div className={'flex justify-between'}>
             <div>

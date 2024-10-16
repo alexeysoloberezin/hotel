@@ -26,7 +26,7 @@ function EventsPackaj(props) {
                 <p>4. Corporate Package</p>
                 <p>5. Birthday Package</p>
                 <p>6. Holiday Packages: <br/>
-                  (Christmas, New Year’s, etc.) – Coming soon!</p>
+                  (Christmas, New Year’s, etc.) <span className={"md:inline block italic font-light"}>– Coming soon!</span></p>
               </div>
             </Animation>
           </div>

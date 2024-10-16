@@ -62,6 +62,13 @@
 input {
   font-size: 16px;
 }
+.event {
+  h2{
+    @media (max-width: 600px) {
+      line-height: 1.05 !important;
+    }
+  }
+}
 
 .isAnimate{
   animation: .8s leftToRight forwards;
