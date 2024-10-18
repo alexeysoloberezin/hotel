@@ -13,14 +13,14 @@ function GridElsItem({img, title, text, index}) {
   )
 }
 
-function GridEls({title, arr}) {
+function GridEls({title, arr, cols, classes}) {
   return (
-    <div className={"bg-[#0E4840] pt-[150px] pb-[85px]"}>
+    <div className={clsx("bg-[#0E4840] pt-[150px] pb-[85px]")}>
       <div className="container">
         <Animation>
         <h2 className={"text-center mb-[40px] bigMob"} >{title}</h2>
         </Animation>
-        <div className={"grid md:grid-cols-3 gap-[20px]"}>
+        <div className={clsx(`grid md:grid-cols-${cols || 3} gap-[20px]`, classes)}>
           {arr.map(({img, title, text}, i) => (
             <GridElsItem key={i} img={img} title={title} text={text} index={i}/>
           ))}

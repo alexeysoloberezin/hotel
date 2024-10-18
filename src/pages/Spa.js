@@ -44,26 +44,25 @@ function Spa(props) {
         }
       </div>
 
-      <GridEls
-        title={'Our Service'}
-        arr={[
-          {
-            title: 'Deep Cleansing Facial',
-            text: 'Focuses on removing impurities and unclogging pores. It often includes a steam treatment, exfoliation, and extractions.',
-            img: '/ourService_1.png'
-          },
-          {
-            title: 'Deep Tissue Massage',
-            text: 'Targets the deeper layers of muscle and connective tissue',
-            img: '/ourService_2.png'
-          },
-          {
-            title: 'Reflexology',
-            text: 'The art of healing through the  use of plant-extracts.',
-            img: '/ourService_3.png'
-          }
-        ]}
-      />
+      <div>
+        <GridEls
+          title={'Our Service'}
+          cols={2}
+          classes={'max-w-[900px] mx-auto'}
+          arr={[
+            {
+              title: 'Deep Tissue Massage',
+              text: 'Targets the deeper layers of muscle and connective tissue',
+              img: '/ourService_2.png'
+            },
+            {
+              title: 'Tranquil Escape',
+              text: 'The art of healing through the  use of plant-extracts.',
+              img: '/ourService_3.png'
+            }
+          ]}
+        />
+      </div>
 
       <SpaRoom />
 

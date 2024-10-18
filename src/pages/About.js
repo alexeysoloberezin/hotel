@@ -26,7 +26,7 @@ function AboutUs(props) {
             <Animation className={"pt-[8px]"}>IRIS HOTEL Boston is ideally located in the picturesque neighborhood of
               Brookline, just minutes from
               the
-              city’s main attractions. We offer 120 modern and elegant suites, equipped with all the amenities for your
+              city’s main attractions. We offer 119 modern and elegant suites, equipped with all the amenities for your
               comfort.
             </Animation>
           </div>

@@ -4,13 +4,13 @@ import clsx from "clsx";
 import Image from "../components/ui/Image";
 import Animation from '../components/Animation';
 
-function FacialItem({imgTemplate, title, price, time, text, index}){
+function FacialItem({imgTemplate, title, price, time, text, index}) {
   return (
     <Animation
       delay={index * 0.1 + 's'}
-     >
-      <div  className={"md:min-h-[420px] min-h-[390px] p-[20px] pt-[90px]  relative"}>
-        <Image src={imgTemplate.replace('{**}', index )} className={"absolute top-0 left-0 w-full h-full object-cover"}/>
+    >
+      <div className={"md:min-h-[420px] min-h-[390px] p-[20px] pt-[90px]  relative"}>
+        <Image src={imgTemplate.replace('{**}', index)} className={"absolute top-0 left-0 w-full h-full object-cover"}/>
         <div className={"relative z-10 flex flex-col items-center"}>
           <div className={"flex items-end mb-[5px] font2"}>
             <span className={"text-[50px]"} style={{lineHeight: 1}}>{price} /</span>
@@ -40,17 +40,10 @@ pain, muscle injuries, and postural issues`,
       time: "50min"
     },
     {
-      text: `Therapeutic massage is a versatile
-approach to healing and relaxation, tailored
-to address specific health concerns and
-promote overall well-being. Therapeutic
-massage not only offers physical benefits
-like improved circulation and flexibility but
-also fosters mental relaxation and
-emotional balance`,
-      title: "Therapeutic Massage",
-      price: "$160",
-      time: "50min"
+      text: `Experience a serene journey of relaxation with our soothing message combined with hot stone therapy. This treatment blends traditional message techniques with the calming effects of heated stones. It will soothe your muscles, calm your mind, and restore your overall well-being, leaving you feeling revitalized and harmonized.`,
+      title: "Tranquil Escape",
+      price: "$175",
+      time: "60min"
     }
   ]
   const arr = [
@@ -118,7 +111,7 @@ confidence and vitality`,
 
   const grid = 'grid lg:grid-cols-3 md:grid-cols-2 gap-[20px]'
   return (
-    <div className={"py-[165px] bg-[#710000]"} >
+    <div className={"py-[165px] bg-[#710000]"}>
       <div className="container">
         <SectionHeader
           text={'We offer a variety of facial services to suit your individual skin care needs. Our estheticians use only the finest Bioelements products based on trace minerals, essential oils, and plant extracts'}
