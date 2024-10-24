@@ -11,7 +11,7 @@ function Weddings(props) {
   const isTable = useMediaQuery(false, '(max-width: 1024px)')
 
   return (
-    <div className={"bg-purple lg:py-[200px] py-[100px] text-black"}>
+    <div className={"bg-purple lg:py-[100px] py-[50px] text-black"}>
       <div className="container">
         <Animation>
           <h2 className={"mb-[30px] bigMob"}>Weddings <br/>at Petal Restaurant</h2>

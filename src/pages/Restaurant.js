@@ -6,12 +6,17 @@ import BgImageBlock from "../blocks/BgImageBlock";
 import Button from "../components/ui/Button";
 import SwiperImages from "../blocks/SwiperImages";
 import Animation from '../components/Animation';
-
+import { Helmet } from "react-helmet-async";
 
 function Restaurant(props) {
   const els = [1, 2, 3]
   return (
     <div>
+      <Helmet>
+        <title>Petal Restaurant | IRIS HOTEL Boston – Fine Dining & Events</title>
+        <meta name="description" content="Experience exquisite dining at Petal Restaurant, offering gourmet dishes and event hosting services. Enjoy live music and customizable menus for special occasions." />
+      </Helmet>
+
       <MainBlockTemplate
         title={'Petal Restaurant'}
         video={'/bar.mp4'}
@@ -19,11 +24,11 @@ function Restaurant(props) {
       >
       </MainBlockTemplate>
 
-      <div className={"bg-gold text-black md:py-[200px] py-[100px]"}>
+      <div className={"bg-gold text-black lg:py-[100px] py-[50px]"}>
         <div className="container text-center">
           <Animation>
           <h2 className={" mx-auto"}>
-            Petal Restaurant is more than just a&nbsp;dining experience; it's a journey of&nbsp;taste and&nbsp;artistry
+            Petal Restaurant is more than just a dining experience; it's a journey of taste and artistry
           </h2>
           </Animation>
 
@@ -33,7 +38,7 @@ function Restaurant(props) {
 
           <div className={"flex justify-center"}>
             <a href="https://www.opentable.com/restref/client/?restref=1344616&lang=en-US&ot_source=Restaurant%20website&corrid=3a42341d-55a0-458f-805a-b07032179a17">
-              <Button label={'Book TABLE'} color={'white'}></Button>
+              <Button label={'Book TABLE'} color={'white'} hoverColor={"purple"}></Button>
             </a>
           </div>
         </div>

@@ -7,7 +7,7 @@ import Animation from "../components/Animation";
 function AboutBlock({imgTemplate}) {
   const arr = [1,1,1,1,1,1]
   return (
-    <div className={"bg-gold lg:py-[200px] py-[100px] text-black md:text-center"}>
+    <div className={"bg-gold lg:py-[100px] py-[50px] text-black md:text-center"}>
       <div className="container">
         <Animation>
           <div className={'text-[50px] leading-snug font2 md:mb-[50px] mb-[30px]'}>Welcome to IRIS HOTEL Boston</div>

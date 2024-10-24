@@ -34,7 +34,7 @@ function ContactsSubtitle({img, title, imgClass, text}) {
 
 function Contacts({showHotelInfo}) {
   return (
-    <div className={"bg-dark lg:py-[200px] py-[100px]"}>
+    <div className={"bg-dark lg:py-[100px] py-[50px]"}>
       {showHotelInfo
         && <div className="container md:pb-[170px] pb-[100px]">
           <h2 className={"md:mb-[50px] mb-[20px]"}>Hotel Information</h2>
@@ -65,8 +65,8 @@ function Contacts({showHotelInfo}) {
             icon={'/icon_faq1.png'}
           >
             <div className={"flex flex-col md:gap-[10px] gap-[5px]"}>
-              Enjoy the convenience of on-site parking at IRIS HOTEL Boston. For just $60 per day, you can rest easy
-              knowing your vehicle is secure and easily accessible throughout your stay.
+              Enjoy the convenience of on-site valet parking at Iris Hotel Boston. For just $60 per day, you can rest
+              easy knowing your vehicle is secure and easily accessible throughout your stay.
             </div>
           </FaqItem>
 
@@ -121,10 +121,6 @@ function Contacts({showHotelInfo}) {
             icon={'/icon_faq3.png'}
           >
             <div className={"flex flex-col md:gap-[10px] gap-[5px]"}>
-              <div>On-Property:</div>
-
-              <div>Local Shuttle: Complimentary</div>
-
               <b className={"mt-[20px] mb-[15px]"}>Nearby:</b>
 
               <b>Bus Station:</b>
@@ -154,15 +150,15 @@ function Contacts({showHotelInfo}) {
             <ContactsBlock/>
           </div>
 
-            <iframe 
-              className={"aspect-video w-full lg:min-h-[550px] md:min-h-[400px] min-h-[250px]"}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.074592970278!2d-71.122327!3d42.340933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379be3ec50ab1%3A0x24633e9bd497a8b!2sIris%20Hotel%20Boston!5e0!3m2!1sen!2sus!4v1724361826199!5m2!1sen!2sus"
-              allowFullScreen=""
-              title={'map'}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div> 
+          <iframe
+            className={"aspect-video w-full lg:min-h-[550px] md:min-h-[400px] min-h-[250px]"}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2949.074592970278!2d-71.122327!3d42.340933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379be3ec50ab1%3A0x24633e9bd497a8b!2sIris%20Hotel%20Boston!5e0!3m2!1sen!2sus!4v1724361826199!5m2!1sen!2sus"
+            allowFullScreen=""
+            title={'map'}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
   );

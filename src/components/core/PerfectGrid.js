@@ -14,16 +14,16 @@ function PerfectGrid({imgTemplate, hideMob}) {
   ]
 
   const h = [
-    'md:h-[279px] h-full w-full',
-    'md:h-[580px] sm:h-full h-[330px] w-full ',
-    'md:h-[279px] h-full w-full',
-    'md:h-[279px] h-full w-full',
-    'md:h-[279px] h-full w-full',
+    'md:h-[195px] lg:h-[279px] h-full w-full',
+    'md:h-[406px] lg:h-[580px] sm:h-full h-[330px] w-full ',
+    'md:h-[195px] lg:h-[279px] h-full w-full',
+    'md:h-[195px] lg:h-[279px] h-full w-full',
+    'md:h-[195px] lg:h-[279px] h-full w-full',
   ]
   return (
     <div className={
       clsx("lg:grid-cols-3 grid-cols-2 md:gap-[22px] gap-[15px]", {
-        'lg:grid hidden' :hideMob,
+        'md:grid hidden' :hideMob,
         'grid': !hideMob
       })
     }>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function ContactUs(props) {
   return (
-    <div className={"bg-gold lg:py-[200px] py-[100px] text-black"}>
+    <div className={"bg-gold lg:py-[100px] py-[50px] text-black"}>
       <div className="container">
         <div className={'text-[50px] leading-snug font2 md:mb-[50px] mb-[30px]'}>Contact Us</div>
         <div className={"flex flex-col-reverse md:flex-col"}>
@@ -18,7 +18,7 @@ function ContactUs(props) {
               <b>Address:</b> 30 Webster St,<br/> Brookline, MA 02446
             </div>
             <div>
-              <div><b>Check-in:</b> from 3:00 PM</div>
+              <div><b>Check-in:</b> from 4:00 PM</div>
               <div><b>Check-out:</b> by 11:00 AM</div>
             </div>
             <div>

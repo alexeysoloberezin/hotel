@@ -26,9 +26,7 @@ const Form = (props) => {
 
   const formSchema = z.object({
     name: z.string().nonempty('Name is required').regex(/^[a-zA-Zа-яА-Я\s]+$/, 'Invalid Name'),
-    phone: z.string()
-      .nonempty('Phone is required')
-      .regex(/^\+1 \(\d{3}\) \d{3}-\d{4}$/, 'Invalid phone number'),
+    phone: z.string(),
     note: z.string(),
   });
 
@@ -128,7 +126,7 @@ const Form = (props) => {
               error={errors.name}
             />
             <Input
-              placeholder={'Your phone'}
+              placeholder={'Phone'}
               value={form.phone}
               mask={'+1 (999) 999-9999'}
               onChange={handleInputChange}
@@ -157,7 +155,8 @@ const Form = (props) => {
             'bg-red': statusMessage === 'error',
           })}
       >
-        {statusMessage === 'success' ? 'Your request has been successfully completed' : 'Error sending form'}
+        {statusMessage === 'success' ? 'Your submission has been received. \n' +
+          'We appreciate your time and will get back to within 48 hours.' : 'Error sending form'}
       </div>
     </div>
   );

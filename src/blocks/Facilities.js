@@ -11,7 +11,7 @@ function Facilities(props) {
     "Non-smoking rooms",
     "Room service",
     "Restaurant",
-    "Tea/Coffee Maker in All Rooms",
+    "Coffee Maker in All Rooms",
     "Bar",
     "Breakfast",
     "Spa"

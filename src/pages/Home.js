@@ -11,6 +11,8 @@ import Contacts from "../blocks/Contacts";
 import Footer from "../components/core/Footer";
 import useIsRender from '../hooks/useIsRender';
 import Animation from '../components/Animation';
+import Facilities from "../blocks/Facilities";
+import { Helmet } from "react-helmet-async";
 
 const useHash = () => {
   const location = useLocation();
@@ -35,6 +37,11 @@ function Home({skipperIsReady, onInitSkipper}) {
   }, []);
   return (
     <div className={clsx(' relative  flex flex-col homePage')}>
+      <Helmet>
+        <title>Iris Hotel Boston - Luxury Rooms, 24/7 Services, Restaurant, Bar & Spa</title>
+        <meta name="description" content="Whether you're traveling for business or a romantic getaway, experience the elegance of comfort at Iris Hotel Boston, nestled in the safest neighborhood of Boston-Brookline. Enjoy 120 luxurious apartments, a restaurant, bar, and spa. Located at 30 Webster St, Brookline, MA 02446. Open 24/7. Check-in at 3:00 PM, check-out at 11:00 AM. Find us on Google Maps." />
+      </Helmet>
+
       <MainBlock skipperIsReady={skipperIsReady} onInitSkipper={onInitSkipper}/>
 
       <div ref={ref1} style={{minHeight:'80vh'}}>
@@ -42,11 +49,13 @@ function Home({skipperIsReady, onInitSkipper}) {
           <Accommodation/>
         )}
       </div>
-      
+
       <div ref={ref2} style={{minHeight:'100vh'}}>
         {isRender2 && (
           <>
+
               <AboutUs/>
+
               <BgImageBlock bg={'/bg1.jpg'} href={'/restaurant'} topImg={'/petalLogo.png'}>
                 <Animation>
                  <h1 >Petal Restaurant</h1>
@@ -57,6 +66,8 @@ function Home({skipperIsReady, onInitSkipper}) {
                 </Animation>
               </BgImageBlock>
               <Bar />
+            <Facilities/>
+
               <Spa />
               <Contacts />
           </>

@@ -7,6 +7,7 @@ import EventsPackaj from "../blocks/EventsPackaj";
 import ImageChanger from "../components/ui/ImageChanger";
 import useMediaQuery from "../hooks/useMediaQuery";
 import Animation from "../components/Animation";
+import { Helmet } from "react-helmet-async";
 
 function EventCard({title, color, children, classes, titleClass}) {
   const colors = {
@@ -28,6 +29,11 @@ function EventsPage(props) {
 
   return (
     <div className={"event"}>
+      <Helmet>
+        <title></title>
+        <meta name="description" content="" />
+      </Helmet>
+
       <MainBlockTemplate
         title={'Events'}
         video={'/ev/events.mp4'}
@@ -198,7 +204,7 @@ function EventsPage(props) {
       </div>
 
 
-      <div className={'bg-dark lg:py-[200px] py-[100px]'}>
+      <div className={'bg-dark lg:py-[100px] py-[50px]'}>
         <div className="container">
           <div className="max-w-[370px] mx-auto text-center lg:mb-[50px] mb-[30px]">
             <Animation>

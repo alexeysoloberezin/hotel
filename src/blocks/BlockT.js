@@ -4,32 +4,37 @@ import Image from "../components/ui/Image";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 function BlockT({title, children, imgTemplate}) {
-  const isMob = useMediaQuery(false, '(max-width: 1024px)')
+  const isMob = useMediaQuery(false, '(max-width: 660px)')
 
   return (
-    <div className={"bg-dark text-white lg:py-[200px] py-[100px]"}>
+    <div className={"bg-dark text-white lg:py-[100px] py-[50px]"}>
       <div className="container">
         <div className="lg:flex gap-[54px]">
           <div className={""}>
             <Animation>
-              <div className={'text-[50px] leading-snug font2'}>{title}</div>
+              <h2 className={'font2'}>{title}</h2>
             </Animation>
-            <Animation className={"md:mt-[50px] mt-[25px]"}>
-              {children}
+            <Animation className={"xl:mt-[50px] mt-[25px]"}>
+              <div
+                className={"xl:text-[18px] lg:text-[16px] md:text-[14px] lg:leading-snug"}>
+                {children}
+              </div>
             </Animation>
           </div>
           {!isMob ? (
-            <div className={"flex gap-[20px]"}>
-              <div className={"flex flex-col w-[333px] gap-[20px]"}>
+            <div className={"flex gap-[20px] w-full lg:pt-0 md:pt-[30px]"}>
+              <div className={"flex flex-col xl:w-[333px] w-[250px] gap-[20px]"}>
                 <Image
                   alt={"image"}
                   noWebp={true}
-                  className={"h-[252px] w-full object-cover"}
+                  className={"h-full w-full object-cover"}
+                  animationClass={"w-full h-full object-cover"}
                   src={imgTemplate.replace('{**}', 1)}
                 ></Image>
                 <Image
                   alt={"image"}
-                  className={"h-[255px] w-full object-cover"}
+                  className={"h-full w-full object-cover"}
+                  animationClass={"w-full h-full object-cover"}
                   noWebp={true}
                   src={imgTemplate.replace('{**}', 2)}
                 ></Image>

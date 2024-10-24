@@ -4,13 +4,14 @@ import 'swiper/css/navigation';
 import useMediaQuery from "../hooks/useMediaQuery";
 import {Autoplay, Navigation} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
+import Zoom from 'react-medium-image-zoom';
 
 function OurMenu(props) {
     const isDesktop = useMediaQuery(false, '(min-width: 1340px)')
     const arr = [1, 1, 1, 1,1,1,1]
 
     return (
-        <div className={"bg-dark lg:py-[200px] py-[100px]"}>
+        <div className={"bg-dark lg:py-[100px] py-[50px]"}>
             <div className={"container lg:flex justify-between gap-[50px]"}>
                 <div className={"flex flex-col max-w-[600px] gap-[30px] leading-normal"}>
                     <h2>Our Menu</h2>
@@ -48,11 +49,22 @@ function OurMenu(props) {
                             <SwiperSlide key={index}>
                                 <div className="slide-content min-h-[300px]">
                                     {isDesktop ? (
-                                        <img src={`/menu/menu_${index + 1}.jpg`} className={""} alt="Menu 1"/>
+                                      <Zoom>
+                                          <img
+                                            src={`/menu/menu_${index + 1}.jpg`}
+                                            className={""}
+                                            alt={`Menu ${index + 1}`}
+                                          />
+                                      </Zoom>
                                     ) : (
-                                        <img src={`/menu/menu_${index + 1}.jpg`} className={""} alt="Menu 1"/>
+                                      <Zoom>
+                                          <img
+                                            src={`/menu/menu_${index + 1}.jpg`}
+                                            className={""}
+                                            alt={`Menu ${index + 1}`}
+                                          />
+                                      </Zoom>
                                     )}
-
                                 </div>
                             </SwiperSlide>
                         ))}

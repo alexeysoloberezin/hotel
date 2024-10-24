@@ -16,6 +16,7 @@ import TestVideos from "./pages/TestVideos";
 import LoadChatScript from './components/core/LoadChatScript';
 import SkipperWidget from './components/core/WidgetBooking'
 import EventsPage from "./pages/Events";
+import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
@@ -39,24 +40,25 @@ function App() {
   }, []);
 
   return (
-    <Router className={'App'}>
-      <Routes>
-        <Route path="/" element={<Home skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
-        <Route path="/restaurant" element={<Restaurant skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
-        <Route path="/test" element={<Restaurant skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
-        <Route path="/events" element={<EventsPage />}/>
-        <Route path="/about" element={<AboutUs skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
-        <Route path="/accommodation" element={<Accommodation skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
-        <Route path="/bar" element={<Bar skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
-        <Route path="/spa" element={<Spa skipperIsReady={skipperIsReady} onInitSkipper={initSkipper} />}/>
-      </Routes>
+    <HelmetProvider >
+      <Router className={'App'}>
+        <Routes>
+          <Route path="/" element={<Home skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+          <Route path="/restaurant" element={<Restaurant skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+          <Route path="/test" element={<Restaurant skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+          <Route path="/events" element={<EventsPage />}/>
+          <Route path="/about" element={<AboutUs skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+          <Route path="/accommodation" element={<Accommodation skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+          <Route path="/bar" element={<Bar skipperIsReady={skipperIsReady} onInitSkipper={initSkipper}/>}/>
+          <Route path="/spa" element={<Spa skipperIsReady={skipperIsReady} onInitSkipper={initSkipper} />}/>
+        </Routes>
 
-      <Footer/>
+        <Footer/>
 
-      <SkipperWidget onInitSkipper={initSkipper}/>
-      <Loader/>
-      <LoadChatScript />
-      {/* {isDesktop && (
+        <SkipperWidget onInitSkipper={initSkipper}/>
+        <Loader/>
+        <LoadChatScript />
+        {/* {isDesktop && (
         <AnimatedCursor
           innerSize={18}
           outerSize={18}
@@ -87,7 +89,9 @@ function App() {
           }}
         />
       )} */}
-    </Router>
+      </Router>
+    </HelmetProvider>
+
   );
 }
 

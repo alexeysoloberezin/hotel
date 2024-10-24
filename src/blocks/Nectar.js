@@ -25,11 +25,11 @@ function Card({title, text, img, txtClass}) {
 function Nectar(props) {
   const arr = [1, 2, 3]
   return (
-    <div className="md:py-[200px] py-[100px] bg-gold text-black">
+    <div className="lg:pt-[100px] pt-[50px] lg:pb-0 pb-[40px] mb-[-20px] bg-gold text-black">
       <div className="container">
         <Animation
           className={"text-center lg:text-[50px] md:text-[40px] text-[30px]  leading-[1.1] max-w-[910px] md:mb-[70px] mb-[30px] mx-auto"}>Welcome
-          to Nectar — the heart of IRIS HOTEL Boston, where sophistication meets comfort
+          to Nectar — the heart of Iris Hotel Boston, where sophistication meets comfort
         </Animation>
 
         

@@ -7,10 +7,16 @@ import CardImageGrid from "../components/core/CardImageGrid";
 import BgImage from "../blocks/BgImage";
 import Animation from "../components/Animation";
 import ContactUs from "../blocks/ContactUs";
+import { Helmet } from "react-helmet-async";
 
 function AboutUs(props) {
   return (
     <>
+      <Helmet>
+        <title>About Us | IRIS HOTEL Boston – Luxury Hotel in the Heart of Boston</title>
+        <meta name="description" content="Discover IRIS HOTEL Boston, offering modern luxury with 119 apartments, elevators, a top-tier restaurant, a spa, and more. Experience comfort and elegance at the heart of Boston." />
+      </Helmet>
+
       <MainBlockTemplate
         title={'About Us'}
         image={'/aboutBg.jpg'}
@@ -19,11 +25,11 @@ function AboutUs(props) {
 
       <AboutBlock imgTemplate={'/aboutImg{**}.jpg'}></AboutBlock>
 
-      <div className={"bg-purple lg:py-[200px] py-[100px] text-black"}>
+      <div className={"bg-purple lg:py-[100px] py-[50px] text-black"}>
         <div className="container">
           <div className={"grid lg:grid-cols-[33%_55%] mb-[50px]"}>
             <Animation className={'text-[50px] leading-snug font2 '}>Our&nbsp;Hotel</Animation>
-            <Animation className={"pt-[8px]"}>IRIS HOTEL Boston is ideally located in the picturesque neighborhood of
+            <Animation className={"pt-[8px]"}>Iris Hotel Boston is ideally located in the picturesque neighborhood of
               Brookline, just minutes from
               the
               city’s main attractions. We offer 119 modern and elegant suites, equipped with all the amenities for your
@@ -103,7 +109,7 @@ function AboutUs(props) {
       <BgImage img={'/phil.jpg'}>
         <Animation>
           <div className={"lg:text-[100px] text-[50px] font2 leading-[1.1] text-center"}>Our <br className={"md:hidden"}/> Philosophy</div>
-          <div className={"max-w-[485px] mx-auto mt-[15px] text-center"}>At IRIS HOTEL Boston, we strive to create an atmosphere of comfort and relaxation. Our friendly and
+          <div className={"max-w-[485px] mx-auto mt-[15px] text-center"}>At Iris Hotel Boston, we strive to create an atmosphere of comfort and relaxation. Our friendly and
             professional staff are ready to assist with any requests and make your stay as enjoyable as possible.
           </div>
         </Animation>

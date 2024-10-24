@@ -11,10 +11,16 @@ import BgImage from "../blocks/BgImage";
 import Animation from "../components/Animation";
 import GridC from "../blocks/GridC";
 import BaseGrids from "../blocks/BaseGrids";
+import { Helmet } from "react-helmet-async";
 
 function Accommodation(props) {
   return (
     <div>
+      <Helmet>
+        <title>Accommodation | IRIS HOTEL Boston – Luxury Apartments & Suites</title>
+        <meta name="description" content="Explore our premium accommodations at IRIS HOTEL Boston, featuring 119 luxurious apartments and suites with modern amenities and elevator access, perfect for both leisure and business stays." />
+      </Helmet>
+
       <MainBlockTemplate
         title={'Accommodation'}
         image={'/acodd.jpg'}
@@ -34,35 +40,47 @@ function Accommodation(props) {
       <Facilities/>
       <Accommodation2/>
 
+      <BlockT
+        title={'But it\'s the little touches that set Iris Hotel apart'}
+        imgTemplate={'/apart{**}.jpg'}
+      >
+        <p className={"mb-[25px]"}>Our exclusive bath amenities by Salvatore Ferragamo elevate your bathing experience
+          to a new level of indulgence, ensuring you feel pampered from head to toe.</p>
+        <p>What sets us apart even further is that Iris Hotel is the sole destination in the United States to offer
+          these exclusive Salvatore Ferragamo amenities, making your stay with us truly exceptional.</p>
+      </BlockT>
       <ZBlock
         title={'Iris Suite'}
         imgTemplate={'/suite{**}.jpg'}
         text1={'Our accommodations offer a range of options, including our exquisite Iris Suite, complete with  a Jacuzzi and a fireplace, making it the perfect choice for honeymooners and couples celebrating their special day'}
-        text2={'You can even arrange a rehearsal dinner in our Petal Restaurant, where delicious cuisine meets artistic ambiance'}
+        text2={''}
       >
-        <Button label={'see more'} color={"white"} hoverColor={'white-2'} className={"group"}>
+        <Button label={'see more'} color={"white"} hoverColor={'white-2'} className={"group mt-[20px]"}>
           <Arrow classes={"group-hover:fill-white fill-black"}/>
         </Button>
       </ZBlock>
 
       <BlockT
-        title={'Room with kitchen'}
+        title={'Room with Kitchenettes'}
         imgTemplate={'/roomKitchen{**}.jpg'}
       >
-        The hotel will provide guests with air-conditioned rooms offering a desk, a coffee machine, a fridge, a
-        microwave, a safety deposit box, a flat-screen TV and a private bathroom with a shower. All guest rooms include
-        a closet.
+        All our guest rooms feature a The hotel will provide guests with air-conditioned rooms offering a desk, a coffee
+        machine, a fridge, a microwave, a safety deposit box, a flat-screen TV and a private bathroom with a shower. All
+        guest rooms include a closet
       </BlockT>
 
       <BgImage img={'/bg5.jpg'}>
         <Animation>
-          <div className={"md:text-[30px] text-[18px] md:max-w-[771px] max-w-[205px] text-center leading-normal max-w-[771px]"}>
+          <div
+            className={"md:text-[30px] text-[18px] md:max-w-[771px] max-w-[205px] text-center leading-normal max-w-[771px]"}>
             Sink into our plush, luxuriously appointed bedding, which promises a restful night's sleep like no other.
             Wrap yourself in the sumptuous bathrobes and slip into the soft slippers provided for your ultimate
             relaxation.
           </div>
         </Animation>
       </BgImage>
+
+
 
       <GridC
         title={'Awaken your senses'}
@@ -71,13 +89,7 @@ function Accommodation(props) {
 
       </GridC>
 
-      <BlockT
-        title={'But it\'s the little touches that set Iris Hotel apart'}
-        imgTemplate={'/apart{**}.jpg'}
-      >
-        <p className={"mb-[25px]"}>Our exclusive bath amenities by Salvatore Ferragamo elevate your bathing experience to a new level of indulgence, ensuring you feel pampered from head to toe.</p>
-        <p>What sets us apart even further is that Iris Hotel is the sole destination in the United States to offer these exclusive Salvatore Ferragamo amenities, making your stay with us truly exceptional.</p>
-      </BlockT>
+
 
       <BaseGrids imgTemplate={'/take{**}.jpg'} title={'Taking care of you'} texts={[
         'At Iris Hotel, we are dedicated to providing you with a memorable and unparalleled experience',

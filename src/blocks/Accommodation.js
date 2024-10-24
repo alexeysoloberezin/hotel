@@ -9,10 +9,14 @@ function Accommodation(props) {
   const accommodations = accommodationData('accommodation');
 
   return (
-    <div className={"bg-gold lg:py-[216px] py-[100px]"}>
+    <div className={"bg-gold lg:py-[100px] py-[50px]"}>
       <div className={"container"}>
         <SectionHeader
-          text={'Whatever room you select, you\'ll discover a cozy haven with ample space to unwind and recharge. From luxurious bathrobes and a wide array of amenities, including exclusive Ferragamo products, to convenient kitchenettes.'}
+          text={'Our exquisite hotel rooms at Iris Hotel redefine \n' +
+            'the concept of hospitality, offering a fusion \n' +
+            'of convenience, luxury, and style. Each room \n' +
+            'is meticulously designed to provide you with \n' +
+            'a memorable and indulgent stay'}
           btnHref={'/accommodation'}
           color={'black'}
           title={'Accommodation'}

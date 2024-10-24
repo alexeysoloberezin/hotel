@@ -4,7 +4,7 @@ import PerfectGrid from "../components/core/PerfectGrid";
 
 function Interior(props) {
   return (
-    <div className={"bg-purple lg:py-[200px] py-[100px]"}>
+    <div className={"bg-purple lg:py-[100px] py-[50px]"}>
       <div className={"container"}>
         <SectionHeader
           text={'As you savor your meal, don\'t forget to cast your eyes upward and behold the masterpiece that graces our ceiling—a stunning mural hand-painted by the renowned Italian artist, Giovanni De Cunto. This breathtaking artwork infuses the restaurant with an air of sophistication and culture, creating a unique dining experience that transcends the ordinary.'}

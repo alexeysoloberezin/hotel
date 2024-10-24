@@ -14,7 +14,7 @@ function Item({title, children, img}){
 
 function OurServices(props) {
   return (
-    <div className={"bg-dark text-white lg:py-[200px] py-[100px]"}>
+    <div className={"bg-dark text-white lg:py-[100px] py-[50px]"}>
       <div className="container">
         <Animation className={'text-[50px] leading-snug font2 '}>Amenities</Animation>
         <div className={"grid lg:grid-cols-3 lg:gap-[20px] gap-[55px] md:mt-[50px] mt-[30px]"}>
@@ -49,7 +49,7 @@ function OurServices(props) {
           </Item>
           <Item
             img={'/ourServices6.jpg'}
-            title={'Business conference'}
+            title={'Business Center'}
           >
             For those who need to stay productive, our business lounge provides a quiet space to work on your computer and hold private meetings.
           </Item>

@@ -7,38 +7,43 @@ function Grid121({imgTemplate, hideMob}) {
 
   return (
     <div className={
-      clsx("lg:grid-cols-3  md:gap-[22px] gap-[15px]", {
-        'lg:grid hidden': hideMob,
+      clsx("md:grid-cols-3  lg:gap-[22px]  gap-[15px]", {
+        'md:grid hidden': hideMob,
         'grid': !hideMob
       })
     }>
-      <div>
+      <div className={"flex flex-col"}>
         <h2>At Nectar</h2>
-        <p className={"my-[25px] "}>everyone will find something to their taste, whether it’s warm conversations over a cup of espresso or
+        <p className={"my-[25px] "}>everyone will find something to their taste, whether it’s warm conversations over a
+          cup of espresso or
           unforgettable evenings with friends enjoying a signature cocktail. </p>
         <Image
           dataAos={"fade-up"} delay={1 * 250 + ''}
           noWebp={true}
-          className={clsx("w-full h-[387px] object-cover ")}
+          className={clsx("w-full h-full object-cover ")}
+          animationClass={"w-full h-full"}
           src={imgTemplate.replace('{**}', 1)} alt="bar-img"/>
       </div>
       <div className={"md:block hidden"}>
         <Image
           dataAos={"fade-up"} delay={2 * 250 + ''}
           noWebp={true}
-          className={clsx("w-full h-[590px] object-cover")}
+          animationClass={"w-full h-full"}
+          className={clsx("w-full  h-full object-cover")}
           src={imgTemplate.replace('{**}', 2)} alt="bar-img"/>
       </div>
       <div className={"md:flex flex-col hidden gap-[20px]"}>
         <Image
           dataAos={"fade-up"} delay={3 * 250 + ''}
           noWebp={true}
-          className={clsx("w-full h-[284px] object-cover")}
+          animationClass={"w-full h-full"}
+          className={clsx("w-full  h-full object-cover")}
           src={imgTemplate.replace('{**}', 3)} alt="bar-img"/>
         <Image
           dataAos={"fade-up"} delay={4 * 250 + ''}
           noWebp={true}
-          className={clsx("w-full h-[284px] object-cover")}
+          animationClass={"w-full h-full"}
+          className={clsx("w-full  h-full object-cover")}
           src={imgTemplate.replace('{**}', 4)} alt="bar-img"/>
       </div>
     </div>

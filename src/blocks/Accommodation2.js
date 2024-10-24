@@ -14,7 +14,7 @@ function Accommodation2(props) {
   };
 
   return (
-    <div className={"bg-gold md:py-[200px] py-[100px] text-black"}>
+    <div className={"bg-gold lg:pt-[90px] pb-[25px] pt-[50px] text-black"}>
       <div className="container">
         <div className={"flex md:flex-row flex-col justify-between gap-[35px] md:items-end"}>
           <Animation>

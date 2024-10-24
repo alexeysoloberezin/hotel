@@ -1,25 +1,41 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import SectionHeader from "../components/ui/SectionHeader";
 import clsx from "clsx";
 import Image from "../components/ui/Image";
 import Animation from '../components/Animation';
 
 function FacialItem({imgTemplate, title, price, time, text, index}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [contentHeight, setContentHeight] = useState(0);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.scrollHeight);
+    }
+  }, [text, isOpen]);
+
   return (
     <Animation
       delay={index * 0.1 + 's'}
     >
-      <div className={"md:min-h-[420px] min-h-[390px] p-[20px] pt-[90px]  relative"}>
+      <div className={"md:min-h-[420px] cursor-pointer min-h-[390px] p-[20px]  relative flex flex-col justify-center align-center"} onClick={() => setIsOpen(!isOpen)}>
         <Image src={imgTemplate.replace('{**}', index)} className={"absolute top-0 left-0 w-full h-full object-cover"}/>
-        <div className={"relative z-10 flex flex-col items-center"}>
+        <div className={"relative z-10 flex flex-col items-center justify-center"}>
           <div className={"flex items-end mb-[5px] font2"}>
             <span className={"text-[50px]"} style={{lineHeight: 1}}>{price} /</span>
             <h4 className={"ml-[15px]"}>{time}</h4>
           </div>
-          <h4 className={"my-[10px] uppercase"}>
+          <h4 className={"my-[10px] mb-[5px] uppercase"}>
             {title}
           </h4>
-          <div className={"mt-[5px] text-center"}>{text}</div>
+          <div
+            ref={contentRef}
+            className={clsx("overflow-hidden transition-all lg:text-[18px] text-[16px] text-center duration-500")}
+            style={{height: isOpen ? `${contentHeight}px` : '0px', opacity: !isOpen ? '0' : '1'}}
+          >
+            {text}
+          </div>
         </div>
       </div>
     </Animation>
@@ -111,14 +127,16 @@ confidence and vitality`,
 
   const grid = 'grid lg:grid-cols-3 md:grid-cols-2 gap-[20px]'
   return (
-    <div className={"py-[165px] bg-[#710000]"}>
+    <div className={"lg:py-[100px] py-[50px] bg-[#710000]"}>
       <div className="container">
         <SectionHeader
           text={'We offer a variety of facial services to suit your individual skin care needs. Our estheticians use only the finest Bioelements products based on trace minerals, essential oils, and plant extracts'}
           color={'white'}
           bigMob={true}
-          classText={"max-w-[640px]"}
           title={'Facials'}
+          classText={"max-w-[640px] text-center"}
+          wrapperClassName={"justify-center"}
+          isCenter={true}
         />
 
         <div className={clsx(grid, 'md:mb-[165px] mb-[60px]')}>
@@ -147,8 +165,10 @@ confidence and vitality`,
           text={'Procedure that combines classic massage techniques with spa therapy elements, aimed at deep relaxation and rejuvenation of both body and mind'}
           color={'white'}
           bigMob={true}
-          classText={"max-w-[640px]"}
           title={'Massages'}
+          classText={"max-w-[640px] text-center"}
+          wrapperClassName={"justify-center"}
+          isCenter={true}
         />
 
         <div className={clsx(grid)}>

@@ -7,20 +7,20 @@ import {Autoplay} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 
 function ZBlock({title, text1, text2, imgTemplate, children}) {
-  const isMob = useMediaQuery(false, '(max-width: 1340px)')
+  const isMob = useMediaQuery(false, '(max-width: 660px)')
   const arr = [1,1,1]
 
   return (
-    <div className={clsx("ZBlock lg:py-[200px] py-[100px] text-black bg-purple")}>
+    <div className={clsx("ZBlock lg:py-[100px] py-[50px] text-black bg-purple")}>
       <div className="container">
-        <div className="xl:grid grid-cols-3 gap-[20px]">
+        <div className="md:grid grid-cols-3 gap-[20px]">
           <div className={"flex flex-col"}>
             <Animation>
-              <h2>{title}</h2>
+              <h2 className={"bigMob"}>{title}</h2>
             </Animation>
-            <div className={'grow flex items-center py-[20px]'}>
+            <div className={'grow flex  py-[20px]'}>
               <Animation>
-                {text1}
+                <span className={"xl:text-[18px] lg:text-[16px] md:text-[14px] lg:leading-tight leading-none"}>{text1}</span>
               </Animation>
             </div>
             {!isMob &&
@@ -32,8 +32,9 @@ function ZBlock({title, text1, text2, imgTemplate, children}) {
           <div>
             {!isMob &&
               <Image
-                className={clsx("w-full h-full object-cover",
-                )} src={imgTemplate.replace('{**}', 2)} alt="accom-img"/>
+                className={clsx("w-full h-full object-cover")}
+                animationClass={clsx("w-full h-full object-cover")}
+                src={imgTemplate.replace('{**}', 2)} alt="accom-img"/>
             }
             {isMob && (
               <Swiper
@@ -74,11 +75,15 @@ function ZBlock({title, text1, text2, imgTemplate, children}) {
                 className={clsx("w-full h-full object-cover",
                 )} src={imgTemplate.replace('{**}', 3)} alt="accom-img"/>
             }
-            <div className={'grow flex  py-[20px]'}>
-              <Animation>
-                {text2}
-              </Animation>
-            </div>
+            {text2 && (
+              <div className={'grow flex  py-[20px]'}>
+                <Animation>
+                  <span
+                    className={"xl:text-[18px]  lg:text-[16px] md:text-[13px] lg:leading-tight leading-none"}>{text2}</span>
+                </Animation>
+              </div>
+            )}
+
             <Animation>
               {children}
             </Animation>

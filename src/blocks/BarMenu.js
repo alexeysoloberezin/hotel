@@ -28,7 +28,7 @@ function BarMenu(props) {
   const subtitle = 'lg:text-[32px] md:text-[27px] text-[22px] mt-[35px] mb-[25px]'
   const grid = 'grid grid-cols-2 gap-y-[10px] gap-x-[5px]'
   return (
-    <div className={"bg-dark md:py-[200px] py-[100px]"}>
+    <div className={"bg-dark lg:py-[100px] py-[50px]"}>
       <div className="container">
         <div className="grid lg:grid-cols-[1fr_24%_24%_15%] md:grid-cols-[1fr_30%_19%] gap-[20px]">
           <div className={""}>

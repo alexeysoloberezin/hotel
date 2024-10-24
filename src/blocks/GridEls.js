@@ -15,7 +15,7 @@ function GridElsItem({img, title, text, index}) {
 
 function GridEls({title, arr, cols, classes}) {
   return (
-    <div className={clsx("bg-[#0E4840] pt-[150px] pb-[85px]")}>
+    <div className={clsx("bg-[#0E4840] lg:py-[100px] py-[50px]")}>
       <div className="container">
         <Animation>
         <h2 className={"text-center mb-[40px] bigMob"} >{title}</h2>

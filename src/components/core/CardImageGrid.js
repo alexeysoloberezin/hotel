@@ -24,14 +24,14 @@ function CardImage({img, title,text, link, linkText,classes }) {
 
 function CardImageGrid({title, text, data}) {
   return (
-    <div className={"bg-[#0E4840] lg:py-[200px] py-[100px]"}>
+    <div className={"bg-[#0E4840] lg:py-[100px] py-[50px]"}>
       <div className="container">
         <div className={"grid lg:grid-cols-[33%_55%] mb-[50px]"}>
           <div className={'text-[50px] leading-snug font2 '}>{title}</div>
           <div className={"pt-[8px] max-w-[466px]"}>{text}
           </div>
         </div>
-        <div className={"grid lg:grid-cols-3  gap-[20px]"}>
+        <div className={"md:grid flex flex-col   lg:grid-cols-3 md:grid-cols-2  gap-[20px]"}>
           <div className={"flex flex-col gap-[20px]"}>
             <CardImage
               classes={'h-[283px]'}
@@ -47,13 +47,13 @@ function CardImageGrid({title, text, data}) {
               {...data[2]}
             />
           </div>
-          <div className={"flex flex-col gap-[20px]"}>
+          <div className={"flex lg:flex-col md:flex-row flex-col lg:col-span-1 col-span-2 gap-[20px]"}>
             <CardImage
               classes={'h-[283px]'}
               {...data[3]}
             />
             <CardImage
-              classes={'h-[319px]'}
+              classes={'h-[283px] lg:h-[319px]'}
               {...data[4]}
             />
           </div>

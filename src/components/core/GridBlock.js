@@ -6,9 +6,9 @@ import Animation from '../Animation';
 function GridBlock({data, imgTemplate, type = 'type1', hideMob}) {
   const classes = {
     'type1': {
-      '1': 'md:h-[314px] ',
-      '2': 'md:h-[220px] ',
-      '3': 'md:h-[590px] ',
+      '1': 'md:h-[220px] lg:h-[314px]',
+      '2': 'md:h-[154px] lg:h-[220px]',
+      '3': 'md:h-[430px] lg:h-[590px]',
     },
   }
 
@@ -16,7 +16,7 @@ function GridBlock({data, imgTemplate, type = 'type1', hideMob}) {
 
   return (
     <div className={clsx('text-black md:grid-cols-[29%_1fr_29%] gap-[20px]', {
-      'lg:grid hidden' :hideMob,
+      'md:grid hidden' :hideMob,
       'grid': !hideMob
     })}>
       <div className={"flex flex-col gap-[20px]"}>
