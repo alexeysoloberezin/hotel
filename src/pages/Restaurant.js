@@ -38,7 +38,7 @@ function Restaurant(props) {
 
           <div className={"flex justify-center"}>
             <a href="https://www.opentable.com/restref/client/?restref=1344616&lang=en-US&ot_source=Restaurant%20website&corrid=3a42341d-55a0-458f-805a-b07032179a17">
-              <Button label={'Book TABLE'} color={'white'} hoverColor={"purple"}></Button>
+              <Button label={'Book TABLE'} color={'purple'} hoverColor={"purple"}></Button>
             </a>
           </div>
         </div>

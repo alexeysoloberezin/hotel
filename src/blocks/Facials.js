@@ -183,6 +183,11 @@ confidence and vitality`,
               index={index + 1}
             />
           ))}
+          <Animation
+            data-aos="fade-up" data-aos-delay="1000"
+            className={"bg-dark flex flex-col text-center justify-center gap-[10px] min-h-[390px]"}>
+            <div className={"text-[35px] font2"} style={{lineHeight: 1}}>Refresh your <br/> senses</div>
+          </Animation>
         </div>
       </div>
     </div>
