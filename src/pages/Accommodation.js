@@ -18,7 +18,9 @@ function Accommodation(props) {
     <div>
       <Helmet>
         <title>Accommodation | IRIS HOTEL Boston – Luxury Apartments & Suites</title>
+        <meta property="og:title" content={"Accommodation | IRIS HOTEL Boston – Luxury Apartments & Suites"}/>
         <meta name="description" content="Explore our premium accommodations at IRIS HOTEL Boston, featuring 119 luxurious apartments and suites with modern amenities and elevator access, perfect for both leisure and business stays." />
+        <meta property="og:description"  content="Explore our premium accommodations at IRIS HOTEL Boston, featuring 119 luxurious apartments and suites with modern amenities and elevator access, perfect for both leisure and business stays." />
       </Helmet>
 
       <MainBlockTemplate

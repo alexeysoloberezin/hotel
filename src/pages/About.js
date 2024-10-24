@@ -14,7 +14,9 @@ function AboutUs(props) {
     <>
       <Helmet>
         <title>About Us | IRIS HOTEL Boston – Luxury Hotel in the Heart of Boston</title>
+        <meta property="og:title" content={'About Us | IRIS HOTEL Boston – Luxury Hotel in the Heart of Boston'}/>
         <meta name="description" content="Discover IRIS HOTEL Boston, offering modern luxury with 119 apartments, elevators, a top-tier restaurant, a spa, and more. Experience comfort and elegance at the heart of Boston." />
+        <meta property="og:description" content="Discover IRIS HOTEL Boston, offering modern luxury with 119 apartments, elevators, a top-tier restaurant, a spa, and more. Experience comfort and elegance at the heart of Boston." />
       </Helmet>
 
       <MainBlockTemplate

@@ -12,6 +12,8 @@ function Bar(props) {
     <div>
       <Helmet>
         <title>Nectar Bar | IRIS HOTEL Boston – Cocktails, Coffee & More</title>
+        <meta property="og:title" content="Nectar Bar | IRIS HOTEL Boston – Cocktails, Coffee & More" />
+        <meta  property="og:description" content="Unwind at Nectar Bar in IRIS HOTEL Boston, featuring an array of crafted cocktails, premium coffee, and teas. A perfect spot for socializing and relaxation." />
         <meta name="description" content="Unwind at Nectar Bar in IRIS HOTEL Boston, featuring an array of crafted cocktails, premium coffee, and teas. A perfect spot for socializing and relaxation." />
       </Helmet>
 

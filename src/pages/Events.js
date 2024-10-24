@@ -31,6 +31,7 @@ function EventsPage(props) {
     <div className={"event"}>
       <Helmet>
         <title></title>
+
         <meta name="description" content="" />
       </Helmet>
 

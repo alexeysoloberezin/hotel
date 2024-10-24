@@ -16,6 +16,8 @@ function Spa(props) {
   return (
     <div>
       <Helmet>
+        <meta property="og:title" content="Spa Room | IRIS HOTEL Boston – Relaxation & Facial Treatments"/>
+        <meta property="og:description" content="Indulge in relaxation at the Spa Room in IRIS HOTEL Boston. Treat yourself to a range of facial treatments and rejuvenating experiences in a serene environment."/>
         <title> Spa Room | IRIS HOTEL Boston – Relaxation & Facial Treatments</title>
         <meta name="description"
               content=" Indulge in relaxation at the Spa Room in IRIS HOTEL Boston. Treat yourself to a range of facial treatments and rejuvenating experiences in a serene environment."/>

@@ -13,8 +13,11 @@ function Restaurant(props) {
   return (
     <div>
       <Helmet>
+        <meta property="og:title" content="Petal Restaurant | IRIS HOTEL Boston – Fine Dining & Events"/>
+        <meta property="og:description" content="Experience exquisite dining at Petal Restaurant, offering gourmet dishes and event hosting services. Enjoy live music and customizable menus for special occasions."/>
         <title>Petal Restaurant | IRIS HOTEL Boston – Fine Dining & Events</title>
-        <meta name="description" content="Experience exquisite dining at Petal Restaurant, offering gourmet dishes and event hosting services. Enjoy live music and customizable menus for special occasions." />
+        <meta name="description"
+              content="Experience exquisite dining at Petal Restaurant, offering gourmet dishes and event hosting services. Enjoy live music and customizable menus for special occasions."/>
       </Helmet>
 
       <MainBlockTemplate
