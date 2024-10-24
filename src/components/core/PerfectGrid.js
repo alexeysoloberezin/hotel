@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from "clsx";
 import Image from "../ui/Image";
+import Zoom from "react-medium-image-zoom";
 
 function PerfectGrid({imgTemplate, hideMob}) {
   const grid = [1, 1, 1, 1, 1]
@@ -14,11 +15,11 @@ function PerfectGrid({imgTemplate, hideMob}) {
   ]
 
   const h = [
-    'md:h-[195px] lg:h-[279px] h-full w-full',
-    'md:h-[406px] lg:h-[580px] sm:h-full h-[330px] w-full ',
-    'md:h-[195px] lg:h-[279px] h-full w-full',
-    'md:h-[195px] lg:h-[279px] h-full w-full',
-    'md:h-[195px] lg:h-[279px] h-full w-full',
+    'md:h-[195px] lg:h-[330px] h-full w-full',
+    'md:h-[406px] lg:h-[683px] sm:h-full h-[330px] w-full ',
+    'md:h-[195px] lg:h-[330px] h-full w-full',
+    'md:h-[195px] lg:h-[330px] h-full w-full',
+    'md:h-[195px] lg:h-[330px] h-full w-full',
   ]
   return (
     <div className={
@@ -29,11 +30,13 @@ function PerfectGrid({imgTemplate, hideMob}) {
     }>
       {grid.map((el, index) => (
         <div key={index} className={indexClasses[index]}>
-          <Image
-            noWebp={true}
-            animationClass={clsx('', h[index])}
-            className={clsx("w-full h-full object-cover",
-          )} src={imgTemplate.replace('{**}', index + 1)} alt="bar-img"/>
+          <Zoom>
+            <Image
+              noWebp={true}
+              animationClass={clsx('', h[index])}
+              className={clsx("w-full h-full object-cover",
+              )} src={imgTemplate.replace('{**}', index + 1)} alt="bar-img"/>
+          </Zoom>
         </div>
       ))}
     </div>
