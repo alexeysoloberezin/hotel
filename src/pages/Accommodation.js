@@ -37,7 +37,6 @@ function Accommodation(props) {
         <BookNow color={"white"}/>
       </ZBlock>
 
-      <Facilities/>
       <Accommodation2/>
 
       <BlockT
@@ -55,9 +54,9 @@ function Accommodation(props) {
         text1={'Our accommodations offer a range of options, including our exquisite Iris Suite, complete with  a Jacuzzi and a fireplace, making it the perfect choice for honeymooners and couples celebrating their special day'}
         text2={''}
       >
-        <Button label={'see more'} color={"white"} hoverColor={'white-2'} className={"group mt-[20px]"}>
-          <Arrow classes={"group-hover:fill-white fill-black"}/>
-        </Button>
+        <div className="mt-[20px]">
+          <BookNow  color={"white"} hoverColor={""}/>
+        </div>
       </ZBlock>
 
       <BlockT
