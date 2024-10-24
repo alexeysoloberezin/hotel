@@ -155,8 +155,7 @@ const Form = (props) => {
             'bg-red': statusMessage === 'error',
           })}
       >
-        {statusMessage === 'success' ? 'Your submission has been received. \n' +
-          'We appreciate your time and will get back to within 48 hours.' : 'Error sending form'}
+        {statusMessage === 'success' ? 'Form was submitted' : 'Error sending form'}
       </div>
     </div>
   );
